@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.Name = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameTXT = new System.Windows.Forms.TextBox();
             this.Email = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.emailTXT = new System.Windows.Forms.TextBox();
             this.DateOfBirth = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dobTXT = new System.Windows.Forms.DateTimePicker();
             this.PostCode = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.postcodeTXT = new System.Windows.Forms.TextBox();
             this.City = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cityTXT = new System.Windows.Forms.TextBox();
             this.Country = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.countryTXT = new System.Windows.Forms.TextBox();
             this.Next = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -55,13 +55,13 @@
             this.Name.Text = "Name";
             this.Name.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // nameTXT
             // 
-            this.textBox1.Location = new System.Drawing.Point(513, 83);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 26);
-            this.textBox1.TabIndex = 1;
+            this.nameTXT.Location = new System.Drawing.Point(513, 83);
+            this.nameTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nameTXT.Name = "nameTXT";
+            this.nameTXT.Size = new System.Drawing.Size(148, 26);
+            this.nameTXT.TabIndex = 1;
             // 
             // Email
             // 
@@ -74,13 +74,13 @@
             this.Email.TabIndex = 2;
             this.Email.Text = "Email";
             // 
-            // textBox2
+            // emailTXT
             // 
-            this.textBox2.Location = new System.Drawing.Point(513, 158);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 26);
-            this.textBox2.TabIndex = 3;
+            this.emailTXT.Location = new System.Drawing.Point(513, 158);
+            this.emailTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.emailTXT.Name = "emailTXT";
+            this.emailTXT.Size = new System.Drawing.Size(148, 26);
+            this.emailTXT.TabIndex = 3;
             // 
             // DateOfBirth
             // 
@@ -93,12 +93,12 @@
             this.DateOfBirth.TabIndex = 4;
             this.DateOfBirth.Text = "Date of Birth";
             // 
-            // dateTimePicker1
+            // dobTXT
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(513, 251);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(162, 26);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dobTXT.Location = new System.Drawing.Point(513, 251);
+            this.dobTXT.Name = "dobTXT";
+            this.dobTXT.Size = new System.Drawing.Size(162, 26);
+            this.dobTXT.TabIndex = 5;
             // 
             // PostCode
             // 
@@ -111,13 +111,13 @@
             this.PostCode.TabIndex = 6;
             this.PostCode.Text = "PostCode";
             // 
-            // textBox3
+            // postcodeTXT
             // 
-            this.textBox3.Location = new System.Drawing.Point(513, 331);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 26);
-            this.textBox3.TabIndex = 7;
+            this.postcodeTXT.Location = new System.Drawing.Point(513, 331);
+            this.postcodeTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.postcodeTXT.Name = "postcodeTXT";
+            this.postcodeTXT.Size = new System.Drawing.Size(148, 26);
+            this.postcodeTXT.TabIndex = 7;
             // 
             // City
             // 
@@ -130,13 +130,13 @@
             this.City.TabIndex = 8;
             this.City.Text = "City";
             // 
-            // textBox4
+            // cityTXT
             // 
-            this.textBox4.Location = new System.Drawing.Point(513, 396);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 26);
-            this.textBox4.TabIndex = 9;
+            this.cityTXT.Location = new System.Drawing.Point(513, 396);
+            this.cityTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cityTXT.Name = "cityTXT";
+            this.cityTXT.Size = new System.Drawing.Size(148, 26);
+            this.cityTXT.TabIndex = 9;
             // 
             // Country
             // 
@@ -149,13 +149,13 @@
             this.Country.TabIndex = 10;
             this.Country.Text = "Country";
             // 
-            // textBox5
+            // countryTXT
             // 
-            this.textBox5.Location = new System.Drawing.Point(513, 472);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 26);
-            this.textBox5.TabIndex = 11;
+            this.countryTXT.Location = new System.Drawing.Point(513, 472);
+            this.countryTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.countryTXT.Name = "countryTXT";
+            this.countryTXT.Size = new System.Drawing.Size(148, 26);
+            this.countryTXT.TabIndex = 11;
             // 
             // Next
             // 
@@ -173,23 +173,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(1200, 637);
             this.Controls.Add(this.Next);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.countryTXT);
             this.Controls.Add(this.Country);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.cityTXT);
             this.Controls.Add(this.City);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.postcodeTXT);
             this.Controls.Add(this.PostCode);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dobTXT);
             this.Controls.Add(this.DateOfBirth);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.emailTXT);
             this.Controls.Add(this.Email);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameTXT);
             this.Controls.Add(this.Name);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "PatientRegistration";
             this.Text = "Patient Registration";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,17 +198,17 @@
         #endregion
 
         private System.Windows.Forms.Label Name;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameTXT;
         private System.Windows.Forms.Label Email;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox emailTXT;
         private System.Windows.Forms.Label DateOfBirth;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dobTXT;
         private System.Windows.Forms.Label PostCode;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox postcodeTXT;
         private System.Windows.Forms.Label City;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox cityTXT;
         private System.Windows.Forms.Label Country;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox countryTXT;
         private System.Windows.Forms.Button Next;
     }
 }

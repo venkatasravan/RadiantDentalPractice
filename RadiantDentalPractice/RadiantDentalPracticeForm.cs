@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice
 {
-    public partial class RadiantDentalPractice : Form
+    public partial class RadiantDentalPracticeForm : Form
     {
-        public RadiantDentalPractice()
+        public RadiantDentalPracticeForm()
         {
             InitializeComponent();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RadiantDentalPractice.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace RadiantDentalPractice.views
 {
     public partial class GP_Practice : Form
     {
-        public GP_Practice()
+
+        private Patient patient;
+
+        public GP_Practice(Patient patient)
         {
             InitializeComponent();
+            this.patient = patient;
         }
 
         private void Submit_Click(object sender, EventArgs e)

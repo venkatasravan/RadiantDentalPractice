@@ -1,6 +1,6 @@
 ﻿namespace RadiantDentalPractice
 {
-    partial class RadiantDentalPractice
+    partial class RadiantDentalPracticeForm
     {
         /// <summary>
         /// Required designer variable.

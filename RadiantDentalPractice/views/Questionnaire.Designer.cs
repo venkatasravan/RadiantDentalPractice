@@ -47,7 +47,7 @@
             // Yes
             // 
             this.Yes.AutoSize = true;
-            this.Yes.Location = new System.Drawing.Point(493, 117);
+            this.Yes.Location = new System.Drawing.Point(485, 117);
             this.Yes.Name = "Yes";
             this.Yes.Size = new System.Drawing.Size(43, 17);
             this.Yes.TabIndex = 1;
