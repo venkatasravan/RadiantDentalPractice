@@ -12,7 +12,7 @@ namespace RadiantDentalPractice.models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int questionId { get; set; }
+        public int ID { get; set; }
         public string question { get; set; }
         public string answer { get; set; }
     }

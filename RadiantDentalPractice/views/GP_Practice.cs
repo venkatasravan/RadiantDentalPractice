@@ -48,8 +48,20 @@ namespace RadiantDentalPractice.views
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            gPPresenter.updatePatient();
-            MessageBox.Show("Patient Registartion Successful");
+            try
+            {
+                gPPresenter.updatePatient();
+                MessageBox.Show("Patient Registartion Successful");
+            }
+            catch
+            {
+                MessageBox.Show("Patient Registartion Not Successful");
+            }
+            finally
+            {
+                this.Close();
+            }
+            
         }
     }
 }

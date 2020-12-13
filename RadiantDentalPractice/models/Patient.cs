@@ -11,9 +11,10 @@ namespace RadiantDentalPractice.models
     public class Patient
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
+        [Key, Column(Order = 0)]
         public int patientID { get; set; }
         public string name { get; set; }
+        [Key, Column(Order = 1), Index(IsUnique = true)]
         public string email { get; set; }
         public DateTime dob { get; set; }
         public Address address { get; set; }
