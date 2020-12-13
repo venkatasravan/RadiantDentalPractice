@@ -13,37 +13,85 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
-    public partial class PatientRegistration : Form
+    public partial class PatientRegistration : Form, IPatientView
     {
 
         private Patient _patient = new Patient();
-        Form view;
         public PatientRegistration()
         {
             InitializeComponent();
+            this.patientPresenter  = new PatientPresenter(this);
         }
 
-        public Patient patient {
+        public string name 
+        {
             get 
             {
-                _patient.name = nameTXT.Text;
-                _patient.email = emailTXT.Text;
-                _patient.dob = dobTXT.Value.Date;
-                _patient.address = new Address();
-                _patient.address.postcode = postcodeTXT.Text;
-                _patient.address.city = cityTXT.Text;
-                _patient.address.country = countryTXT.Text;
-                _patient.medicalQuestions = new MedicalQuestions();
-                _patient.gp_details = new GP();
-                return _patient;
+                return nameTXT.Text;
             }
             set
             {
-                _patient = value;
+                nameTXT.Text = value;
+            } 
+        }
+        public string email
+        {
+            get
+            {
+                return emailTXT.Text;
             }
+            set
+            {
+                emailTXT.Text = value;
             }
+        }
 
-        
+        public DateTime dob
+        {
+            get
+            {
+                return dobTXT.Value.Date;
+            }
+            set
+            {
+                dobTXT.Value = value;
+            }
+        }
+        public string postcode
+        {
+            get
+            {
+                return postcodeTXT.Text;
+            }
+            set
+            {
+                postcodeTXT.Text = value;
+            }
+        }
+        public string city
+        {
+            get
+            {
+                return cityTXT.Text;
+            }
+            set
+            {
+                cityTXT.Text = value;
+            }
+        }
+        public string country
+        {
+            get
+            {
+                return countryTXT.Text;
+            }
+            set
+            {
+                countryTXT.Text = value;
+            }
+        }
+
+        public PatientPresenter patientPresenter { get; set; }
 
         public void validatePatient()
         {
@@ -53,9 +101,7 @@ namespace RadiantDentalPractice.views
         private void Next_Click(object sender, EventArgs e)
         {
             this.Hide();
-            view = new Questionnaire(patient);
-            IPresenter presenter = new QuestionnairePresenter(view);
-            presenter.load();
+            patientPresenter.RegisterPatient();
             this.Close();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using RadiantDentalPractice.models;
+using RadiantDentalPractice.views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,28 +9,41 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.presenter
 {
-    class QuestionnairePresenter : RegistrationHandler, IPresenter
+    public class QuestionnairePresenter
     {
-        protected RegistrationHandler handler;
-        private Form view;
+        private IQuestionView view;
+        private Patient patient;
 
-        public QuestionnairePresenter(Form view)
+        public QuestionnairePresenter(IQuestionView view, Patient patient)
         {
             this.view = view;
-        }
-        public void load()
-        {
-            this.view.ShowDialog();
+            this.patient = patient;
+            
         }
 
-        public override void RegisterPatient(Patient patient)
+        public void updatePatient()
         {
-            Console.WriteLine("good");
+            updateQuestions();
+            GP_Practice gP_Practice = new GP_Practice();
+            gP_Practice.gPPresenter = new GPPresenter(gP_Practice,patient);
+            gP_Practice.ShowDialog();
         }
 
         public void validate()
         {
             throw new NotImplementedException();
+        }
+
+        private void updateQuestions()
+        {
+            foreach (KeyValuePair<string, string> entry in view.questions)
+            {
+                Question question = new Question();
+                question.question = entry.Key;
+                question.answer = entry.Value;
+                patient.medicalQuestions.questions.Add(question);
+            }
+            patient.medicalQuestions.lastUpdatedDate = DateTime.Now;
         }
     }
 }

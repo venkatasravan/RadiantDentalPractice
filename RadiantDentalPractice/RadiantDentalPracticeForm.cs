@@ -1,4 +1,6 @@
-﻿using RadiantDentalPractice.views;
+﻿using RadiantDentalPractice.models;
+using RadiantDentalPractice.presenter;
+using RadiantDentalPractice.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +15,13 @@ namespace RadiantDentalPractice
 {
     public partial class RadiantDentalPracticeForm : Form
     {
+
         public RadiantDentalPracticeForm()
         {
             InitializeComponent();
         }
+        
+
 
         private void RegisterPatient_Click(object sender, EventArgs e)
         {
@@ -24,6 +29,11 @@ namespace RadiantDentalPractice
             PatientRegistration patientRegistration = new PatientRegistration();
             patientRegistration.ShowDialog();
             this.Close();
+        }
+
+        private void DentalSurgery_Click(object sender, EventArgs e)
+        {
+            //not implemented
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.GP_Name = new System.Windows.Forms.Label();
             this.GP_Name_Txt = new System.Windows.Forms.TextBox();
-            this.addressTXT = new System.Windows.Forms.TextBox();
+            this.GP_addressTXT = new System.Windows.Forms.TextBox();
             this.GP_Address = new System.Windows.Forms.Label();
             this.Submit = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,12 +52,12 @@
             this.GP_Name_Txt.Size = new System.Drawing.Size(100, 20);
             this.GP_Name_Txt.TabIndex = 1;
             // 
-            // addressTXT
+            // GP_addressTXT
             // 
-            this.addressTXT.Location = new System.Drawing.Point(439, 179);
-            this.addressTXT.Name = "addressTXT";
-            this.addressTXT.Size = new System.Drawing.Size(132, 20);
-            this.addressTXT.TabIndex = 2;
+            this.GP_addressTXT.Location = new System.Drawing.Point(439, 179);
+            this.GP_addressTXT.Name = "GP_addressTXT";
+            this.GP_addressTXT.Size = new System.Drawing.Size(132, 20);
+            this.GP_addressTXT.TabIndex = 2;
             // 
             // GP_Address
             // 
@@ -88,7 +88,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.GP_Address);
-            this.Controls.Add(this.addressTXT);
+            this.Controls.Add(this.GP_addressTXT);
             this.Controls.Add(this.GP_Name_Txt);
             this.Controls.Add(this.GP_Name);
             this.Name = "GP_Practice";
@@ -102,7 +102,7 @@
 
         private System.Windows.Forms.Label GP_Name;
         private System.Windows.Forms.TextBox GP_Name_Txt;
-        private System.Windows.Forms.TextBox addressTXT;
+        private System.Windows.Forms.TextBox GP_addressTXT;
         private System.Windows.Forms.Label GP_Address;
         private System.Windows.Forms.Button Submit;
     }

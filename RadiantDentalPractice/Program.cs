@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RadiantDentalPractice.presenter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace RadiantDentalPractice
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var mainView = new RadiantDentalPracticeForm();
+            var presenter = new RadiantDentalPracticePresenter();
             Application.Run(mainView);
         }
     }

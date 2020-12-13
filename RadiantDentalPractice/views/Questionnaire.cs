@@ -12,43 +12,45 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
-    public partial class Questionnaire : Form
+    public partial class Questionnaire : Form, IQuestionView
     {
 
-        Patient patient;
-        Form view;
-        Question _question = new Question();
 
+        private Dictionary<string,string> _questions = new Dictionary<string, string>();
 
-        public Questionnaire(Patient patient)
+        public Questionnaire()
         {
             InitializeComponent();
-            this.patient = patient;
+            loadQuestions();
         }
 
-        public Question question
-        {
+
+
+        public QuestionnairePresenter questionnairePresenter { get; set; }
+        public Dictionary<string, string> questions 
+        { 
             get
-            {
-                _question.question = Question1.Text;
-                _question.answer = Yes.Checked? Yes.Text:No.Text;
-                return _question;
-            }
-            set
-            {
-                _question = value;
+            {                
+                return _questions;
             }
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
             this.Hide();
-            patient.medicalQuestions.questions = new HashSet<Question>();
-            patient.medicalQuestions.questions.Add(question);
-            view = new GP_Practice(patient);
-            IPresenter presenter = new GPPresenter(view);
-            presenter.load();
+            questionnairePresenter.updatePatient();
             this.Close();
         }
+
+        private void loadQuestions()
+        {
+            _questions.Add(Question1.Text, Question1_TXT.Text);
+        }
+
+        private void Question1_TXT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _questions[Question1.Text] = Question1_TXT.Text;
+        }
+
     }
 }

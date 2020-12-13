@@ -58,6 +58,7 @@
             this.DentalSurgery.TabIndex = 1;
             this.DentalSurgery.Text = "DentalSurgery";
             this.DentalSurgery.UseVisualStyleBackColor = false;
+            this.DentalSurgery.Click += new System.EventHandler(this.DentalSurgery_Click);
             // 
             // BookCheckup
             // 

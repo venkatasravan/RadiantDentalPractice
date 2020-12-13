@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.Question1 = new System.Windows.Forms.Label();
-            this.Yes = new System.Windows.Forms.RadioButton();
-            this.No = new System.Windows.Forms.RadioButton();
             this.Next = new System.Windows.Forms.Button();
+            this.Question1_TXT = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Question1
@@ -43,28 +42,6 @@
             this.Question1.Size = new System.Drawing.Size(345, 20);
             this.Question1.TabIndex = 0;
             this.Question1.Text = "Do you have alergy to latex or Antibiotics?";
-            // 
-            // Yes
-            // 
-            this.Yes.AutoSize = true;
-            this.Yes.Location = new System.Drawing.Point(485, 117);
-            this.Yes.Name = "Yes";
-            this.Yes.Size = new System.Drawing.Size(43, 17);
-            this.Yes.TabIndex = 1;
-            this.Yes.TabStop = true;
-            this.Yes.Text = "Yes";
-            this.Yes.UseVisualStyleBackColor = true;
-            // 
-            // No
-            // 
-            this.No.AutoSize = true;
-            this.No.Location = new System.Drawing.Point(633, 117);
-            this.No.Name = "No";
-            this.No.Size = new System.Drawing.Size(39, 17);
-            this.No.TabIndex = 2;
-            this.No.TabStop = true;
-            this.No.Text = "No";
-            this.No.UseVisualStyleBackColor = true;
             // 
             // Next
             // 
@@ -78,14 +55,25 @@
             this.Next.UseVisualStyleBackColor = false;
             this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
+            // Question1_TXT
+            // 
+            this.Question1_TXT.FormattingEnabled = true;
+            this.Question1_TXT.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.Question1_TXT.Location = new System.Drawing.Point(490, 115);
+            this.Question1_TXT.Name = "Question1_TXT";
+            this.Question1_TXT.Size = new System.Drawing.Size(121, 21);
+            this.Question1_TXT.TabIndex = 4;
+            this.Question1_TXT.SelectedIndexChanged += new System.EventHandler(this.Question1_TXT_SelectedIndexChanged);
+            // 
             // Questionnaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Question1_TXT);
             this.Controls.Add(this.Next);
-            this.Controls.Add(this.No);
-            this.Controls.Add(this.Yes);
             this.Controls.Add(this.Question1);
             this.Name = "Questionnaire";
             this.Text = "Questionnaire";
@@ -97,8 +85,7 @@
         #endregion
 
         private System.Windows.Forms.Label Question1;
-        private System.Windows.Forms.RadioButton Yes;
-        private System.Windows.Forms.RadioButton No;
         private System.Windows.Forms.Button Next;
+        private System.Windows.Forms.ComboBox Question1_TXT;
     }
 }
