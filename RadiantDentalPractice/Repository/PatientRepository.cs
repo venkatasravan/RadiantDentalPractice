@@ -11,12 +11,13 @@ namespace RadiantDentalPractice.Repository
     public class PatientRepository
     {
 
-        public void addPatient(Patient patient)
+        public int addPatient(Patient patient)
         {
             using (var db = new DentalPracticeContext())
             {
                 db.Patients.Add(patient);
                 db.SaveChanges();
+                return patient.patientID;
             }
         }
     }

@@ -22,11 +22,11 @@ namespace RadiantDentalPractice.presenter
             this.patient = patient;
         }
 
-        public void updatePatient()
+        public int updatePatient()
         {
             updateAddress();
             PatientRepository patientRepository = new PatientRepository();
-            patientRepository.addPatient(patient);
+            return patientRepository.addPatient(patient);
         }
 
         private void updateAddress()

@@ -50,8 +50,8 @@ namespace RadiantDentalPractice.views
         {
             try
             {
-                gPPresenter.updatePatient();
-                MessageBox.Show("Patient Registartion Successful");
+                int patientID = gPPresenter.updatePatient();
+                MessageBox.Show("Patient Registartion Successful \n Your PatientID is " + patientID);
             }
             catch
             {
