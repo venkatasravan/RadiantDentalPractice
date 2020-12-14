@@ -17,8 +17,8 @@ namespace RadiantDentalPractice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var mainView = new RadiantDentalPracticeForm();
-            var presenter = new RadiantDentalPracticePresenter();
+            RadiantDentalPracticeForm mainView = new RadiantDentalPracticeForm();
+            mainView.radiantDentalPracticePresenter = new RadiantDentalPracticePresenter(mainView);
             Application.Run(mainView);
         }
     }

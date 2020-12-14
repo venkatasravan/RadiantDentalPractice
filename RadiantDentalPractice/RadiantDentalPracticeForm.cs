@@ -21,13 +21,12 @@ namespace RadiantDentalPractice
             InitializeComponent();
         }
         
-
+        public RadiantDentalPracticePresenter radiantDentalPracticePresenter { get; set; }
 
         private void RegisterPatient_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientRegistration patientRegistration = new PatientRegistration();
-            patientRegistration.ShowDialog();
+            radiantDentalPracticePresenter.registerPatient();
             this.Close();
         }
 

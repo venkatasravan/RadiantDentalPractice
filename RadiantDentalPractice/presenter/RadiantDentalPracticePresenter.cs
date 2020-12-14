@@ -9,20 +9,20 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.presenter
 {
-    class RadiantDentalPracticePresenter
+    public class RadiantDentalPracticePresenter
     {
 
-        
-        public RadiantDentalPracticePresenter()
+        private RadiantDentalPracticeForm formView;
+        public RadiantDentalPracticePresenter(RadiantDentalPracticeForm formView)
         {
-            
+            this.formView = formView;
         }
         
         public void registerPatient()
         {
-            IPatientView view = new PatientRegistration();
+            PatientRegistration view = new PatientRegistration();
             PatientPresenter patientPresenter = new PatientPresenter(view);
-            patientPresenter.RegisterPatient();
+            view.ShowDialog();
         }
 
        

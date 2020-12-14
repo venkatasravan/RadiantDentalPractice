@@ -25,16 +25,6 @@ namespace RadiantDentalPractice.presenter
         public void updatePatient()
         {
             updateAddress();
-            Console.WriteLine("Patient name: " + patient.name);
-            Console.WriteLine("Patient email: " + patient.email);
-            Console.WriteLine("Patient dob: " + patient.dob.ToString());
-            Console.WriteLine("Patient city: " + patient.address.city);
-            Console.WriteLine("Patient postcode: " + patient.address.postcode);
-            Console.WriteLine("Patient country: " + patient.address.country);
-            Console.WriteLine("Patient question: " + patient.medicalQuestions.questions.First().question);
-            Console.WriteLine("Patient answer: " + patient.medicalQuestions.questions.First().answer);
-            Console.WriteLine("Patient gp: " + patient.gp_details.name);
-            Console.WriteLine("Patient gp address: " + patient.gp_details.address);
             PatientRepository patientRepository = new PatientRepository();
             patientRepository.addPatient(patient);
         }
