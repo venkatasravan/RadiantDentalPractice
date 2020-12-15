@@ -20,7 +20,6 @@ namespace RadiantDentalPractice.views
         public PatientRegistration()
         {
             InitializeComponent();
-            this.patientPresenter  = new PatientPresenter(this);
         }
 
         public string name 

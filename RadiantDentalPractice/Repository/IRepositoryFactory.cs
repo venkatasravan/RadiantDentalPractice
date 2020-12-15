@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
-    public interface IFactory
+    public interface IRepositoryFactory
     {
         IPatientRepository getPatientRepository();
     }

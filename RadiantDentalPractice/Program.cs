@@ -1,4 +1,6 @@
-﻿using RadiantDentalPractice.presenter;
+﻿using RadiantDentalPractice.Factory;
+using RadiantDentalPractice.presenter;
+using RadiantDentalPractice.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,10 @@ namespace RadiantDentalPractice
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             RadiantDentalPracticeForm mainView = new RadiantDentalPracticeForm();
-            mainView.radiantDentalPracticePresenter = new RadiantDentalPracticePresenter(mainView);
+            IViewFactory viewFactory = new ViewFactory();
+            IRepositoryFactory repositoryFactory = new RepositoryFactory();
+            IPresenterFactory presenterFactory = new PresenterFactory();
+            mainView.radiantDentalPracticePresenter = new RadiantDentalPracticePresenter(mainView,viewFactory, presenterFactory, repositoryFactory);
             Application.Run(mainView);
         }
     }

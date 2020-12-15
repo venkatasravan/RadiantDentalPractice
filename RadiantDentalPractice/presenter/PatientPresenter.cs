@@ -1,4 +1,6 @@
-﻿using RadiantDentalPractice.models;
+﻿using RadiantDentalPractice.Factory;
+using RadiantDentalPractice.models;
+using RadiantDentalPractice.Repository;
 using RadiantDentalPractice.views;
 using System;
 using System.Collections.Generic;
@@ -14,18 +16,26 @@ namespace RadiantDentalPractice.presenter
 
         private IPatientView view;
         private Patient patient;
+        private IViewFactory viewFactory;
+        private IPresenterFactory presenterFactory;
+        private IRepositoryFactory repositoryFactory;
 
-        public PatientPresenter(IPatientView view)
+        public PatientPresenter(IPatientView view,IViewFactory viewFactory,
+            IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
             this.view = view;
+            this.viewFactory = viewFactory;
+            this.presenterFactory = presenterFactory;
+            this.repositoryFactory = repositoryFactory;
         }
 
         public void RegisterPatient()
         {
             initializePatient();
-            Questionnaire questionnaire = new Questionnaire();
-            questionnaire.questionnairePresenter = new QuestionnairePresenter(questionnaire,patient);
-            questionnaire.ShowDialog();
+            Questionnaire questionnaire = viewFactory.getQuestionView();
+            questionnaire.questionnairePresenter = presenterFactory
+                .getQuestionnairePresenter(questionnaire,patient,viewFactory,presenterFactory,repositoryFactory);
+            ViewHelper.showView(questionnaire);
         }
 
         public void validate()
