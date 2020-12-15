@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
-    public class PatientRepository
+    public class PatientRepository : IPatientRepository
     {
 
         public int addPatient(Patient patient)

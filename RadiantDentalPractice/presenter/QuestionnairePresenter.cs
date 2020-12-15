@@ -1,4 +1,5 @@
 ﻿using RadiantDentalPractice.models;
+using RadiantDentalPractice.Repository;
 using RadiantDentalPractice.views;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,8 @@ namespace RadiantDentalPractice.presenter
         {
             updateQuestions();
             GP_Practice gP_Practice = new GP_Practice();
-            gP_Practice.gPPresenter = new GPPresenter(gP_Practice,patient);
+            IFactory factory = new RepositoryFactory();
+            gP_Practice.gPPresenter = new GPPresenter(gP_Practice,patient, factory);
             gP_Practice.ShowDialog();
         }
 

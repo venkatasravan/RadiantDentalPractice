@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * GPPresenter responsible to update the GP details to the patient model.
+ * It will call Patient Repository to insert the data to database
+ */
+
 namespace RadiantDentalPractice.presenter
 {
     public class GPPresenter
@@ -15,17 +20,19 @@ namespace RadiantDentalPractice.presenter
 
         IGpView view;
         Patient patient;
+        IFactory factory;
 
-        public GPPresenter(IGpView view,Patient patient)
+        public GPPresenter(IGpView view,Patient patient, IFactory factory)
         {
             this.view = view;
             this.patient = patient;
+            this.factory = factory;
         }
 
         public int updatePatient()
         {
             updateAddress();
-            PatientRepository patientRepository = new PatientRepository();
+            IPatientRepository patientRepository = factory.getObject();
             return patientRepository.addPatient(patient);
         }
 
