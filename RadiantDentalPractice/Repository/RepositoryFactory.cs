@@ -8,7 +8,7 @@ namespace RadiantDentalPractice.Repository
 {
     public class RepositoryFactory : IFactory
     {
-        public IPatientRepository getObject()
+        public IPatientRepository getPatientRepository()
         {
             return new PatientRepository();
         }

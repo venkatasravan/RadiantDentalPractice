@@ -8,6 +8,6 @@ namespace RadiantDentalPractice.Repository
 {
     public interface IFactory
     {
-        IPatientRepository getObject();
+        IPatientRepository getPatientRepository();
     }
 }

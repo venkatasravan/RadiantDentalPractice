@@ -22,7 +22,7 @@ namespace RadiantDentalPracticeTests.Presenter
             
             Mock<IGpView> gpView = new Mock<IGpView>();
             Mock<IFactory> factory = new Mock<IFactory>();
-            factory.Setup(x => x.getObject()).Returns(repo.Object);
+            factory.Setup(x => x.getPatientRepository()).Returns(repo.Object);
             gpView.Object.name = "Biddlestone Health Group";
             gpView.Object.address = "Biddlestone Road, Heaton, Newcastle";
             Patient patient = new Patient();

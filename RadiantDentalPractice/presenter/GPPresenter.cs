@@ -32,7 +32,7 @@ namespace RadiantDentalPractice.presenter
         public int updatePatient()
         {
             updateAddress();
-            IPatientRepository patientRepository = factory.getObject();
+            IPatientRepository patientRepository = factory.getPatientRepository();
             return patientRepository.addPatient(patient);
         }
 
