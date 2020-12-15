@@ -47,16 +47,18 @@
             // 
             // GP_Name_Txt
             // 
+            this.GP_Name_Txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GP_Name_Txt.Location = new System.Drawing.Point(439, 114);
             this.GP_Name_Txt.Name = "GP_Name_Txt";
-            this.GP_Name_Txt.Size = new System.Drawing.Size(100, 20);
+            this.GP_Name_Txt.Size = new System.Drawing.Size(100, 26);
             this.GP_Name_Txt.TabIndex = 1;
             // 
             // GP_addressTXT
             // 
+            this.GP_addressTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GP_addressTXT.Location = new System.Drawing.Point(439, 179);
             this.GP_addressTXT.Name = "GP_addressTXT";
-            this.GP_addressTXT.Size = new System.Drawing.Size(132, 20);
+            this.GP_addressTXT.Size = new System.Drawing.Size(132, 26);
             this.GP_addressTXT.TabIndex = 2;
             // 
             // GP_Address

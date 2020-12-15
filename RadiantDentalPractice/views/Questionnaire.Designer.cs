@@ -57,13 +57,14 @@
             // 
             // Question1_TXT
             // 
+            this.Question1_TXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Question1_TXT.FormattingEnabled = true;
             this.Question1_TXT.Items.AddRange(new object[] {
             "Yes",
             "No"});
             this.Question1_TXT.Location = new System.Drawing.Point(490, 115);
             this.Question1_TXT.Name = "Question1_TXT";
-            this.Question1_TXT.Size = new System.Drawing.Size(121, 21);
+            this.Question1_TXT.Size = new System.Drawing.Size(121, 28);
             this.Question1_TXT.TabIndex = 4;
             this.Question1_TXT.SelectedIndexChanged += new System.EventHandler(this.Question1_TXT_SelectedIndexChanged);
             // 
