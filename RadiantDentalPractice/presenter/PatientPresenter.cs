@@ -20,7 +20,7 @@ namespace RadiantDentalPractice.presenter
         private IPresenterFactory presenterFactory;
         private IRepositoryFactory repositoryFactory;
 
-        public PatientPresenter(IPatientView view,IViewFactory viewFactory,
+        public PatientPresenter(IPatientView view, IViewFactory viewFactory,
             IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
             this.view = view;
@@ -29,13 +29,11 @@ namespace RadiantDentalPractice.presenter
             this.repositoryFactory = repositoryFactory;
         }
 
-        public void RegisterPatient()
+        public void RegisterPatient(IQuestionView questionView)
         {
             initializePatient();
-            Questionnaire questionnaire = viewFactory.getQuestionView();
-            questionnaire.questionnairePresenter = presenterFactory
-                .getQuestionnairePresenter(questionnaire,patient,viewFactory,presenterFactory,repositoryFactory);
-            ViewHelper.showView(questionnaire);
+            questionView.questionnairePresenter = presenterFactory
+                .getQuestionnairePresenter(questionView, patient, viewFactory, presenterFactory, repositoryFactory);
         }
 
         public void validate()

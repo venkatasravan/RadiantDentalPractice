@@ -24,5 +24,9 @@ namespace RadiantDentalPractice.Factory
         {
             return new Questionnaire();
         }
+        public CheckUpForm getCheckUpView()
+        {
+            return new CheckUpForm();
+        }
     }
 }

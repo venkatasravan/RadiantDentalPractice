@@ -20,12 +20,17 @@ namespace RadiantDentalPractice.presenter
         public PatientPresenter getPatientPresenter(IPatientView view, IViewFactory factory,
             IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
-            return new PatientPresenter(view, factory,presenterFactory,repositoryFactory);
+            return new PatientPresenter(view, factory, presenterFactory, repositoryFactory);
         }
 
         public QuestionnairePresenter getQuestionnairePresenter(IQuestionView view, Patient patient, IViewFactory factory, IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
-            return new QuestionnairePresenter(view, patient, factory,presenterFactory,repositoryFactory);
+            return new QuestionnairePresenter(view, patient, factory, presenterFactory, repositoryFactory);
+        }
+
+        public CheckUpPresenter getCheckUpPresenter(ICheckupView checkupView, ICheckupRepository checkupRepository)
+        {
+            return new CheckUpPresenter(checkupView, checkupRepository);
         }
     }
 }

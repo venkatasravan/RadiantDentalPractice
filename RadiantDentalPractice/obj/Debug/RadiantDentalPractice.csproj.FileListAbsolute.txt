@@ -55,3 +55,5 @@ C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bi
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\Moq.xml
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.CheckUpForm.resources
+C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.EmergencyForm.resources

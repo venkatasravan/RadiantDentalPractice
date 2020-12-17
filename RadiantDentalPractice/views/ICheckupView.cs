@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.views
 {
-    public interface IQuestionView
+    public interface ICheckupView
     {
-        Dictionary<string, string> questions { get; }
-        QuestionnairePresenter questionnairePresenter { get; set; }
+        int patientID { get; set; }
+        DateTime bookingDate { get; set; }
+        string bookingSlot { get; set; }
+        CheckUpPresenter checkUpPresenter { get; set; }
     }
 }

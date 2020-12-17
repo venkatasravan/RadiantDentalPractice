@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadiantDentalPractice", "RadiantDentalPractice\RadiantDentalPractice.csproj", "{4B703CA0-2E7D-4726-96A4-016DD25FAAA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadiantDentalPracticeTests", "RadiantDentalPracticeTests\RadiantDentalPracticeTests.csproj", "{B0F19BC5-6C56-4FA0-B9E4-53C1153AFC1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadiantDentalPracticeTests", "RadiantDentalPracticeTests\RadiantDentalPracticeTests.csproj", "{B0F19BC5-6C56-4FA0-B9E4-53C1153AFC1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

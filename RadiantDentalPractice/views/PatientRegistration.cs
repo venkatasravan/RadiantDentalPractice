@@ -100,7 +100,9 @@ namespace RadiantDentalPractice.views
         private void Next_Click(object sender, EventArgs e)
         {
             this.Hide();
-            patientPresenter.RegisterPatient();
+            Questionnaire questionnaire = new Questionnaire();
+            patientPresenter.RegisterPatient(questionnaire);
+            questionnaire.ShowDialog();
             this.Close();
         }
     }

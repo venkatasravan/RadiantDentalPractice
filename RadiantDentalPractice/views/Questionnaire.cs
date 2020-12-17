@@ -38,7 +38,9 @@ namespace RadiantDentalPractice.views
         private void Next_Click(object sender, EventArgs e)
         {
             this.Hide();
-            questionnairePresenter.updatePatient();
+            GP_Practice gP_Practice = new GP_Practice();
+            questionnairePresenter.updatePatient(gP_Practice);
+            gP_Practice.ShowDialog();
             this.Close();
         }
 

@@ -18,7 +18,7 @@ namespace RadiantDentalPractice.presenter
         private IViewFactory viewFactory;
         private IPresenterFactory presenterFactory;
         private IRepositoryFactory repositoryFactory;
-        public RadiantDentalPracticePresenter(RadiantDentalPracticeForm formView, 
+        public RadiantDentalPracticePresenter(RadiantDentalPracticeForm formView,
             IViewFactory viewFactory, IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
             this.formView = formView;
@@ -26,14 +26,18 @@ namespace RadiantDentalPractice.presenter
             this.presenterFactory = presenterFactory;
             this.repositoryFactory = repositoryFactory;
         }
-        
-        public void registerPatient()
+
+        public void registerPatient(IPatientView patientView)
         {
-            PatientRegistration view = viewFactory.getPatientView();
-            view.patientPresenter = presenterFactory.getPatientPresenter(view,viewFactory,presenterFactory, repositoryFactory);
-            ViewHelper.showView(view);
+            patientView.patientPresenter = presenterFactory.getPatientPresenter(patientView, viewFactory, presenterFactory, repositoryFactory);
         }
 
-       
+        public void bookCheckup(ICheckupView checkupView)
+        {
+            checkupView.checkUpPresenter = presenterFactory.
+                getCheckUpPresenter(checkupView, repositoryFactory.getCheckupRepository());
+        }
+
+
     }
 }

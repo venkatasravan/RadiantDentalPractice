@@ -19,8 +19,9 @@ namespace RadiantDentalPractice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            RadiantDentalPracticeForm mainView = new RadiantDentalPracticeForm();
             IViewFactory viewFactory = new ViewFactory();
+            RadiantDentalPracticeForm mainView = new RadiantDentalPracticeForm(viewFactory);
+
             IRepositoryFactory repositoryFactory = new RepositoryFactory();
             IPresenterFactory presenterFactory = new PresenterFactory();
             mainView.radiantDentalPracticePresenter = new RadiantDentalPracticePresenter(mainView,viewFactory, presenterFactory, repositoryFactory);

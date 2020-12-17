@@ -9,5 +9,7 @@ namespace RadiantDentalPractice.Repository
     public interface IRepositoryFactory
     {
         IPatientRepository getPatientRepository();
+        //IAppointmentRepository getAppointmentRepository();
+        ICheckupRepository getCheckupRepository();
     }
 }

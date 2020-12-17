@@ -10,7 +10,7 @@ namespace RadiantDentalPractice.DAL
 {
     class DentalPracticeContext : DbContext
     {
-        public DentalPracticeContext(): base("DentalPracticeContext")
+        public DentalPracticeContext() : base("DentalPracticeContext")
         {
 
         }
@@ -19,5 +19,6 @@ namespace RadiantDentalPractice.DAL
         public DbSet<Question> questions { get; set; }
         public DbSet<GP> GP_details { get; set; }
         public DbSet<Address> address_details { get; set; }
+        public DbSet<CheckupAppointment> checkupAppointments { get; set; }
     }
 }

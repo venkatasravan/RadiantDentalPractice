@@ -13,5 +13,6 @@ namespace RadiantDentalPractice.Factory
         PatientRegistration getPatientView();
         Questionnaire getQuestionView();
         GP_Practice getGPView();
+        CheckUpForm getCheckUpView();
     }
 }
