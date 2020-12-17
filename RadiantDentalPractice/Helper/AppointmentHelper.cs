@@ -34,7 +34,7 @@ namespace RadiantDentalPractice.Helper
             {
                 return checkUpSlots;
             }
-            if (dateTime < DateTime.Now.AddDays(4))
+            if (dateTime < DateTime.Now.AddDays(7))
             {
                 return checkUpSlots;
             }
@@ -77,13 +77,40 @@ namespace RadiantDentalPractice.Helper
             {
                 return emergencySlots;
             }
-            if (dateTime < DateTime.Now.AddDays(4))
+            if (dateTime < DateTime.Now)
             {
                 return emergencySlots;
+            }
+            for (int i = 0; emergencySlots.Count < ApplicationConstants.DAILY_EMERGENCY_SLOTS; i++)
+            {
+                DateTime startSlot = dateTime.AddMinutes(i * (2 * ApplicationConstants.EMERGENCY_DURATION));
+                DateTime endSlot = dateTime.AddMinutes((i + 1) * (2 * ApplicationConstants.EMERGENCY_DURATION));
+                if (startSlot.Hour == ApplicationConstants.BREAK_HOUR)
+                {
+                    continue;
+                }
+                string updatedStartSlotMinute = startSlot.Minute.ToString();
+                string updatedEndSlotMinute = endSlot.Minute.ToString();
+                if (startSlot.Minute == 0)
+                {
+                    updatedStartSlotMinute = startSlot.Minute + "0";
+                }
+                if (endSlot.Minute == 0)
+                {
+                    updatedEndSlotMinute = endSlot.Minute + "0";
+                }
+                emergencySlots.Add(startSlot.Hour + ":" + updatedStartSlotMinute + "-" + endSlot.Hour + ":" + updatedEndSlotMinute);
             }
 
 
             return emergencySlots;
+        }
+
+        public static List<string> availableEmergencySlots(DateTime bookedDate)
+        {
+            IEmergencyRepository emergencyRepository = repositoryFactory.getEmergencyRepository();
+            List<string> bookedSlots = emergencyRepository.bookedEmergencySlots(bookedDate);
+            return bookedSlots;
         }
     }
 }

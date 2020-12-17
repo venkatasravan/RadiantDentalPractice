@@ -38,6 +38,12 @@ namespace RadiantDentalPractice.presenter
                 getCheckUpPresenter(checkupView, repositoryFactory.getCheckupRepository());
         }
 
+        public void bookEmergency(IEmergencyView emergencyView)
+        {
+            emergencyView.emergencyPresenter = presenterFactory.
+                getEmergencyPresenter(emergencyView, repositoryFactory.getEmergencyRepository());
+        }
+
 
     }
 }

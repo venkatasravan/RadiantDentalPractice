@@ -12,8 +12,8 @@ namespace RadiantDentalPractice.presenter
 {
     public class CheckUpPresenter
     {
-        ICheckupView checkupView;
-        ICheckupRepository checkupRepository;
+        private ICheckupView checkupView;
+        private ICheckupRepository checkupRepository;
         public CheckUpPresenter(ICheckupView checkupView, ICheckupRepository checkupRepository)
         {
             this.checkupView = checkupView;

@@ -16,5 +16,6 @@ namespace RadiantDentalPractice.presenter
         QuestionnairePresenter getQuestionnairePresenter(IQuestionView view, Patient patient, IViewFactory factory, IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory);
         GPPresenter getGPPresenter(IGpView view, Patient patient, IRepositoryFactory factory);
         CheckUpPresenter getCheckUpPresenter(ICheckupView checkupView, ICheckupRepository checkupRepository);
+        EmergencyPresenter getEmergencyPresenter(IEmergencyView emergencyView, IEmergencyRepository emergencyRepository);
     }
 }

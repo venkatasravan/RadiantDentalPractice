@@ -83,6 +83,7 @@
             this.EmergencyAppointment.TabIndex = 3;
             this.EmergencyAppointment.Text = "EmergencyAppointment";
             this.EmergencyAppointment.UseVisualStyleBackColor = false;
+            this.EmergencyAppointment.Click += new System.EventHandler(this.EmergencyAppointment_Click);
             // 
             // AppointmentReminders
             // 

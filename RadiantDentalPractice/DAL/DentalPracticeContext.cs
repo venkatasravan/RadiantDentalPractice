@@ -20,5 +20,6 @@ namespace RadiantDentalPractice.DAL
         public DbSet<GP> GP_details { get; set; }
         public DbSet<Address> address_details { get; set; }
         public DbSet<CheckupAppointment> checkupAppointments { get; set; }
+        public DbSet<EmergencyAppointment> emergencyAppointments { get; set; }
     }
 }

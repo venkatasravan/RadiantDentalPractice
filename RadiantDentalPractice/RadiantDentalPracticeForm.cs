@@ -60,5 +60,14 @@ namespace RadiantDentalPractice
             checkUpForm.ShowDialog();
             this.Close();
         }
+
+        private void EmergencyAppointment_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EmergencyForm emergencyForm = new EmergencyForm();
+            radiantDentalPracticePresenter.bookEmergency(emergencyForm);
+            emergencyForm.ShowDialog();
+            this.Close();
+        }
     }
 }

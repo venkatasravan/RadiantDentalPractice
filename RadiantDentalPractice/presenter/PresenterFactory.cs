@@ -32,5 +32,10 @@ namespace RadiantDentalPractice.presenter
         {
             return new CheckUpPresenter(checkupView, checkupRepository);
         }
+
+        public EmergencyPresenter getEmergencyPresenter(IEmergencyView emergencyView, IEmergencyRepository emergencyRepository)
+        {
+            return new EmergencyPresenter(emergencyView, emergencyRepository);
+        }
     }
 }

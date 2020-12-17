@@ -16,5 +16,10 @@ namespace RadiantDentalPractice.Repository
         {
             return new CheckupRepository();
         }
+
+        public IEmergencyRepository getEmergencyRepository()
+        {
+            return new EmergencyRepository();
+        }
     }
 }

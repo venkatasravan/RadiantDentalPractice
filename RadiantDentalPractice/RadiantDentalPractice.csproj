@@ -77,13 +77,14 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\Address.cs" />
     <Compile Include="models\CheckupAppointment.cs" />
+    <Compile Include="models\EmergencyAppointment.cs" />
     <Compile Include="models\GP.cs" />
     <Compile Include="models\MedicalQuestions.cs" />
     <Compile Include="models\Patient.cs" />
     <Compile Include="models\Question.cs" />
     <Compile Include="presenter\CheckUpPresenter.cs" />
+    <Compile Include="presenter\EmergencyPresenter.cs" />
     <Compile Include="presenter\GPPresenter.cs" />
-    <Compile Include="presenter\IPresenter.cs" />
     <Compile Include="presenter\IPresenterFactory.cs" />
     <Compile Include="presenter\PatientPresenter.cs" />
     <Compile Include="presenter\PresenterFactory.cs" />
@@ -98,7 +99,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CheckupRepository.cs" />
+    <Compile Include="Repository\EmergencyRepository.cs" />
     <Compile Include="Repository\ICheckupRepository.cs" />
+    <Compile Include="Repository\IEmergencyRepository.cs" />
     <Compile Include="Repository\IRepositoryFactory.cs" />
     <Compile Include="Repository\IPatientRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
@@ -138,7 +141,6 @@
     <Compile Include="views\Questionnaire.Designer.cs">
       <DependentUpon>Questionnaire.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\ViewHelper.cs" />
     <EmbeddedResource Include="RadiantDentalPracticeForm.resx">
       <DependentUpon>RadiantDentalPracticeForm.cs</DependentUpon>
     </EmbeddedResource>

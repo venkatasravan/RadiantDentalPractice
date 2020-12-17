@@ -1,4 +1,5 @@
 ﻿using RadiantDentalPractice.Helper;
+using RadiantDentalPractice.presenter;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,22 +53,39 @@ namespace RadiantDentalPractice.views
                 bookingSlotTXT.Text = value;
             }
         }
+        public EmergencyPresenter emergencyPresenter { get; set; }
 
         private void Book_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int result = emergencyPresenter.CreateEmergencyBooking();
+                if (result > 0)
+                {
+                    MessageBox.Show("Emergency Appointment Booked");
+                }
+                else
+                {
+                    MessageBox.Show("Emergency Appointment Not Successful");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error Occured during Emergency Appointment");
+            }
+            this.Close();
         }
 
         private void bookingDateTXT_ValueChanged(object sender, EventArgs e)
         {
             bookingSlotTXT.Items.Clear();
             bookingSlotTXT.Text = "";
-            List<string> bookingSlots = AppointmentHelper.getCheckupSlots(bookingDateTXT.Value);
+            List<string> bookingSlots = AppointmentHelper.getEmergencySlots(bookingDateTXT.Value);
             List<string> bookedSlots = new List<string>();
             if (bookingSlots.Count != 0)
             {
                 bookedSlots = AppointmentHelper.
-                availableCheckupSlots(new DateTime(bookingDate.Year, bookingDate.Month, bookingDate.Day));
+                availableEmergencySlots(new DateTime(bookingDate.Year, bookingDate.Month, bookingDate.Day));
             }
 
             List<string> availableSlots = bookingSlots.Except(bookedSlots).ToList();
