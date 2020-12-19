@@ -12,9 +12,11 @@ namespace RadiantDentalPractice.presenter
 {
     public interface IPresenterFactory
     {
-        PatientPresenter getPatientPresenter(IPatientView view, IViewFactory factory, IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory);
-        QuestionnairePresenter getQuestionnairePresenter(IQuestionView view, Patient patient, IViewFactory factory, IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory);
-        GPPresenter getGPPresenter(IGpView view, Patient patient, IRepositoryFactory factory);
+        PatientPresenter getPatientPresenter(IViewFactory factory, IPresenterFactory presenterFactory, 
+            IRepositoryFactory repositoryFactory);
+        QuestionnairePresenter getQuestionnairePresenter(Patient patient,
+            IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory);
+        GPPresenter getGPPresenter(Patient patient, IRepositoryFactory factory);
         CheckUpPresenter getCheckUpPresenter(ICheckupView checkupView, ICheckupRepository checkupRepository);
         EmergencyPresenter getEmergencyPresenter(IEmergencyView emergencyView, IEmergencyRepository emergencyRepository);
     }

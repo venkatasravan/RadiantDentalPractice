@@ -36,7 +36,6 @@ C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bi
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\EntityFramework.xml
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.csprojAssemblyReference.cache
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.RadiantDentalPracticeForm.resources
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.Properties.Resources.resources
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.GP_Practice.resources
@@ -57,3 +56,4 @@ C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bi
 C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.CheckUpForm.resources
 C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.EmergencyForm.resources
+C:\Users\w19051025\Downloads\Test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.csprojAssemblyReference.cache

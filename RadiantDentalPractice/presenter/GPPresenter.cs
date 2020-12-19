@@ -18,16 +18,17 @@ namespace RadiantDentalPractice.presenter
     public class GPPresenter
     {
 
-        IGpView view;
+        
         Patient patient;
         IRepositoryFactory factory;
 
-        public GPPresenter(IGpView view,Patient patient, IRepositoryFactory factory)
+        public GPPresenter(Patient patient, IRepositoryFactory factory)
         {
-            this.view = view;
             this.patient = patient;
             this.factory = factory;
         }
+
+        public IGpView view { get; set; }
 
         public int updatePatient()
         {

@@ -1,5 +1,4 @@
-﻿using RadiantDentalPractice.models;
-using RadiantDentalPractice.presenter;
+﻿using RadiantDentalPractice.presenter;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,8 +14,6 @@ namespace RadiantDentalPractice.views
 {
     public partial class PatientRegistration : Form, IPatientView
     {
-
-        private Patient _patient = new Patient();
         public PatientRegistration()
         {
             InitializeComponent();

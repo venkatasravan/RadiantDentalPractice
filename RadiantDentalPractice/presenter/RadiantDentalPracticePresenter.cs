@@ -29,7 +29,9 @@ namespace RadiantDentalPractice.presenter
 
         public void registerPatient(IPatientView patientView)
         {
-            patientView.patientPresenter = presenterFactory.getPatientPresenter(patientView, viewFactory, presenterFactory, repositoryFactory);
+            PatientPresenter patientPresenter = presenterFactory.getPatientPresenter(viewFactory, presenterFactory, repositoryFactory);
+            patientPresenter.view = patientView;
+            patientView.patientPresenter = patientPresenter;
         }
 
         public void bookCheckup(ICheckupView checkupView)

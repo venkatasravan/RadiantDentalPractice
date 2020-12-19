@@ -14,26 +14,30 @@ namespace RadiantDentalPractice.presenter
     public class PatientPresenter
     {
 
-        private IPatientView view;
+        
         private Patient patient;
         private IViewFactory viewFactory;
         private IPresenterFactory presenterFactory;
         private IRepositoryFactory repositoryFactory;
 
-        public PatientPresenter(IPatientView view, IViewFactory viewFactory,
+
+        public PatientPresenter(IViewFactory viewFactory,
             IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
-            this.view = view;
             this.viewFactory = viewFactory;
             this.presenterFactory = presenterFactory;
             this.repositoryFactory = repositoryFactory;
         }
 
+        public IPatientView view { get; set; }
+
         public void RegisterPatient(IQuestionView questionView)
         {
             initializePatient();
-            questionView.questionnairePresenter = presenterFactory
-                .getQuestionnairePresenter(questionView, patient, viewFactory, presenterFactory, repositoryFactory);
+            QuestionnairePresenter questionnairePresenter = presenterFactory.getQuestionnairePresenter( 
+                patient, presenterFactory, repositoryFactory);
+            questionnairePresenter.view = questionView;
+            questionView.questionnairePresenter = questionnairePresenter;
         }
 
         public void validate()
