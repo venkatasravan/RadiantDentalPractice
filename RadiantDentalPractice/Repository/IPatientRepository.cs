@@ -10,5 +10,7 @@ namespace RadiantDentalPractice.Repository
     public interface IPatientRepository
     {
         int addPatient(Patient patient);
+        List<Patient> getPatients();
+        int isEmailRegistered(string email);
     }
 }

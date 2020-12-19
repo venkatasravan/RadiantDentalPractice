@@ -93,16 +93,28 @@ namespace RadiantDentalPractice.views
 
         public void validatePatient()
         {
+            errorMessage = "";
             patientPresenter.validate();
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Questionnaire questionnaire = new Questionnaire();
-            patientPresenter.RegisterPatient(questionnaire);
-            questionnaire.ShowDialog();
-            this.Close();
+            
+            validatePatient();
+            if(errorMessage.Length!=0)
+            {
+                MessageBox.Show(errorMessage);
+            }
+            else
+            {
+                this.Hide();
+                Questionnaire questionnaire = new Questionnaire();
+                patientPresenter.RegisterPatient(questionnaire);
+                questionnaire.ShowDialog();
+                this.Close();
+            }
+            
+            
         }
     }
 }

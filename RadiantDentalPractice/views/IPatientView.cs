@@ -16,5 +16,6 @@ namespace RadiantDentalPractice.views
         string city { get; set; }
         string country { get; set; }
         PatientPresenter patientPresenter { set; }
+        string errorMessage { get; set; }
     }
 }

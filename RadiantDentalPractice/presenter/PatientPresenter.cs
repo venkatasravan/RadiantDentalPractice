@@ -5,6 +5,7 @@ using RadiantDentalPractice.views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,7 +43,64 @@ namespace RadiantDentalPractice.presenter
 
         public void validate()
         {
-            throw new NotImplementedException();
+            validationChecks();
+        }
+
+        private Boolean isEmailRegistered(string email)
+        {
+            int result = repositoryFactory.getPatientRepository().isEmailRegistered(email);
+            if(result>0)
+            {
+                return true;
+            }
+            return false;
+        }
+        private Boolean verifyEmail()
+        {
+            try
+            {
+                MailAddress mailAddress = new MailAddress(view.email);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+        private void validationChecks()
+        {
+            if(view.name.Trim().Length==0)
+            {
+                view.errorMessage = "Please enter name";
+            }
+            else if (view.email.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter email";
+            }
+            else if (!verifyEmail())
+            {
+                view.errorMessage = "Please enter valid email address";
+            }
+            else if (isEmailRegistered(view.email))
+            {
+                view.errorMessage = "Email is already registered";
+            }
+            else if (view.city.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter city";
+            }
+            else if (view.country.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter country";
+            }
+            else if (view.postcode.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter postcode";
+            }
+            else if (view.dob > DateTime.Now)
+            {
+                view.errorMessage = "Please enter valid date of birth";
+            }
         }
 
         private void initializePatient()
