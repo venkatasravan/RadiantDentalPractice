@@ -89,9 +89,11 @@ namespace RadiantDentalPractice.views
 
         public PatientPresenter patientPresenter { get; set; }
 
+        public string errorMessage { get; set; }
+
         public void validatePatient()
         {
-            throw new NotImplementedException();
+            patientPresenter.validate();
         }
 
         private void Next_Click(object sender, EventArgs e)

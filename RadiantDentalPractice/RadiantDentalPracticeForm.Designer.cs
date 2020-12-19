@@ -117,6 +117,7 @@
             this.RecordTreatmentPlan.TabIndex = 6;
             this.RecordTreatmentPlan.Text = "Record Treatment Plan";
             this.RecordTreatmentPlan.UseVisualStyleBackColor = false;
+            this.RecordTreatmentPlan.Click += new System.EventHandler(this.RecordTreatmentPlan_Click);
             // 
             // RadiantDentalPracticeForm
             // 

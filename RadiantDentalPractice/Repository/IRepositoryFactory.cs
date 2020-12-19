@@ -11,5 +11,6 @@ namespace RadiantDentalPractice.Repository
         IPatientRepository getPatientRepository();
         //IAppointmentRepository getAppointmentRepository();
         IAppointmentRepository getAppointmentRepository();
+        ITreatmentPlanRepository getTreatmentPlanRepository();
     }
 }

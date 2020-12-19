@@ -58,5 +58,14 @@ namespace RadiantDentalPractice
             emergencyForm.ShowDialog();
             this.Close();
         }
+
+        private void RecordTreatmentPlan_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RecordTreatmentForm recordTreatmentForm = new RecordTreatmentForm();
+            radiantDentalPracticePresenter.recordTreatmentPlan(recordTreatmentForm);
+            recordTreatmentForm.ShowDialog();
+            this.Close();
+        }
     }
 }

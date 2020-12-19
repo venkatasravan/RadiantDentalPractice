@@ -45,6 +45,13 @@ namespace RadiantDentalPractice.presenter
             emergencyView.emergencyPresenter = presenterFactory.
                 getEmergencyPresenter(emergencyView, repositoryFactory.getAppointmentRepository());
         }
+        public void recordTreatmentPlan(IRecordTreatmentForm recordTreatmentForm)
+        {
+            RecordTreatmentPresenter recordTreatmentPresenter = presenterFactory.getRecordTreatmentPresenter(repositoryFactory.
+                getTreatmentPlanRepository());
+            recordTreatmentPresenter.view = recordTreatmentForm;
+            recordTreatmentForm.recordTreatmentPresenter = recordTreatmentPresenter;
+        }
 
 
     }

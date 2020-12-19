@@ -85,3 +85,4 @@ C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\
 C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.csproj.CopyComplete
+C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.RecordTreatmentForm.resources

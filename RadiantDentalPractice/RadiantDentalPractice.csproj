@@ -91,6 +91,7 @@
     <Compile Include="presenter\PresenterFactory.cs" />
     <Compile Include="presenter\QuestionnairePresenter.cs" />
     <Compile Include="presenter\RadiantDentalPracticePresenter.cs" />
+    <Compile Include="presenter\RecordTreatmentPresenter.cs" />
     <Compile Include="RadiantDentalPracticeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,8 +104,10 @@
     <Compile Include="Repository\IAppointmentRepository.cs" />
     <Compile Include="Repository\IRepositoryFactory.cs" />
     <Compile Include="Repository\IPatientRepository.cs" />
+    <Compile Include="Repository\ITreatmentPlanRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RepositoryFactory.cs" />
+    <Compile Include="Repository\TreatmentPlanRepository.cs" />
     <Compile Include="views\CheckUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +131,7 @@
     <Compile Include="views\IGpView.cs" />
     <Compile Include="views\IPatientView.cs" />
     <Compile Include="views\IQuestionView.cs" />
+    <Compile Include="views\IRecordTreatmentForm.cs" />
     <Compile Include="views\PatientRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +143,12 @@
     </Compile>
     <Compile Include="views\Questionnaire.Designer.cs">
       <DependentUpon>Questionnaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\RecordTreatmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\RecordTreatmentForm.Designer.cs">
+      <DependentUpon>RecordTreatmentForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="RadiantDentalPracticeForm.resx">
       <DependentUpon>RadiantDentalPracticeForm.cs</DependentUpon>
@@ -166,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\Questionnaire.resx">
       <DependentUpon>Questionnaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\RecordTreatmentForm.resx">
+      <DependentUpon>RecordTreatmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

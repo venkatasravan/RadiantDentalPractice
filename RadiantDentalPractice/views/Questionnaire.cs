@@ -33,6 +33,10 @@ namespace RadiantDentalPractice.views
             {                
                 return _questions;
             }
+            set
+            {
+                _questions = value;
+            }
         }
 
         private void Next_Click(object sender, EventArgs e)

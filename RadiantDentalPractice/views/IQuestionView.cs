@@ -9,7 +9,7 @@ namespace RadiantDentalPractice.views
 {
     public interface IQuestionView
     {
-        Dictionary<string, string> questions { get; }
+        Dictionary<string, string> questions { get; set; }
         QuestionnairePresenter questionnairePresenter { get; set; }
     }
 }
