@@ -61,7 +61,7 @@ namespace RadiantDentalPractice.Helper
         public static List<string> getEmergencySlots(DateTime bookingDate)
         {
             List<string> emergencySlots = new List<string>();
-            DateTime dateTime = new DateTime(bookingDate.Year, bookingDate.Month, bookingDate.Day, 8, 0, 0);
+            DateTime dateTime = new DateTime(bookingDate.Year, bookingDate.Month, bookingDate.Day, 9, 0, 0);
             if (dateTime.DayOfWeek == DayOfWeek.Saturday || dateTime.DayOfWeek == DayOfWeek.Sunday)
             {
                 return emergencySlots;
@@ -72,9 +72,9 @@ namespace RadiantDentalPractice.Helper
             }
             for (int i = 0; emergencySlots.Count < ApplicationConstants.DAILY_EMERGENCY_SLOTS; i++)
             {
-                DateTime startSlot = dateTime.AddMinutes(i * (2 * ApplicationConstants.EMERGENCY_DURATION));
-                DateTime endSlot = dateTime.AddMinutes((i + 1) * (2 * ApplicationConstants.EMERGENCY_DURATION));
-                if (startSlot.Hour == ApplicationConstants.BREAK_HOUR)
+                DateTime startSlot = dateTime.AddMinutes(i * ( ApplicationConstants.EMERGENCY_DURATION));
+                DateTime endSlot = dateTime.AddMinutes((i + 1) * ( ApplicationConstants.EMERGENCY_DURATION));
+                if (startSlot.Hour == ApplicationConstants.BREAK_HOUR || startSlot.Hour == (ApplicationConstants.BREAK_HOUR-1))
                 {
                     continue;
                 }
