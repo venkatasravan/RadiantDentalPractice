@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
-    public interface IEmergencyRepository
+    public interface IAppointmentRepository
     {
-        int addEmergencyBooking(EmergencyAppointment appointment);
-        List<string> bookedEmergencySlots(DateTime bookingDate);
+        int addBooking(Appointment appointment);
+        List<string> bookedSlots(DateTime bookingDate, String treatmentType);
     }
 }

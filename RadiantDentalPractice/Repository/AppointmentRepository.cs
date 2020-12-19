@@ -1,4 +1,5 @@
-﻿using RadiantDentalPractice.DAL;
+﻿using Castle.Components.DictionaryAdapter.Xml;
+using RadiantDentalPractice.DAL;
 using RadiantDentalPractice.models;
 using System;
 using System.Collections.Generic;
@@ -8,24 +9,24 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
-    public class EmergencyRepository : IEmergencyRepository
+    public class AppointmentRepository : IAppointmentRepository
     {
-        public int addEmergencyBooking(EmergencyAppointment appointment)
+        public int addBooking(Appointment appointment)
         {
             using (var db = new DentalPracticeContext())
             {
-                db.emergencyAppointments.Add(appointment);
+                db.appointments.Add(appointment);
                 int value = db.SaveChanges();
                 return value;
             }
         }
 
-        public List<string> bookedEmergencySlots(DateTime bookingDate)
+        public List<string> bookedSlots(DateTime bookingDate, String treatmentType)
         {
             using (var db = new DentalPracticeContext())
             {
-                var result = from booking in db.emergencyAppointments
-                             where booking.bookingDate == bookingDate
+                var result = from booking in db.appointments
+                             where booking.bookingDate == bookingDate && booking.treatmentType == treatmentType
                              select booking.bookingSlot;
                 return result.ToList();
             }

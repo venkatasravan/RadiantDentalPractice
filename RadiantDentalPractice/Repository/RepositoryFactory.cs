@@ -12,14 +12,9 @@ namespace RadiantDentalPractice.Repository
         {
             return new PatientRepository();
         }
-        public ICheckupRepository getCheckupRepository()
+        public IAppointmentRepository getAppointmentRepository()
         {
-            return new CheckupRepository();
-        }
-
-        public IEmergencyRepository getEmergencyRepository()
-        {
-            return new EmergencyRepository();
+            return new AppointmentRepository();
         }
     }
 }

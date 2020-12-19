@@ -37,7 +37,7 @@ namespace RadiantDentalPractice.presenter
         public void updatePatient(IGpView gpView)
         {
             updateQuestions();
-            GPPresenter gPPresenter = presenterFactory.getGPPresenter(patient, repositoryFactory);
+            GPPresenter gPPresenter = presenterFactory.getGPPresenter(patient, repositoryFactory,presenterFactory);
             gPPresenter.view = gpView;
             gpView.gPPresenter = gPPresenter;
         }

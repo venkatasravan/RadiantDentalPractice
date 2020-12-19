@@ -20,12 +20,14 @@ namespace RadiantDentalPractice.presenter
 
         
         Patient patient;
-        IRepositoryFactory factory;
+        IRepositoryFactory repositoryFactory;
+        IPresenterFactory presenterFactory;
 
-        public GPPresenter(Patient patient, IRepositoryFactory factory)
+        public GPPresenter(Patient patient, IRepositoryFactory repositoryFactory, IPresenterFactory presenterFactory)
         {
             this.patient = patient;
-            this.factory = factory;
+            this.repositoryFactory = repositoryFactory;
+            this.presenterFactory = presenterFactory;
         }
 
         public IGpView view { get; set; }
@@ -33,8 +35,15 @@ namespace RadiantDentalPractice.presenter
         public int updatePatient()
         {
             updateAddress();
-            IPatientRepository patientRepository = factory.getPatientRepository();
+            IPatientRepository patientRepository = repositoryFactory.getPatientRepository();
             return patientRepository.addPatient(patient);
+        }
+
+        public void registerCheckupPresenter(ICheckupView checkupView)
+        {
+            CheckUpPresenter checkUpPresenter = presenterFactory.getCheckUpPresenter(checkupView,
+                repositoryFactory.getAppointmentRepository());
+            checkupView.checkUpPresenter = checkUpPresenter;
         }
 
         private void updateAddress()

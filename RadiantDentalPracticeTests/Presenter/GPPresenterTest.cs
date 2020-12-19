@@ -19,6 +19,7 @@ namespace RadiantDentalPracticeTests.Presenter
         {
             Mock<GPPresenter> Gp = new Mock<GPPresenter>();
             Mock<IPatientRepository> repo = new Mock<IPatientRepository>();
+            Mock<IPresenterFactory> presenterFactory = new Mock<IPresenterFactory>();
             
             Mock<IGpView> gpView = new Mock<IGpView>();
             Mock<IRepositoryFactory> factory = new Mock<IRepositoryFactory>();
@@ -29,7 +30,7 @@ namespace RadiantDentalPracticeTests.Presenter
             GP gp_details = new GP();
             patient.gp_details = gp_details;
             repo.Setup(x => x.addPatient(patient)).Returns(1);
-            GPPresenter gPPresenter = new GPPresenter(patient, factory.Object);
+            GPPresenter gPPresenter = new GPPresenter(patient, factory.Object,presenterFactory.Object);
             gPPresenter.view = gpView.Object;
             int value = gPPresenter.updatePatient();
             Assert.AreEqual(1, value);

@@ -14,18 +14,7 @@ namespace RadiantDentalPractice.Helper
         private static IRepositoryFactory repositoryFactory = new RepositoryFactory();
         
 
-        public static Boolean checkAvailabilityForDate(string bookingSlot, DateTime bookingDate)
-        {
-            IRepositoryFactory repositoryFactory = new RepositoryFactory();
-            /*IAppointmentRepository appointmentRepository =repositoryFactory.getAppointmentRepository();
-            int value=appointmentRepository.checkAvailableSlots(bookingDate, bookingSlot);
-            if(value>1)
-            {
-                return false;
-            }*/
-            return true;
-        }
-
+       
         public static List<string> getCheckupSlots(DateTime bookingDate)
         {
             List<string> checkUpSlots = new List<string>();
@@ -62,10 +51,10 @@ namespace RadiantDentalPractice.Helper
             return checkUpSlots;
         }
 
-        public static List<string> availableCheckupSlots(DateTime bookedDate)
+        public static List<string> bookedCheckupSlots(DateTime bookedDate)
         {
-            ICheckupRepository checkupRepository = repositoryFactory.getCheckupRepository();
-            List<string> bookedSlots = checkupRepository.bookedCheckupSlots(bookedDate);
+            IAppointmentRepository appointmentRepository = repositoryFactory.getAppointmentRepository();
+            List<string> bookedSlots = appointmentRepository.bookedSlots(bookedDate,"CHCEKUP");
             return bookedSlots;
         }
 
@@ -106,10 +95,10 @@ namespace RadiantDentalPractice.Helper
             return emergencySlots;
         }
 
-        public static List<string> availableEmergencySlots(DateTime bookedDate)
+        public static List<string> bookedEmergencySlots(DateTime bookedDate)
         {
-            IEmergencyRepository emergencyRepository = repositoryFactory.getEmergencyRepository();
-            List<string> bookedSlots = emergencyRepository.bookedEmergencySlots(bookedDate);
+            IAppointmentRepository appointmentRepository = repositoryFactory.getAppointmentRepository();
+            List<string> bookedSlots = appointmentRepository.bookedSlots(bookedDate,"EMERGENCY");
             return bookedSlots;
         }
     }

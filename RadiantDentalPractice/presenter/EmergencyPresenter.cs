@@ -12,20 +12,22 @@ namespace RadiantDentalPractice.presenter
     public class EmergencyPresenter
     {
         private IEmergencyView emergencyView;
-        private IEmergencyRepository emergencyRepository;
-        public EmergencyPresenter(IEmergencyView emergencyView, IEmergencyRepository emergencyRepository)
+        private IAppointmentRepository appointmentRepository;
+        public EmergencyPresenter(IEmergencyView emergencyView, IAppointmentRepository appointmentRepository)
         {
             this.emergencyView = emergencyView;
-            this.emergencyRepository = emergencyRepository;
+            this.appointmentRepository = appointmentRepository;
         }
 
         public int CreateEmergencyBooking()
         {
-            EmergencyAppointment emergencyAppointment = new EmergencyAppointment();
-            emergencyAppointment.patientID = emergencyView.patientID;
-            emergencyAppointment.bookingDate = emergencyView.bookingDate;
-            emergencyAppointment.bookingSlot = emergencyView.bookingSlot;
-            return emergencyRepository.addEmergencyBooking(emergencyAppointment);
+            Appointment appointment = new Appointment();
+            appointment.patientID = emergencyView.patientID;
+            appointment.bookingDate = emergencyView.bookingDate;
+            appointment.bookingSlot = emergencyView.bookingSlot;
+            appointment.treatmentType = "EMERGENCY";
+            appointment.status = "CONFIRM";
+            return appointmentRepository.addBooking(appointment);
         }
      }
 }

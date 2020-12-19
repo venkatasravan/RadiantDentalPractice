@@ -12,9 +12,9 @@ namespace RadiantDentalPractice.presenter
 {
     public class PresenterFactory : IPresenterFactory
     {
-        public GPPresenter getGPPresenter(Patient patient, IRepositoryFactory factory)
+        public GPPresenter getGPPresenter(Patient patient, IRepositoryFactory factory, IPresenterFactory presenterFactory)
         {
-            return new GPPresenter( patient, factory);
+            return new GPPresenter( patient, factory,presenterFactory);
         }
 
         public PatientPresenter getPatientPresenter(IViewFactory factory,
@@ -28,14 +28,15 @@ namespace RadiantDentalPractice.presenter
             return new QuestionnairePresenter(patient, presenterFactory, repositoryFactory);
         }
 
-        public CheckUpPresenter getCheckUpPresenter(ICheckupView checkupView, ICheckupRepository checkupRepository)
+        public CheckUpPresenter getCheckUpPresenter(ICheckupView checkupView, IAppointmentRepository appointmentRepository)
         {
-            return new CheckUpPresenter(checkupView, checkupRepository);
+            return new CheckUpPresenter(checkupView, appointmentRepository);
         }
 
-        public EmergencyPresenter getEmergencyPresenter(IEmergencyView emergencyView, IEmergencyRepository emergencyRepository)
+        public EmergencyPresenter getEmergencyPresenter(IEmergencyView emergencyView,
+            IAppointmentRepository appointmentRepository)
         {
-            return new EmergencyPresenter(emergencyView, emergencyRepository);
+            return new EmergencyPresenter(emergencyView, appointmentRepository);
         }
     }
 }

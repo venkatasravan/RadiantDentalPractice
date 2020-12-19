@@ -32,18 +32,7 @@ namespace RadiantDentalPractice
             PatientRegistration patientView = new PatientRegistration();
             radiantDentalPracticePresenter.registerPatient(patientView);
             patientView.ShowDialog();
-            DialogResult checkupBooking = MessageBox.Show("Do You want to Book for the checkup?",
-                    "CheckUp Booking", MessageBoxButtons.YesNo);
-            if (checkupBooking == DialogResult.Yes)
-            {
-                CheckUpForm checkUpForm = new CheckUpForm();
-                radiantDentalPracticePresenter.bookCheckup(checkUpForm);
-                checkUpForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Thanks for Registering with us. Have a Nice day");
-            }
+            
             this.Close();
         }
 

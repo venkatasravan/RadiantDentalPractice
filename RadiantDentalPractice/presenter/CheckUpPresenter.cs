@@ -13,8 +13,8 @@ namespace RadiantDentalPractice.presenter
     public class CheckUpPresenter
     {
         private ICheckupView checkupView;
-        private ICheckupRepository checkupRepository;
-        public CheckUpPresenter(ICheckupView checkupView, ICheckupRepository checkupRepository)
+        private IAppointmentRepository checkupRepository;
+        public CheckUpPresenter(ICheckupView checkupView, IAppointmentRepository checkupRepository)
         {
             this.checkupView = checkupView;
             this.checkupRepository = checkupRepository;
@@ -22,11 +22,13 @@ namespace RadiantDentalPractice.presenter
 
         public int CreateCheckupBooking()
         {
-            CheckupAppointment checkupAppointment = new CheckupAppointment();
-            checkupAppointment.bookingDate = checkupView.bookingDate;
-            checkupAppointment.bookingSlot = checkupView.bookingSlot;
-            checkupAppointment.patientID = checkupView.patientID;
-            int result = checkupRepository.addCheckupBooking(checkupAppointment);
+            Appointment appointment = new Appointment();
+            appointment.bookingDate = checkupView.bookingDate;
+            appointment.bookingSlot = checkupView.bookingSlot;
+            appointment.patientID = checkupView.patientID;
+            appointment.treatmentType = "CHECKUP";
+            appointment.status = "CONFIRM";
+            int result = checkupRepository.addBooking(appointment);
             return result;
         }
 

@@ -48,19 +48,33 @@ namespace RadiantDentalPractice.views
 
         private void Submit_Click(object sender, EventArgs e)
         {
+            int? patientID = null;
             try
             {
-                int patientID = gPPresenter.updatePatient();
+                patientID = gPPresenter.updatePatient();
                 MessageBox.Show("Patient Registartion Successful \n Your PatientID is " + patientID);
             }
             catch
             {
                 MessageBox.Show("Patient Registartion Not Successful");
             }
-            finally
+            if(patientID!=null)
             {
-                this.Close();
+                DialogResult checkupBooking = MessageBox.Show("Do You want to Book for the checkup?",
+                    "CheckUp Booking", MessageBoxButtons.YesNo);
+                if (checkupBooking == DialogResult.Yes)
+                {
+                    CheckUpForm checkUpForm = new CheckUpForm();
+                    gPPresenter.registerCheckupPresenter(checkUpForm);
+                    checkUpForm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Thanks for Registering with us. Have a Nice day");
+                }
             }
+            
+            this.Close();
 
         }
     }

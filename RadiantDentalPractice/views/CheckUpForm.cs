@@ -65,7 +65,7 @@ namespace RadiantDentalPractice.views
             if (bookingSlots.Count != 0)
             {
                 bookedSlots = AppointmentHelper.
-                availableCheckupSlots(new DateTime(bookingDate.Year, bookingDate.Month, bookingDate.Day));
+                bookedCheckupSlots(new DateTime(bookingDate.Year, bookingDate.Month, bookingDate.Day));
             }
             
             List<string> availableSlots = bookingSlots.Except(bookedSlots).ToList();
