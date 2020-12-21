@@ -53,12 +53,20 @@ namespace RadiantDentalPractice.views
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            int result = treatmentConsentPresenter.updateTreatmentPlan();
-            if(result>0)
+            if (isAccepted)
             {
-                MessageBox.Show("Success");
+                int result = treatmentConsentPresenter.updateTreatmentPlan();
+                if (result > 0)
+                {
+                    MessageBox.Show("Success");
+                }
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                MessageBox.Show("Thanks for attending");
+            }
+            
         }
     }
 }

@@ -81,17 +81,28 @@ namespace RadiantDentalPractice.presenter
             TreatmentPlan treatmentPlan = treatmentPlanRepository.getTreatmentPlan(patientID);
             if (treatmentPlan!=null && (DateTime.Now.Subtract(treatmentPlan.bookedDate).TotalDays / 30) < 2)
             {
-                cost = ApplicationConstants.FREE;
                 if (band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
                     other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
                 {
                     cost = ApplicationConstants.FREE;
+                    if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.OTHER;
+                    }
                 }
                 else if(band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
                     other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
                     band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
                 {
                     cost = ApplicationConstants.FREE;
+                    if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.BAND3;
+                    }
+                    if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.OTHER;
+                    }
                 }
                 else if (band_1_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
                     other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
@@ -99,6 +110,18 @@ namespace RadiantDentalPractice.presenter
                     band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
                 {
                     cost = ApplicationConstants.FREE;
+                    if (band_2_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.BAND2;
+                    }
+                    if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.BAND3;
+                    }
+                    if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.OTHER;
+                    }
                 }
                 else if (other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
                     band_1_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
@@ -106,6 +129,18 @@ namespace RadiantDentalPractice.presenter
                     band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
                 {
                     cost = ApplicationConstants.FREE;
+                    if (band_1_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.BAND1;
+                    }
+                    if (band_2_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.BAND2;
+                    }
+                    if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    {
+                        cost = ApplicationConstants.BAND3;
+                    }
                 }
             }
             return cost;
