@@ -17,21 +17,17 @@ namespace RadiantDentalPractice.presenter
             this.treatmentPlanRepository = treatmentPlanRepository;
         }
         public IRecordTreatmentForm view { get; set; }
-        public void recordTreatementPlan()
+        public void recordTreatementPlan(ITreatmentConsentView treatmentConsentView)
         {
-            foreach(string treatment in view.proposedTreatments)
-            {
-                TreatmentPlan treatmentPlan = new TreatmentPlan();
-                treatmentPlan.patientID = view.patientID;
-                treatmentPlan.treatmentNotes = view.treatmentNotes;
-                treatmentPlan.proposedTreatment = treatment;
-                insertTreatmentPlan(treatmentPlan);
-            }
+            TreatmentPlan treatmentPlan = new TreatmentPlan();
+            treatmentPlan.patientID = view.patientID;
+            treatmentPlan.treatmentNotes = view.treatmentNotes;
+            treatmentPlan.proposedTreatment = string.Join(",",view.proposedTreatments);
+            treatmentPlan.treatmentConsentAndPayment = new TreatmentConsentAndPayment();
         }
 
         private void insertTreatmentPlan(TreatmentPlan treatmentPlan)
         {
-
             treatmentPlanRepository.addTreatmentPlan(treatmentPlan);
         }
     }

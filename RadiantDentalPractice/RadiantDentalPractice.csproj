@@ -82,6 +82,7 @@
     <Compile Include="models\MedicalQuestions.cs" />
     <Compile Include="models\Patient.cs" />
     <Compile Include="models\Question.cs" />
+    <Compile Include="models\TreatmentConsentAndPayment.cs" />
     <Compile Include="models\TreatmentPlan.cs" />
     <Compile Include="presenter\CheckUpPresenter.cs" />
     <Compile Include="presenter\EmergencyPresenter.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="views\IPatientView.cs" />
     <Compile Include="views\IQuestionView.cs" />
     <Compile Include="views\IRecordTreatmentForm.cs" />
+    <Compile Include="views\ITreatmentConsentView.cs" />
     <Compile Include="views\PatientRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +151,12 @@
     </Compile>
     <Compile Include="views\RecordTreatmentForm.Designer.cs">
       <DependentUpon>RecordTreatmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\TreatmentConsentAndPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\TreatmentConsentAndPaymentForm.Designer.cs">
+      <DependentUpon>TreatmentConsentAndPaymentForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="RadiantDentalPracticeForm.resx">
       <DependentUpon>RadiantDentalPracticeForm.cs</DependentUpon>
@@ -179,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\RecordTreatmentForm.resx">
       <DependentUpon>RecordTreatmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\TreatmentConsentAndPaymentForm.resx">
+      <DependentUpon>TreatmentConsentAndPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

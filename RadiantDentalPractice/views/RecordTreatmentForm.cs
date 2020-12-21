@@ -70,9 +70,10 @@ namespace RadiantDentalPractice.views
 
         private void Next_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("hello " + proposedTreatments.Count);
-            recordTreatmentPresenter.recordTreatementPlan();
-            MessageBox.Show("Success");
+            this.Hide();
+            TreatmentConsentAndPaymentForm treatmentConsentAndPaymentForm = new TreatmentConsentAndPaymentForm();
+            recordTreatmentPresenter.recordTreatementPlan(treatmentConsentAndPaymentForm);
+            treatmentConsentAndPaymentForm.ShowDialog();
             this.Close();
         }
     }
