@@ -13,6 +13,7 @@ namespace RadiantDentalPractice.presenter
     public class TreatmentConsentPresenter
     {
         ITreatmentPlanRepository treatmentPlanRepository;
+        private TreatmentPlan treatmentPlan;
         private static List<string> band_1_list = new List<string>();
         private static List<string> band_2_list = new List<string>();
         private static List<string> band_3_list = new List<string>();
@@ -29,48 +30,23 @@ namespace RadiantDentalPractice.presenter
             other_list.Add("TEETH_WHITENING");
             other_list.Add("DENTAL_IMPLANTS");
         }
-        public TreatmentConsentPresenter(ITreatmentPlanRepository treatmentPlanRepository)
+        public TreatmentConsentPresenter(ITreatmentPlanRepository treatmentPlanRepository, TreatmentPlan treatmentPlan)
         {
             this.treatmentPlanRepository = treatmentPlanRepository;
+            this.treatmentPlan = treatmentPlan;
         }
         public ITreatmentConsentView view { get; set; }
 
-        public void updateTreatmentPlan(TreatmentPlan treatmentPlan)
+        public int updateTreatmentPlan()
         {
-            updateTreatmentConsent(treatmentPlan);
+            updateTreatmentConsent();
+            return treatmentPlanRepository.addTreatmentPlan(treatmentPlan);
         }
-        private void updateTreatmentConsent(TreatmentPlan treatmentPlan)
+        private void updateTreatmentConsent()
         {
             treatmentPlan.treatmentConsentAndPayment.consentText = view.consentText;
             treatmentPlan.treatmentConsentAndPayment.isAccepted = view.isAccepted;
-            treatmentPlan.treatmentConsentAndPayment.treatmentCost = 
-                calculateCost(treatmentPlan.proposedTreatment,treatmentPlan.patientID);
         }
-        public double calculateCost(string proposedTreatment, int patientID)
-        {
-            double cost = 0;
-            if(band_1_list.Contains(proposedTreatment))
-            {
-                cost = ApplicationConstants.BAND1;
-            }
-            else if (band_2_list.Contains(proposedTreatment))
-            {
-                cost = ApplicationConstants.BAND2;
-            }
-            else if (band_3_list.Contains(proposedTreatment))
-            {
-                cost = ApplicationConstants.BAND3;
-            }
-            else if (other_list.Contains(proposedTreatment))
-            {
-                cost = ApplicationConstants.OTHER;
-            }
-            DateTime bookedDate = treatmentPlanRepository.getLastTreatmentBookedDate(patientID);
-            if ((DateTime.Now.Subtract(bookedDate).TotalDays/30) < 2)
-            {
-                cost = ApplicationConstants.FREE;
-            }
-            return cost;
-        }
+        
     }
 }

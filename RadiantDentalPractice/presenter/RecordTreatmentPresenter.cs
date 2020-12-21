@@ -13,13 +13,15 @@ namespace RadiantDentalPractice.presenter
     public class RecordTreatmentPresenter
     {
         ITreatmentPlanRepository treatmentPlanRepository;
+        IPresenterFactory presenterFactory;
         private static List<string> band_1_list = new List<string>();
         private static List<string> band_2_list = new List<string>();
         private static List<string> band_3_list = new List<string>();
         private static List<string> other_list = new List<string>();
-        public RecordTreatmentPresenter(ITreatmentPlanRepository treatmentPlanRepository)
+        public RecordTreatmentPresenter(IPresenterFactory presenterFactory,ITreatmentPlanRepository treatmentPlanRepository)
         {
             this.treatmentPlanRepository = treatmentPlanRepository;
+            this.presenterFactory = presenterFactory;
         }
         static RecordTreatmentPresenter()
         {
@@ -36,40 +38,48 @@ namespace RadiantDentalPractice.presenter
         public IRecordTreatmentForm view { get; set; }
         public void recordTreatementPlan(ITreatmentConsentView treatmentConsentView)
         {
+            TreatmentPlan treatmentPlan = createTreatmentPlan();
+            treatmentPlan.treatmentConsentAndPayment.treatmentCost = 
+                calculateCost(treatmentPlan.proposedTreatment,treatmentPlan.patientID);
+            TreatmentConsentPresenter treatmentConsentPresenter = presenterFactory.
+                getTreatmentConsentPresenter(treatmentPlanRepository,treatmentPlan);
+            treatmentConsentView.treatmentConsentPresenter = treatmentConsentPresenter;
+            treatmentConsentPresenter.view = treatmentConsentView;
+            treatmentConsentPresenter.view.treatmentCost = treatmentPlan.treatmentConsentAndPayment.treatmentCost;
+        }
+
+        private TreatmentPlan createTreatmentPlan()
+        {
             TreatmentPlan treatmentPlan = new TreatmentPlan();
             treatmentPlan.patientID = view.patientID;
             treatmentPlan.treatmentNotes = view.treatmentNotes;
             treatmentPlan.bookedDate = DateTime.Now;
-            treatmentPlan.proposedTreatment = string.Join(",",view.proposedTreatments);
+            treatmentPlan.proposedTreatment = string.Join(",", view.proposedTreatments);
             treatmentPlan.treatmentConsentAndPayment = new TreatmentConsentAndPayment();
+            return treatmentPlan;
         }
 
-        private void insertTreatmentPlan(TreatmentPlan treatmentPlan)
-        {
-            treatmentPlanRepository.addTreatmentPlan(treatmentPlan);
-        }
-
-        public double calculateCost(string proposedTreatment, int patientID)
+        private double calculateCost(string proposedTreatment, int patientID)
         {
             double cost = 0;
-            if (band_1_list.Contains(proposedTreatment))
+            if (band_1_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
             {
                 cost = ApplicationConstants.BAND1;
             }
-            else if (band_2_list.Contains(proposedTreatment))
+            else if (band_2_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
             {
                 cost = ApplicationConstants.BAND2;
             }
-            else if (band_3_list.Contains(proposedTreatment))
+            else if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
             {
                 cost = ApplicationConstants.BAND3;
             }
-            else if (other_list.Contains(proposedTreatment))
+            else if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
             {
                 cost = ApplicationConstants.OTHER;
             }
-            DateTime bookedDate = treatmentPlanRepository.getLastTreatmentBookedDate(patientID);
-            if ((DateTime.Now.Subtract(bookedDate).TotalDays / 30) < 2)
+            DateTime? bookedDate = treatmentPlanRepository.getLastTreatmentBookedDate(patientID);
+            if (bookedDate.HasValue && (DateTime.Now.Subtract(bookedDate.Value).TotalDays / 30) < 2)
             {
                 cost = ApplicationConstants.FREE;
             }

@@ -20,13 +20,17 @@ namespace RadiantDentalPractice.Repository
             }
         }
 
-        public DateTime getLastTreatmentBookedDate(int patientID)
+        public DateTime? getLastTreatmentBookedDate(int patientID)
         {
             using (var db = new DentalPracticeContext())
             {
                 var result = from treatmentPlan in db.treatmentPlans
                              where treatmentPlan.patientID == patientID orderby treatmentPlan.bookedDate descending
                              select treatmentPlan.bookedDate;
+                if(result.Count() == 0)
+                {
+                    return null;
+                }
                 return result.First();
             }
         }

@@ -39,9 +39,16 @@ namespace RadiantDentalPractice.presenter
             return new EmergencyPresenter(emergencyView, appointmentRepository);
         }
 
-        public RecordTreatmentPresenter getRecordTreatmentPresenter(ITreatmentPlanRepository treatmentPlanRepository)
+        public RecordTreatmentPresenter getRecordTreatmentPresenter(IPresenterFactory presenterFactory, 
+            ITreatmentPlanRepository treatmentPlanRepository)
         {
-            return new RecordTreatmentPresenter(treatmentPlanRepository);
+            return new RecordTreatmentPresenter(presenterFactory,treatmentPlanRepository);
+        }
+
+        public TreatmentConsentPresenter getTreatmentConsentPresenter(ITreatmentPlanRepository treatmentPlanRepository,
+            TreatmentPlan treatmentPlan)
+        {
+            return new TreatmentConsentPresenter(treatmentPlanRepository,treatmentPlan);
         }
     }
 }

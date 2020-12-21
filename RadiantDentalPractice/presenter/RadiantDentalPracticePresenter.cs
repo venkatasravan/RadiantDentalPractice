@@ -47,8 +47,8 @@ namespace RadiantDentalPractice.presenter
         }
         public void recordTreatmentPlan(IRecordTreatmentForm recordTreatmentForm)
         {
-            RecordTreatmentPresenter recordTreatmentPresenter = presenterFactory.getRecordTreatmentPresenter(repositoryFactory.
-                getTreatmentPlanRepository());
+            RecordTreatmentPresenter recordTreatmentPresenter = presenterFactory.
+                getRecordTreatmentPresenter(presenterFactory,repositoryFactory.getTreatmentPlanRepository());
             recordTreatmentPresenter.view = recordTreatmentForm;
             recordTreatmentForm.recordTreatmentPresenter = recordTreatmentPresenter;
         }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Payment = new System.Windows.Forms.Label();
-            this.Property = new System.Windows.Forms.Label();
+            this.PaymentTXT = new System.Windows.Forms.Label();
             this.consentTXT = new System.Windows.Forms.CheckBox();
             this.Consent = new System.Windows.Forms.Label();
             this.Submit = new System.Windows.Forms.Button();
@@ -46,15 +46,15 @@
             this.Payment.Text = "You need to pay £";
             this.Payment.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Property
+            // PaymentTXT
             // 
-            this.Property.AutoSize = true;
-            this.Property.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Property.Location = new System.Drawing.Point(412, 67);
-            this.Property.Name = "Property";
-            this.Property.Size = new System.Drawing.Size(19, 20);
-            this.Property.TabIndex = 1;
-            this.Property.Text = "0";
+            this.PaymentTXT.AutoSize = true;
+            this.PaymentTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentTXT.Location = new System.Drawing.Point(412, 67);
+            this.PaymentTXT.Name = "PaymentTXT";
+            this.PaymentTXT.Size = new System.Drawing.Size(19, 20);
+            this.PaymentTXT.TabIndex = 1;
+            this.PaymentTXT.Text = "0";
             // 
             // consentTXT
             // 
@@ -97,7 +97,7 @@
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.consentTXT);
             this.Controls.Add(this.Consent);
-            this.Controls.Add(this.Property);
+            this.Controls.Add(this.PaymentTXT);
             this.Controls.Add(this.Payment);
             this.Name = "TreatmentConsentAndPaymentForm";
             this.Text = "TreatmentConsentAndPaymentForm";
@@ -109,7 +109,7 @@
         #endregion
 
         private System.Windows.Forms.Label Payment;
-        private System.Windows.Forms.Label Property;
+        private System.Windows.Forms.Label PaymentTXT;
         private System.Windows.Forms.CheckBox consentTXT;
         private System.Windows.Forms.Label Consent;
         private System.Windows.Forms.Button Submit;

@@ -20,6 +20,9 @@ namespace RadiantDentalPractice.presenter
         CheckUpPresenter getCheckUpPresenter(ICheckupView checkupView, IAppointmentRepository appointmentRepository);
         EmergencyPresenter getEmergencyPresenter(IEmergencyView emergencyView, 
             IAppointmentRepository appointmentRepository);
-        RecordTreatmentPresenter getRecordTreatmentPresenter(ITreatmentPlanRepository treatmentPlanRepository);
+        RecordTreatmentPresenter getRecordTreatmentPresenter(IPresenterFactory presenterFactory,
+            ITreatmentPlanRepository treatmentPlanRepository);
+        TreatmentConsentPresenter getTreatmentConsentPresenter(
+            ITreatmentPlanRepository treatmentPlanRepository, TreatmentPlan treatmentPlan);
     }
 }

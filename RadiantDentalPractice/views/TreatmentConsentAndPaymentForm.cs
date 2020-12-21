@@ -20,13 +20,10 @@ namespace RadiantDentalPractice.views
 
         public double treatmentCost
         {
-            get
-            {
-                return double.Parse(Payment.Text);
-            }
+            
             set
             {
-                Payment.Text = value.ToString();
+                PaymentTXT.Text = value.ToString();
             }
         }
         public string consentText
@@ -56,7 +53,12 @@ namespace RadiantDentalPractice.views
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            
+            int result = treatmentConsentPresenter.updateTreatmentPlan();
+            if(result>0)
+            {
+                MessageBox.Show("Success");
+            }
+            this.Close();
         }
     }
 }
