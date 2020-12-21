@@ -17,5 +17,6 @@ namespace RadiantDentalPractice.models
         public string proposedTreatment { get; set; }
         public string treatmentNotes { get; set; }
         public TreatmentConsentAndPayment treatmentConsentAndPayment { get; set; }
+        public DateTime bookedDate { get; set; }
     }
 }

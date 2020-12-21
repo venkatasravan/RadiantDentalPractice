@@ -10,18 +10,14 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.presenter
 {
-    public class RecordTreatmentPresenter
+    public class TreatmentConsentPresenter
     {
         ITreatmentPlanRepository treatmentPlanRepository;
         private static List<string> band_1_list = new List<string>();
         private static List<string> band_2_list = new List<string>();
         private static List<string> band_3_list = new List<string>();
         private static List<string> other_list = new List<string>();
-        public RecordTreatmentPresenter(ITreatmentPlanRepository treatmentPlanRepository)
-        {
-            this.treatmentPlanRepository = treatmentPlanRepository;
-        }
-        static RecordTreatmentPresenter()
+        static TreatmentConsentPresenter()
         {
             band_1_list.Add("EXAMINATION");
             band_1_list.Add("DIAGNOSIS");
@@ -33,26 +29,27 @@ namespace RadiantDentalPractice.presenter
             other_list.Add("TEETH_WHITENING");
             other_list.Add("DENTAL_IMPLANTS");
         }
-        public IRecordTreatmentForm view { get; set; }
-        public void recordTreatementPlan(ITreatmentConsentView treatmentConsentView)
+        public TreatmentConsentPresenter(ITreatmentPlanRepository treatmentPlanRepository)
         {
-            TreatmentPlan treatmentPlan = new TreatmentPlan();
-            treatmentPlan.patientID = view.patientID;
-            treatmentPlan.treatmentNotes = view.treatmentNotes;
-            treatmentPlan.bookedDate = DateTime.Now;
-            treatmentPlan.proposedTreatment = string.Join(",",view.proposedTreatments);
-            treatmentPlan.treatmentConsentAndPayment = new TreatmentConsentAndPayment();
+            this.treatmentPlanRepository = treatmentPlanRepository;
         }
+        public ITreatmentConsentView view { get; set; }
 
-        private void insertTreatmentPlan(TreatmentPlan treatmentPlan)
+        public void updateTreatmentPlan(TreatmentPlan treatmentPlan)
         {
-            treatmentPlanRepository.addTreatmentPlan(treatmentPlan);
+            updateTreatmentConsent(treatmentPlan);
         }
-
+        private void updateTreatmentConsent(TreatmentPlan treatmentPlan)
+        {
+            treatmentPlan.treatmentConsentAndPayment.consentText = view.consentText;
+            treatmentPlan.treatmentConsentAndPayment.isAccepted = view.isAccepted;
+            treatmentPlan.treatmentConsentAndPayment.treatmentCost = 
+                calculateCost(treatmentPlan.proposedTreatment,treatmentPlan.patientID);
+        }
         public double calculateCost(string proposedTreatment, int patientID)
         {
             double cost = 0;
-            if (band_1_list.Contains(proposedTreatment))
+            if(band_1_list.Contains(proposedTreatment))
             {
                 cost = ApplicationConstants.BAND1;
             }
@@ -69,7 +66,7 @@ namespace RadiantDentalPractice.presenter
                 cost = ApplicationConstants.OTHER;
             }
             DateTime bookedDate = treatmentPlanRepository.getLastTreatmentBookedDate(patientID);
-            if ((DateTime.Now.Subtract(bookedDate).TotalDays / 30) < 2)
+            if ((DateTime.Now.Subtract(bookedDate).TotalDays/30) < 2)
             {
                 cost = ApplicationConstants.FREE;
             }

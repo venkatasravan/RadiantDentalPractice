@@ -72,6 +72,7 @@ namespace RadiantDentalPractice.views
         {
             this.Hide();
             TreatmentConsentAndPaymentForm treatmentConsentAndPaymentForm = new TreatmentConsentAndPaymentForm();
+            treatmentConsentAndPaymentForm.treatmentCost = recordTreatmentPresenter.calculateCost(string.Join(",", proposedTreatments), patientID);
             recordTreatmentPresenter.recordTreatementPlan(treatmentConsentAndPaymentForm);
             treatmentConsentAndPaymentForm.ShowDialog();
             this.Close();

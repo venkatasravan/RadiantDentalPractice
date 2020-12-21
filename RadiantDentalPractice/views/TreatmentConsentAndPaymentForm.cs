@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RadiantDentalPractice.presenter;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,6 +51,8 @@ namespace RadiantDentalPractice.views
                 consentTXT.Checked = value;
             }
         }
+
+        public TreatmentConsentPresenter treatmentConsentPresenter { get; set; }
 
         private void Submit_Click(object sender, EventArgs e)
         {

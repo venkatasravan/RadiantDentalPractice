@@ -93,6 +93,7 @@
     <Compile Include="presenter\QuestionnairePresenter.cs" />
     <Compile Include="presenter\RadiantDentalPracticePresenter.cs" />
     <Compile Include="presenter\RecordTreatmentPresenter.cs" />
+    <Compile Include="presenter\TreatmentConsentPresenter.cs" />
     <Compile Include="RadiantDentalPracticeForm.cs">
       <SubType>Form</SubType>
     </Compile>
