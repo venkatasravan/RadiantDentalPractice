@@ -66,22 +66,47 @@ namespace RadiantDentalPractice.presenter
             {
                 cost = ApplicationConstants.BAND1;
             }
-            else if (band_2_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+            if (band_2_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
             {
                 cost = ApplicationConstants.BAND2;
             }
-            else if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+            if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
             {
                 cost = ApplicationConstants.BAND3;
             }
-            else if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+            if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
             {
                 cost = ApplicationConstants.OTHER;
             }
-            DateTime? bookedDate = treatmentPlanRepository.getLastTreatmentBookedDate(patientID);
-            if (bookedDate.HasValue && (DateTime.Now.Subtract(bookedDate.Value).TotalDays / 30) < 2)
+            TreatmentPlan treatmentPlan = treatmentPlanRepository.getTreatmentPlan(patientID);
+            if (treatmentPlan!=null && (DateTime.Now.Subtract(treatmentPlan.bookedDate).TotalDays / 30) < 2)
             {
                 cost = ApplicationConstants.FREE;
+                if (band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
+                    other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
+                {
+                    cost = ApplicationConstants.FREE;
+                }
+                else if(band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
+                    other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
+                    band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
+                {
+                    cost = ApplicationConstants.FREE;
+                }
+                else if (band_1_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
+                    other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
+                    band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
+                    band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
+                {
+                    cost = ApplicationConstants.FREE;
+                }
+                else if (other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
+                    band_1_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
+                    band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
+                    band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
+                {
+                    cost = ApplicationConstants.FREE;
+                }
             }
             return cost;
         }

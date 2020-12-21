@@ -12,5 +12,6 @@ namespace RadiantDentalPractice.Repository
         int addTreatmentPlan(TreatmentPlan treatmentPlan);
         List<TreatmentPlan> getTreatmentPlans(int patientID);
         DateTime? getLastTreatmentBookedDate(int patientID);
+        TreatmentPlan getTreatmentPlan(int patientID);
     }
 }

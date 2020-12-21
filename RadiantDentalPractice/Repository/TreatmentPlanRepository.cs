@@ -25,7 +25,8 @@ namespace RadiantDentalPractice.Repository
             using (var db = new DentalPracticeContext())
             {
                 var result = from treatmentPlan in db.treatmentPlans
-                             where treatmentPlan.patientID == patientID orderby treatmentPlan.bookedDate descending
+                             where treatmentPlan.patientID == patientID 
+                             orderby treatmentPlan.bookedDate descending
                              select treatmentPlan.bookedDate;
                 if(result.Count() == 0)
                 {
@@ -43,6 +44,22 @@ namespace RadiantDentalPractice.Repository
                              where treatmentPlan.patientID == patientID
                              select treatmentPlan;
                 return result.ToList();
+            }
+        }
+
+        public TreatmentPlan getTreatmentPlan(int patientID)
+        {
+            using (var db = new DentalPracticeContext())
+            {
+                var result = from treatmentPlan in db.treatmentPlans
+                             where treatmentPlan.patientID == patientID
+                             orderby treatmentPlan.bookedDate descending
+                             select treatmentPlan;
+                if(result.Any())
+                {
+                    return result.First();
+                }
+                return null;
             }
         }
     }
