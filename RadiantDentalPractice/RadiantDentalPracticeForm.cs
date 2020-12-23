@@ -14,6 +14,10 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice
 {
+    /*
+     * @author Venkata Sravan Kumar(w19051025)
+     * 
+     */
     public partial class RadiantDentalPracticeForm : Form
     {
         private IViewFactory viewFactory;
@@ -38,7 +42,11 @@ namespace RadiantDentalPractice
 
         private void DentalSurgery_Click(object sender, EventArgs e)
         {
-            //not implemented
+            this.Hide();
+            DentalSurgeryVisitForm dentalSurgeryVisitForm = new DentalSurgeryVisitForm();
+            radiantDentalPracticePresenter.OnDentalSurgeryVisit(dentalSurgeryVisitForm);
+            dentalSurgeryVisitForm.ShowDialog();
+            this.Close();
         }
 
         private void BookCheckup_Click(object sender, EventArgs e)

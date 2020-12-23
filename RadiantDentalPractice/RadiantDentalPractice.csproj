@@ -85,6 +85,7 @@
     <Compile Include="models\TreatmentConsentAndPayment.cs" />
     <Compile Include="models\TreatmentPlan.cs" />
     <Compile Include="presenter\CheckUpPresenter.cs" />
+    <Compile Include="presenter\DentalSurgeryVisitPresenter.cs" />
     <Compile Include="presenter\EmergencyPresenter.cs" />
     <Compile Include="presenter\GPPresenter.cs" />
     <Compile Include="presenter\IPresenterFactory.cs" />
@@ -116,6 +117,12 @@
     <Compile Include="views\CheckUpForm.Designer.cs">
       <DependentUpon>CheckUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\DentalSurgeryVisitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\DentalSurgeryVisitForm.Designer.cs">
+      <DependentUpon>DentalSurgeryVisitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\EmergencyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +136,7 @@
       <DependentUpon>GP_Practice.cs</DependentUpon>
     </Compile>
     <Compile Include="views\ICheckupView.cs" />
+    <Compile Include="views\IDentalSurgeryVisitView.cs" />
     <Compile Include="views\IEmergencyView.cs" />
     <Compile Include="views\IGpView.cs" />
     <Compile Include="views\IPatientView.cs" />
@@ -173,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="views\CheckUpForm.resx">
       <DependentUpon>CheckUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\DentalSurgeryVisitForm.resx">
+      <DependentUpon>DentalSurgeryVisitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\EmergencyForm.resx">
       <DependentUpon>EmergencyForm.cs</DependentUpon>

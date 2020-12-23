@@ -53,6 +53,14 @@ namespace RadiantDentalPractice.presenter
             recordTreatmentForm.recordTreatmentPresenter = recordTreatmentPresenter;
         }
 
+        public void OnDentalSurgeryVisit(IDentalSurgeryVisitView dentalSurgeryVisitView)
+        {
+            DentalSurgeryVisitPresenter dentalSurgeryVisitPresenter = presenterFactory.getDentalSurgeryVisitPresenter(
+                repositoryFactory,presenterFactory);
+            dentalSurgeryVisitPresenter.view = dentalSurgeryVisitView;
+            dentalSurgeryVisitView.dentalSurgeryVisitPresenter = dentalSurgeryVisitPresenter;
+        }
+
 
     }
 }

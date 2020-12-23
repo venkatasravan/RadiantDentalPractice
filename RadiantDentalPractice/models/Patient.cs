@@ -17,8 +17,8 @@ namespace RadiantDentalPractice.models
         [Key, Column(Order = 1), Index(IsUnique = true)]
         public string email { get; set; }
         public DateTime dob { get; set; }
-        public Address address { get; set; }
-        public MedicalQuestions medicalQuestions { get; set; }
-        public GP gp_details { get; set; }
+        public virtual Address address { get; set; }
+        public virtual MedicalQuestions medicalQuestions { get; set; }
+        public virtual GP gp_details { get; set; }
     }
 }

@@ -110,6 +110,7 @@ namespace RadiantDentalPractice.views
                 this.Hide();
                 Questionnaire questionnaire = new Questionnaire();
                 patientPresenter.RegisterPatient(questionnaire);
+                questionnaire.caller = this;
                 questionnaire.ShowDialog();
                 this.Close();
             }

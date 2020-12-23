@@ -50,5 +50,10 @@ namespace RadiantDentalPractice.presenter
         {
             return new TreatmentConsentPresenter(treatmentPlanRepository,treatmentPlan);
         }
+
+        public DentalSurgeryVisitPresenter getDentalSurgeryVisitPresenter(IRepositoryFactory repositoryFactory, IPresenterFactory presenterFactory)
+        {
+            return new DentalSurgeryVisitPresenter(repositoryFactory, presenterFactory);
+        }
     }
 }

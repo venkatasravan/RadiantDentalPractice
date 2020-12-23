@@ -16,10 +16,13 @@ namespace RadiantDentalPractice.DAL
         }
 
         public DbSet<Patient> Patients { get; set; }
+        public DbSet<MedicalQuestions> medicalQuestions { get; set; }
         public DbSet<Question> questions { get; set; }
         public DbSet<GP> GP_details { get; set; }
         public DbSet<Address> address_details { get; set; }
         public DbSet<Appointment> appointments { get; set; }
         public DbSet<TreatmentPlan> treatmentPlans { get; set; }
+
+        
     }
 }

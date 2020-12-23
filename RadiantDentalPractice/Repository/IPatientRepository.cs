@@ -12,5 +12,8 @@ namespace RadiantDentalPractice.Repository
         int addPatient(Patient patient);
         List<Patient> getPatients();
         int isEmailRegistered(string email);
+        Boolean isMedicalQuestionExpired(int patientID);
+        Patient getPatient(int patientID);
+        int updatePatientQuestions(int patientID, Dictionary<string, string> questions);
     }
 }

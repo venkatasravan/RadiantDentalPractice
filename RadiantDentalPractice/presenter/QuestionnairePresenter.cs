@@ -33,6 +33,7 @@ namespace RadiantDentalPractice.presenter
         }
 
         public IQuestionView view { get; set; }
+        public int patientID { get; set; }
 
         public void updatePatient(IGpView gpView)
         {
@@ -57,6 +58,12 @@ namespace RadiantDentalPractice.presenter
                 patient.medicalQuestions.questions.Add(question);
             }
             patient.medicalQuestions.lastUpdatedDate = DateTime.Now;
+        }
+
+        public void updateExistingPatient()
+        {
+            IPatientRepository patientRepository = repositoryFactory.getPatientRepository();
+            patientRepository.updatePatientQuestions(patientID,view.questions);
         }
     }
 }
