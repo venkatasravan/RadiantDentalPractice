@@ -1,4 +1,4 @@
-﻿using RadiantDentalPractice.Factory;
+﻿
 using RadiantDentalPractice.models;
 using RadiantDentalPractice.presenter;
 using RadiantDentalPractice.views;
@@ -17,6 +17,7 @@ namespace RadiantDentalPractice
     /*
      * @author Venkata Sravan Kumar(w19051025)
      * 
+     * this contains all the all the different operations you can perform
      */
     public partial class RadiantDentalPracticeForm : Form
     {

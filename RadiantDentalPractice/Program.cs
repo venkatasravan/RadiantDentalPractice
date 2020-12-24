@@ -1,4 +1,4 @@
-﻿using RadiantDentalPractice.Factory;
+﻿
 using RadiantDentalPractice.presenter;
 using RadiantDentalPractice.Repository;
 using RadiantDentalPractice.views;

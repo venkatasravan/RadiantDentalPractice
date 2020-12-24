@@ -11,6 +11,12 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * This form allow us to add staff to the database
+     * 
+     * 
+     */
     public partial class AddStaffForm : Form, IAddStaffView
     {
         public AddStaffForm()
@@ -41,6 +47,12 @@ namespace RadiantDentalPractice.views
                 RoleList.Text = value;
             }
         }
+
+        /*
+         * Load the roles
+         * 
+         * 
+         */
         private void loadRoles()
         {
             RoleList.Items.Add("CHECKUP");
@@ -48,6 +60,11 @@ namespace RadiantDentalPractice.views
             RoleList.Items.Add("SURGERY");
         }
 
+        /*
+         * 
+         * Presenter instance
+         * 
+         */
         public AddStaffPresenter addStaffPresenter { get; set; }
 
         private void Submit_Click(object sender, EventArgs e)

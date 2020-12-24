@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Constants
 {
+    /*
+    * @author venkata sravan kumar
+    * 
+    */
     public sealed class ApplicationConstants
     {
         public const int DAILY_CHECKUP_SLOTS = 20;

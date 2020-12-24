@@ -8,6 +8,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RadiantDentalPractice.models
 {
+    /*
+    * @author venkata sravan kumar
+    * 
+    */
     public class TreatmentPlan
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

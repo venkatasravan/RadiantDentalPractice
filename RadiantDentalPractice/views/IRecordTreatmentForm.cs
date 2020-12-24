@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * interface for record treatment form     * 
+     * 
+     */
     public interface IRecordTreatmentForm
     {
         int patientID { get; set; }

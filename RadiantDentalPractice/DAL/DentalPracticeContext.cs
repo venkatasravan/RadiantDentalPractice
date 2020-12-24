@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.DAL
 {
+    /*
+    * @author venkata sravan kumar
+    * 
+    */
     class DentalPracticeContext : DbContext
     {
         public DentalPracticeContext() : base("DentalPracticeContext")

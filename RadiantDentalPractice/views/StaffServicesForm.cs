@@ -11,6 +11,11 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form allows to staff operations such as adding staff,setting up availability
+     */
     public partial class StaffServicesForm : Form
     {
         public StaffServicesForm()

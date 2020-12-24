@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * interface for set availability form
+     * 
+     * 
+     */
     public interface ISetAvailabilityView
     {
         string name { get; set; }

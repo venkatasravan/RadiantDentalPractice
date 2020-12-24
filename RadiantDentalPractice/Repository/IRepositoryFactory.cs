@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * interface for factory class
+     */
     public interface IRepositoryFactory
     {
         IPatientRepository getPatientRepository();

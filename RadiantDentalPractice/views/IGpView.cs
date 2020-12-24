@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * interface for GP form
+     * 
+     * 
+     */
     public interface IGpView
     {
         string name { get; set; }

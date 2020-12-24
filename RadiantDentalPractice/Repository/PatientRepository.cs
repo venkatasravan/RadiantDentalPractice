@@ -8,9 +8,15 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * patient repository operations
+     * 
+     */
     public class PatientRepository : IPatientRepository
     {
-
+        // add patient
         public int addPatient(Patient patient)
         {
             using (var db = new DentalPracticeContext())
@@ -20,7 +26,7 @@ namespace RadiantDentalPractice.Repository
                 return patient.patientID;
             }
         }
-
+        // retrieve all patients
         public List<Patient> getPatients()
         {
             using (var db = new DentalPracticeContext())
@@ -30,7 +36,7 @@ namespace RadiantDentalPractice.Repository
                 return result.ToList();
             }
         }
-
+        // duplicate email check
         public int isEmailRegistered(string email)
         {
             using (var db = new DentalPracticeContext())
@@ -41,6 +47,7 @@ namespace RadiantDentalPractice.Repository
                 return result.Count();
             }
         }
+        //medical questions validity check
         public Boolean isMedicalQuestionExpired(int patientID)
         {
             using (var db = new DentalPracticeContext())
@@ -55,6 +62,8 @@ namespace RadiantDentalPractice.Repository
                 return false;
             }
         }
+
+        // retrieve patient
         public Patient getPatient(int patientID)
         {
             using (var db = new DentalPracticeContext())
@@ -66,6 +75,8 @@ namespace RadiantDentalPractice.Repository
                 return result.Any() ? result.First() : null;
             }
         }
+
+        // update patient questions
         public int updatePatientQuestions(int patientID, Dictionary<string, string> questions)
         {
             int updatedRecords = 0;
@@ -76,6 +87,9 @@ namespace RadiantDentalPractice.Repository
             }
         }
 
+        // update patient questions
+        // not implemented properly 
+        // not useful
         private void updateQuestions(Patient patient,Dictionary<string, string> questions)
         {
             foreach (KeyValuePair<string, string> entry in questions)

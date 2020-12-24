@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.models
 {
+    /*
+    * @author venkata sravan kumar
+    * 
+    */
     public class AppointmentList
     {
         public int patientID { get; set; }

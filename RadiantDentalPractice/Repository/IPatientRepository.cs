@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     */
     public interface IPatientRepository
     {
         int addPatient(Patient patient);

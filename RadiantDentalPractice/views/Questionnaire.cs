@@ -12,6 +12,12 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form allows us to record the medical questions
+     * 
+     */
     public partial class Questionnaire : Form, IQuestionView
     {
 
@@ -38,7 +44,10 @@ namespace RadiantDentalPractice.views
                 _questions = value;
             }
         }
-
+        /*
+         * introduced to handle who called this form
+         * because this gets called from PatientRegistration form and DentalSurgery form
+         */
         public Form caller { get; set; }
 
         
@@ -60,6 +69,10 @@ namespace RadiantDentalPractice.views
             this.Close();
         }
 
+        /*
+         * load questions directly from view to list
+         * 
+         */
         private void loadQuestions()
         {
             _questions.Add(Question1.Text, Question1_TXT.Text);

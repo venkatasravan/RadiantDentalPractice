@@ -9,8 +9,13 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
+    /*
+    * @author venkata sravan kumar
+    * 
+    */
     public class AppointmentRepository : IAppointmentRepository
     {
+        // add booking
         public int addBooking(Appointment appointment)
         {
             using (var db = new DentalPracticeContext())
@@ -20,7 +25,7 @@ namespace RadiantDentalPractice.Repository
                 return value;
             }
         }
-
+        // retrieves booked slots
         public List<string> bookedSlots(DateTime bookingDate, String treatmentType)
         {
             using (var db = new DentalPracticeContext())
@@ -32,6 +37,7 @@ namespace RadiantDentalPractice.Repository
             }
         }
 
+        // get all bookings
         public List<Appointment> getBookings()
         {
             using (var db = new DentalPracticeContext())

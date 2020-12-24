@@ -12,6 +12,12 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form allow us to make emergency booking
+     * 
+     */
     public partial class EmergencyForm : Form,IEmergencyView
     {
         public EmergencyForm()
@@ -81,6 +87,12 @@ namespace RadiantDentalPractice.views
             this.Close();
         }
 
+        /*
+         * 
+         * Loads the booking slots based on the availability
+         * 
+         * 
+         */
         private void bookingDateTXT_ValueChanged(object sender, EventArgs e)
         {
             bookingSlotTXT.Items.Clear();

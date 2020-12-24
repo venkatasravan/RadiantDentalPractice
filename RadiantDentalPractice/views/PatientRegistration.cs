@@ -12,6 +12,11 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form allow us to insert patient details to database
+     */
     public partial class PatientRegistration : Form, IPatientView
     {
         public PatientRegistration()
@@ -91,6 +96,10 @@ namespace RadiantDentalPractice.views
 
         public string errorMessage { get; set; }
 
+        /*
+         * validation checks
+         * 
+         */
         public void validatePatient()
         {
             errorMessage = "";

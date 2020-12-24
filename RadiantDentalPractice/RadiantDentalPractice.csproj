@@ -71,8 +71,6 @@
   <ItemGroup>
     <Compile Include="Constants\ApplicationConstants.cs" />
     <Compile Include="DAL\DentalPracticeContext.cs" />
-    <Compile Include="Factory\IViewFactory.cs" />
-    <Compile Include="Factory\ViewFactory.cs" />
     <Compile Include="Helper\AppointmentHelper.cs" />
     <Compile Include="Helper\PatientHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />

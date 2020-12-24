@@ -8,8 +8,17 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * contains staff operations
+     */
     public class StaffRepository : IStaffRepository
     {
+        /*
+         * add staff details
+         * 
+         */
         public int addStaff(Staff staff)
         {
             using (var db = new DentalPracticeContext())
@@ -19,6 +28,10 @@ namespace RadiantDentalPractice.Repository
                 return staff.ID;
             }
         }
+        /*
+         * get staffid by name
+         * 
+         */
         public int getStaffIDByName(string name)
         {
             using (var db = new DentalPracticeContext())
@@ -30,6 +43,9 @@ namespace RadiantDentalPractice.Repository
             }
         }
 
+        /*
+         * update availability of the staff
+         */
         public Boolean updateAvailability(StaffAvailability staffAvailability)
         {
             using (var db = new DentalPracticeContext())
@@ -40,6 +56,10 @@ namespace RadiantDentalPractice.Repository
             }
         }
 
+        /*
+         * get all the staff
+         * 
+         */
         public List<Staff> retrieveStaff()
         {
             using (var db = new DentalPracticeContext())

@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * interface for emergency form
+     */
     public interface IEmergencyView
     {
         int patientID { get; set; }

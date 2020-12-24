@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * factory class to get repository objects
+     * 
+     */
     public class RepositoryFactory : IRepositoryFactory
     {
         public IPatientRepository getPatientRepository()

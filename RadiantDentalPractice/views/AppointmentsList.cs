@@ -11,6 +11,13 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form displays appointments booked
+     * 
+     * 
+     */
     public partial class AppointmentsList : Form, IAppointmentListView
     {
         public AppointmentsList()
@@ -23,14 +30,26 @@ namespace RadiantDentalPractice.views
         public string treatmentType { get; set; }
         public DateTime bookingdate { get; set; }
         public string bookingSlot { get; set; }
+        /*
+         * Presenter Instance
+         * 
+         */
         public AppointmentsListPresenter appointmentsListPresenter { get; set; }
 
-        public void getAppointments()
+        /*
+         * retrieves appointments list
+         * updates the view
+         * 
+         */
+        private void getAppointments()
         {
             var list = appointmentsListPresenter.getAppointments();
             AppointmentsData.DataSource = list;
         }
 
+        /*
+         * calling above private method
+         */
         private void AppointmentsList_Load(object sender, EventArgs e)
         {
             getAppointments();

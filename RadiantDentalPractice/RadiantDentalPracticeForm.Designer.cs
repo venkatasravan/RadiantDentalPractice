@@ -33,7 +33,6 @@
             this.DentalSurgery = new System.Windows.Forms.Button();
             this.BookCheckup = new System.Windows.Forms.Button();
             this.EmergencyAppointment = new System.Windows.Forms.Button();
-            this.AppointmentReminders = new System.Windows.Forms.Button();
             this.StaffServices = new System.Windows.Forms.Button();
             this.RecordTreatmentPlan = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,7 +42,7 @@
             this.RegisterPatient.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.RegisterPatient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.RegisterPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterPatient.Location = new System.Drawing.Point(21, 33);
+            this.RegisterPatient.Location = new System.Drawing.Point(30, 52);
             this.RegisterPatient.Name = "RegisterPatient";
             this.RegisterPatient.Size = new System.Drawing.Size(157, 38);
             this.RegisterPatient.TabIndex = 0;
@@ -67,7 +66,7 @@
             // 
             this.BookCheckup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BookCheckup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BookCheckup.Location = new System.Drawing.Point(608, 201);
+            this.BookCheckup.Location = new System.Drawing.Point(12, 302);
             this.BookCheckup.Name = "BookCheckup";
             this.BookCheckup.Size = new System.Drawing.Size(157, 43);
             this.BookCheckup.TabIndex = 2;
@@ -79,24 +78,13 @@
             // 
             this.EmergencyAppointment.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.EmergencyAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmergencyAppointment.Location = new System.Drawing.Point(21, 119);
+            this.EmergencyAppointment.Location = new System.Drawing.Point(12, 174);
             this.EmergencyAppointment.Name = "EmergencyAppointment";
             this.EmergencyAppointment.Size = new System.Drawing.Size(216, 43);
             this.EmergencyAppointment.TabIndex = 3;
             this.EmergencyAppointment.Text = "EmergencyAppointment";
             this.EmergencyAppointment.UseVisualStyleBackColor = false;
             this.EmergencyAppointment.Click += new System.EventHandler(this.EmergencyAppointment_Click);
-            // 
-            // AppointmentReminders
-            // 
-            this.AppointmentReminders.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.AppointmentReminders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppointmentReminders.Location = new System.Drawing.Point(21, 330);
-            this.AppointmentReminders.Name = "AppointmentReminders";
-            this.AppointmentReminders.Size = new System.Drawing.Size(239, 42);
-            this.AppointmentReminders.TabIndex = 4;
-            this.AppointmentReminders.Text = "AppointmentReminders";
-            this.AppointmentReminders.UseVisualStyleBackColor = false;
             // 
             // StaffServices
             // 
@@ -114,7 +102,7 @@
             // 
             this.RecordTreatmentPlan.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.RecordTreatmentPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RecordTreatmentPlan.Location = new System.Drawing.Point(21, 216);
+            this.RecordTreatmentPlan.Location = new System.Drawing.Point(544, 179);
             this.RecordTreatmentPlan.Name = "RecordTreatmentPlan";
             this.RecordTreatmentPlan.Size = new System.Drawing.Size(244, 38);
             this.RecordTreatmentPlan.TabIndex = 6;
@@ -131,7 +119,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.RecordTreatmentPlan);
             this.Controls.Add(this.StaffServices);
-            this.Controls.Add(this.AppointmentReminders);
             this.Controls.Add(this.EmergencyAppointment);
             this.Controls.Add(this.BookCheckup);
             this.Controls.Add(this.DentalSurgery);
@@ -148,7 +135,6 @@
         private System.Windows.Forms.Button DentalSurgery;
         private System.Windows.Forms.Button BookCheckup;
         private System.Windows.Forms.Button EmergencyAppointment;
-        private System.Windows.Forms.Button AppointmentReminders;
         private System.Windows.Forms.Button StaffServices;
         private System.Windows.Forms.Button RecordTreatmentPlan;
     }

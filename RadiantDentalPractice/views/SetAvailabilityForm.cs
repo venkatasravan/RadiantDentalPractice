@@ -12,6 +12,12 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form allows us to set availabilty for staff
+     * 
+     */
     public partial class SetAvailabilityForm : Form, ISetAvailabilityView
     {
         public SetAvailabilityForm()
@@ -88,6 +94,7 @@ namespace RadiantDentalPractice.views
             this.Close();
         }
 
+        // validation checks can go here
         private void ValidateChecks()
         {
             if(SelectedDateTXT.Value < DateTime.Now)

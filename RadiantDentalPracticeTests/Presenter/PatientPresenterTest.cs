@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using RadiantDentalPractice.Factory;
 using RadiantDentalPractice.models;
 using RadiantDentalPractice.presenter;
 using RadiantDentalPractice.Repository;
@@ -22,7 +21,6 @@ namespace RadiantDentalPracticeTests.Presenter
 
             IPresenterFactory presenterFactory = new PresenterFactory();
             IRepositoryFactory repositoryFactory = new RepositoryFactory();
-            IViewFactory viewFactory = new ViewFactory();
 
             PatientPresenter patientpresenter = new PatientPresenter(
                 presenterFactory,repositoryFactory);

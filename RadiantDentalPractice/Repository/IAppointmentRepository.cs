@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
+    /*
+    * @author venkata sravan kumar
+    * 
+    * appointment operations
+    */
     public interface IAppointmentRepository
     {
         int addBooking(Appointment appointment);

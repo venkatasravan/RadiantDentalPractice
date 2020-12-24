@@ -10,23 +10,43 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.presenter
 {
+    /*
+     * @author venkata sravan kumar
+     * this class contains logic to check medical history
+     * it also contans logic to check patient available or not using helper class
+     * 
+     */
     public class DentalSurgeryVisitPresenter
     {
-        IRepositoryFactory repositoryFactory;
-        IPresenterFactory presenterFactory;
+        private IRepositoryFactory repositoryFactory;
+        private IPresenterFactory presenterFactory;
         public DentalSurgeryVisitPresenter(IRepositoryFactory repositoryFactory, IPresenterFactory presenterFactory)
         {
             this.repositoryFactory = repositoryFactory;
             this.presenterFactory = presenterFactory;
         }
 
+        /*
+         * view to access and update fields
+         * 
+         */
         public IDentalSurgeryVisitView view { get; set; }
 
+        /*
+         * method to check medical question history
+         * 
+         * 
+         */
         public Boolean checkMedicalQuestionHistory()
         {
             IPatientRepository patientRepository = repositoryFactory.getPatientRepository();
             return patientRepository.isMedicalQuestionExpired(view.PatientID);
         }
+
+        /*
+         * updates the latest questions to the database
+         * 
+         */
         public void updateQuestions(IQuestionView questionView)
         {
             QuestionnairePresenter questionnairePresenter = presenterFactory.getQuestionnairePresenter(
@@ -36,6 +56,11 @@ namespace RadiantDentalPractice.presenter
             questionnairePresenter.patientID = view.PatientID;
         }
 
+        /*
+         * 
+         * Check if patient registered with that id
+         * 
+         */
         public Boolean isPatientAvailable(int patientID)
         {
             return PatientHelper.isPatientAvailable(patientID);

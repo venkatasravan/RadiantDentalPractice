@@ -11,6 +11,12 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form allows us to record treatment plan
+     * 
+     */
     public partial class RecordTreatmentForm : Form, IRecordTreatmentForm
     {
         public RecordTreatmentForm()
@@ -55,6 +61,10 @@ namespace RadiantDentalPractice.views
 
         public RecordTreatmentPresenter recordTreatmentPresenter { get; set; }
 
+        /*
+         * load pre-populated values
+         * 
+         */
         private void loadTreatmentConditions()
         {
             proposedTreatmentList.Items.Add("EXAMINATION");

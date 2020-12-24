@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.models
 {
+    /*
+    * @author venkata sravan kumar
+    * 
+    */
     public class GP
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

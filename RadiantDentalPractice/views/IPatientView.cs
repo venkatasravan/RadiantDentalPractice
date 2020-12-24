@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * interface for patient registration     * 
+     * 
+     * 
+     */
     public interface IPatientView
     {
         string name { get; set; }

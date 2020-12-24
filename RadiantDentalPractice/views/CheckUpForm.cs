@@ -12,6 +12,15 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * 
+     * @author venkata sravan kumar
+     * 
+     * This form allow to us to make check up booking
+     * 
+     * 
+     * 
+     */
     public partial class CheckUpForm : Form, ICheckupView
     {
         public CheckUpForm()
@@ -54,8 +63,21 @@ namespace RadiantDentalPractice.views
             }
         }
 
+        /*
+         * 
+         * Presenter instance
+         * 
+         * 
+         */
         public CheckUpPresenter checkUpPresenter { get; set; }
 
+        /*
+         * 
+         * 
+         * Loads booking slots based on the datetime dynamically by calliing database
+         * 
+         * 
+         */
         private void checkUpDateTXT_ValueChanged(object sender, EventArgs e)
         {
             bookingSlotTXT.Items.Clear();

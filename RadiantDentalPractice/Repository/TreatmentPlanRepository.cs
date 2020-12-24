@@ -8,8 +8,20 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.Repository
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this contains the different operations you can perform on the treatment plan details
+     * 
+     * 
+     * 
+     */
     public class TreatmentPlanRepository : ITreatmentPlanRepository
     {
+        /*
+         * insert treatment plan
+         * 
+         */
         public int addTreatmentPlan(TreatmentPlan treatmentPlan)
         {
             using (var db = new DentalPracticeContext())
@@ -20,6 +32,11 @@ namespace RadiantDentalPractice.Repository
             }
         }
 
+        /*
+         * last booked treatmentdat of the patient
+         * 
+         * 
+         */
         public DateTime? getLastTreatmentBookedDate(int patientID)
         {
             using (var db = new DentalPracticeContext())
@@ -36,6 +53,13 @@ namespace RadiantDentalPractice.Repository
             }
         }
 
+        /*
+         * gets all treatment plans of the patient
+         * 
+         * 
+         * 
+         */
+
         public List<TreatmentPlan> getTreatmentPlans(int patientID)
         {
             using (var db = new DentalPracticeContext())
@@ -47,6 +71,10 @@ namespace RadiantDentalPractice.Repository
             }
         }
 
+        /*
+         * gets the latest treatment plan of the patientID
+         * 
+         */
         public TreatmentPlan getTreatmentPlan(int patientID)
         {
             using (var db = new DentalPracticeContext())

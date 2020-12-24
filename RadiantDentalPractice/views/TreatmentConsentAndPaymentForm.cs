@@ -11,6 +11,11 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form allows us to take consent from patient
+     */
     public partial class TreatmentConsentAndPaymentForm : Form, ITreatmentConsentView
     {
         public TreatmentConsentAndPaymentForm()

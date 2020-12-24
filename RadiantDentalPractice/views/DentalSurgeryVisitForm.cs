@@ -11,6 +11,14 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * this form asks for patientID 
+     * then this calls presenter to verify medical history
+     * if it is not updated it will call medical questions again
+     * 
+     * Note: Updating medical question feature is not implemented yet.
+     */
     public partial class DentalSurgeryVisitForm : Form, IDentalSurgeryVisitView
     {
         public DentalSurgeryVisitForm()
@@ -30,15 +38,21 @@ namespace RadiantDentalPractice.views
             }
         }
 
+        /*
+         * Presenter instance
+         * 
+         */
         public DentalSurgeryVisitPresenter dentalSurgeryVisitPresenter { get; set; }
 
         private void next_Click(object sender, EventArgs e)
         {
+            // Check if patient is available with the given id
             if(!dentalSurgeryVisitPresenter.isPatientAvailable(PatientID))
             {
                 MessageBox.Show("Patient Not registered");
                 this.Close();
             }
+            // check medcal history
             Boolean result = dentalSurgeryVisitPresenter.checkMedicalQuestionHistory();
             if(result)
             {

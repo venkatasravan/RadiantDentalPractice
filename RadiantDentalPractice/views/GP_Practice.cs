@@ -12,6 +12,12 @@ using System.Windows.Forms;
 
 namespace RadiantDentalPractice.views
 {
+    /*
+     * @author venkata sravan kumar
+     * 
+     * this form allow us to add gp details to the database
+     * 
+     */
     public partial class GP_Practice : Form,IGpView
     {
 
@@ -60,6 +66,7 @@ namespace RadiantDentalPractice.views
             }
             if(patientID!=null)
             {
+                // Give the option to the patient to book checkup
                 DialogResult checkupBooking = MessageBox.Show("Do You want to Book for the checkup?",
                     "CheckUp Booking", MessageBoxButtons.YesNo);
                 if (checkupBooking == DialogResult.Yes)

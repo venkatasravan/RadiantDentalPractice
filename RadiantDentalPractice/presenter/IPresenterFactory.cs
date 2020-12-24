@@ -1,5 +1,4 @@
-﻿using RadiantDentalPractice.Factory;
-using RadiantDentalPractice.models;
+﻿using RadiantDentalPractice.models;
 using RadiantDentalPractice.Repository;
 using RadiantDentalPractice.views;
 using System;
@@ -10,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace RadiantDentalPractice.presenter
 {
+    /*
+    * @author venkata sravan kumar
+    * 
+    */
     public interface IPresenterFactory
     {
         PatientPresenter getPatientPresenter(IPresenterFactory presenterFactory, 
