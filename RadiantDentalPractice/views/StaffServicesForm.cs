@@ -36,5 +36,17 @@ namespace RadiantDentalPractice.views
             addStaffForm.ShowDialog();
             this.Close();
         }
+
+        private void AllocatePatients_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("As of now only Manual Allocation is possible");
+            this.Close();
+        }
+
+        private void UnAllocatedPatients_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
     }
 }

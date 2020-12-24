@@ -56,6 +56,7 @@
             this.AllocatePatients.TabIndex = 1;
             this.AllocatePatients.Text = "Allocate Patients";
             this.AllocatePatients.UseVisualStyleBackColor = false;
+            this.AllocatePatients.Click += new System.EventHandler(this.AllocatePatients_Click);
             // 
             // UnAllocatedPatients
             // 
@@ -67,6 +68,7 @@
             this.UnAllocatedPatients.TabIndex = 2;
             this.UnAllocatedPatients.Text = "UnAllocated Patients";
             this.UnAllocatedPatients.UseVisualStyleBackColor = false;
+            this.UnAllocatedPatients.Click += new System.EventHandler(this.UnAllocatedPatients_Click);
             // 
             // AddStaff
             // 
