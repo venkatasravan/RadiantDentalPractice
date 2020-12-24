@@ -11,7 +11,7 @@ namespace RadiantDentalPractice.views
     {
         int patientID { get; set; }
         string treatmentNotes { get; set; }
-        List<string> proposedTreatments { get; set; }
+        string proposedTreatmentValue { get; set; }
         RecordTreatmentPresenter recordTreatmentPresenter { get; set; }
     }
 }

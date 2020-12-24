@@ -54,7 +54,7 @@ namespace RadiantDentalPractice.presenter
             treatmentPlan.patientID = view.patientID;
             treatmentPlan.treatmentNotes = view.treatmentNotes;
             treatmentPlan.bookedDate = DateTime.Now;
-            treatmentPlan.proposedTreatment = string.Join(",", view.proposedTreatments);
+            treatmentPlan.proposedTreatment = view.proposedTreatmentValue;
             treatmentPlan.treatmentConsentAndPayment = new TreatmentConsentAndPayment();
             return treatmentPlan;
         }
@@ -62,82 +62,82 @@ namespace RadiantDentalPractice.presenter
         private double calculateCost(string proposedTreatment, int patientID)
         {
             double cost = 0;
-            if (band_1_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+            if (band_1_list.Contains(proposedTreatment))
             {
                 cost = ApplicationConstants.BAND1;
             }
-            if (band_2_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+            if (band_2_list.Contains(proposedTreatment))
             {
                 cost = ApplicationConstants.BAND2;
             }
-            if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+            if (band_3_list.Contains(proposedTreatment))
             {
                 cost = ApplicationConstants.BAND3;
             }
-            if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+            if (other_list.Contains(proposedTreatment))
             {
                 cost = ApplicationConstants.OTHER;
             }
             TreatmentPlan treatmentPlan = treatmentPlanRepository.getTreatmentPlan(patientID);
             if (treatmentPlan!=null && (DateTime.Now.Subtract(treatmentPlan.bookedDate).TotalDays / 30) < 2)
             {
-                if (band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
-                    other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
+                if (band_3_list.Contains(proposedTreatment) &&
+                    !other_list.Contains(proposedTreatment))
                 {
                     cost = ApplicationConstants.FREE;
-                    if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (other_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.OTHER;
                     }
                 }
-                else if(band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
-                    other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
-                    band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
+                else if(band_2_list.Contains(proposedTreatment) &&
+                    !other_list.Contains(proposedTreatment) &&
+                    !band_3_list.Contains(proposedTreatment))
                 {
                     cost = ApplicationConstants.FREE;
-                    if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (band_3_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.BAND3;
                     }
-                    if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (other_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.OTHER;
                     }
                 }
-                else if (band_1_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
-                    other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
-                    band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
-                    band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
+                else if (band_1_list.Contains(proposedTreatment) &&
+                    !other_list.Contains(proposedTreatment) &&
+                    !band_3_list.Contains(proposedTreatment) &&
+                    !band_2_list.Contains(proposedTreatment))
                 {
                     cost = ApplicationConstants.FREE;
-                    if (band_2_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (band_2_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.BAND2;
                     }
-                    if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (band_3_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.BAND3;
                     }
-                    if (other_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (other_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.OTHER;
                     }
                 }
-                else if (other_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() > 0 &&
-                    band_1_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
-                    band_3_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0 &&
-                    band_2_list.Intersect(treatmentPlan.proposedTreatment.Split(',')).Count() == 0)
+                else if (other_list.Contains(proposedTreatment) &&
+                    !band_1_list.Contains(proposedTreatment) &&
+                    !band_3_list.Contains(proposedTreatment) &&
+                    !band_2_list.Contains(proposedTreatment))
                 {
                     cost = ApplicationConstants.FREE;
-                    if (band_1_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (band_1_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.BAND1;
                     }
-                    if (band_2_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (band_2_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.BAND2;
                     }
-                    if (band_3_list.Intersect(proposedTreatment.Split(',')).Count() > 0)
+                    if (band_3_list.Contains(proposedTreatment))
                     {
                         cost = ApplicationConstants.BAND3;
                     }

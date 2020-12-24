@@ -41,15 +41,15 @@ namespace RadiantDentalPractice.views
                 treatmentNotesTXT.Text = value;
             }
         }
-        public List<string> proposedTreatments 
+        public string proposedTreatmentValue 
         {
             get
             {
-                return proposedTreatmentList.CheckedItems.OfType<string>().ToList();
+                return proposedTreatmentList.Text;
             }
             set
             {
-                proposedTreatmentList.Items.AddRange(value.ToArray());
+                proposedTreatmentList.Text = value;
             }
         }
 
@@ -57,15 +57,15 @@ namespace RadiantDentalPractice.views
 
         private void loadTreatmentConditions()
         {
-            proposedTreatmentList.Items.Add("EXAMINATION", CheckState.Unchecked);
-            proposedTreatmentList.Items.Add("DIAGNOSIS", CheckState.Unchecked);
-            proposedTreatmentList.Items.Add("CORRECTION_OF_FILLINGS", CheckState.Unchecked);
-            proposedTreatmentList.Items.Add("TEETH_WHITENING", CheckState.Unchecked);
-            proposedTreatmentList.Items.Add("DENTAL_IMPLANTS", CheckState.Unchecked);
-            proposedTreatmentList.Items.Add("ROOT_CANAL_WORK", CheckState.Unchecked);
-            proposedTreatmentList.Items.Add("CROWNS", CheckState.Unchecked);
-            proposedTreatmentList.Items.Add("DENTURES", CheckState.Unchecked);
-            proposedTreatmentList.Items.Add("FILLINGS", CheckState.Unchecked);
+            proposedTreatmentList.Items.Add("EXAMINATION");
+            proposedTreatmentList.Items.Add("DIAGNOSIS");
+            proposedTreatmentList.Items.Add("CORRECTION_OF_FILLINGS");
+            proposedTreatmentList.Items.Add("TEETH_WHITENING");
+            proposedTreatmentList.Items.Add("DENTAL_IMPLANTS");
+            proposedTreatmentList.Items.Add("ROOT_CANAL_WORK");
+            proposedTreatmentList.Items.Add("CROWNS");
+            proposedTreatmentList.Items.Add("DENTURES");
+            proposedTreatmentList.Items.Add("FILLINGS");
         }
 
         private void Next_Click(object sender, EventArgs e)

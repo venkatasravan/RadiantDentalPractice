@@ -95,7 +95,6 @@
             this.Controls.Add(this.Role);
             this.Controls.Add(this.nameTXT);
             this.Controls.Add(this.Name);
-            this.Name = "AddStaffForm";
             this.Text = "AddStaffForm";
             this.ResumeLayout(false);
             this.PerformLayout();

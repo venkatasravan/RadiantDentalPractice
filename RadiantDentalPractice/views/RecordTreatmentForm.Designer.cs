@@ -34,7 +34,7 @@
             this.TreatmentNotes = new System.Windows.Forms.Label();
             this.treatmentNotesTXT = new System.Windows.Forms.TextBox();
             this.proposedTreatment = new System.Windows.Forms.Label();
-            this.proposedTreatmentList = new System.Windows.Forms.CheckedListBox();
+            this.proposedTreatmentList = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // PatientID
@@ -51,7 +51,7 @@
             // 
             this.Next.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Next.Location = new System.Drawing.Point(352, 341);
+            this.Next.Location = new System.Drawing.Point(344, 290);
             this.Next.Name = "Next";
             this.Next.Size = new System.Drawing.Size(156, 37);
             this.Next.TabIndex = 1;
@@ -100,9 +100,9 @@
             // 
             this.proposedTreatmentList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.proposedTreatmentList.FormattingEnabled = true;
-            this.proposedTreatmentList.Location = new System.Drawing.Point(382, 177);
+            this.proposedTreatmentList.Location = new System.Drawing.Point(382, 175);
             this.proposedTreatmentList.Name = "proposedTreatmentList";
-            this.proposedTreatmentList.Size = new System.Drawing.Size(210, 109);
+            this.proposedTreatmentList.Size = new System.Drawing.Size(200, 28);
             this.proposedTreatmentList.TabIndex = 6;
             // 
             // RecordTreatmentForm
@@ -132,6 +132,6 @@
         private System.Windows.Forms.Label TreatmentNotes;
         private System.Windows.Forms.TextBox treatmentNotesTXT;
         private System.Windows.Forms.Label proposedTreatment;
-        private System.Windows.Forms.CheckedListBox proposedTreatmentList;
+        private System.Windows.Forms.ComboBox proposedTreatmentList;
     }
 }
