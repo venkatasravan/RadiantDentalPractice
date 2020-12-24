@@ -75,6 +75,7 @@
             this.SelectedDateTXT.Name = "SelectedDateTXT";
             this.SelectedDateTXT.Size = new System.Drawing.Size(168, 26);
             this.SelectedDateTXT.TabIndex = 3;
+            this.SelectedDateTXT.ValueChanged += new System.EventHandler(this.SelectedDateTXT_ValueChanged);
             // 
             // AvailabilityStatusTXT
             // 
