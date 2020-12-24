@@ -44,7 +44,7 @@ namespace RadiantDentalPractice.views
 
         private void AllocatePatients_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("As of now only Manual Allocation is possible");
+            MessageBox.Show("As of now only Manual Allocation is possible, Please click on Unallocated Patients");
             this.Close();
         }
 
