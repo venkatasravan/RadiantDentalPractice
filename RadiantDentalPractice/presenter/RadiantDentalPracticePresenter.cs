@@ -59,6 +59,13 @@ namespace RadiantDentalPractice.presenter
             dentalSurgeryVisitView.dentalSurgeryVisitPresenter = dentalSurgeryVisitPresenter;
         }
 
+        public void staffServices(StaffServicesForm view)
+        {
+            StaffServicesPresenter staffServicesPresenter = presenterFactory.getStaffServicesPresenter(presenterFactory,
+                repositoryFactory);
+            view.staffServicesPresenter = staffServicesPresenter;
+        }
+
 
     }
 }

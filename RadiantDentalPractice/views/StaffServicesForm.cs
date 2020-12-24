@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RadiantDentalPractice.presenter;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,8 @@ namespace RadiantDentalPractice.views
             InitializeComponent();
         }
 
+        public StaffServicesPresenter staffServicesPresenter { get; set; }
+
         private void SetAvailability_Click(object sender, EventArgs e)
         {
 
@@ -26,6 +29,9 @@ namespace RadiantDentalPractice.views
         {
             this.Hide();
             AddStaffForm addStaffForm = new AddStaffForm();
+            staffServicesPresenter.addStaff(addStaffForm);
+            addStaffForm.ShowDialog();
+            this.Close();
         }
     }
 }

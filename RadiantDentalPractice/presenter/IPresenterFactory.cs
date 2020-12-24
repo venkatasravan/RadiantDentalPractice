@@ -26,6 +26,7 @@ namespace RadiantDentalPractice.presenter
             ITreatmentPlanRepository treatmentPlanRepository, TreatmentPlan treatmentPlan);
         DentalSurgeryVisitPresenter getDentalSurgeryVisitPresenter(IRepositoryFactory repositoryFactory,
             IPresenterFactory presenterFactory);
+        StaffServicesPresenter getStaffServicesPresenter(IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory);
         AddStaffPresenter getAddStaffPresenter(IStaffRepository staffRepository);
     }
 }

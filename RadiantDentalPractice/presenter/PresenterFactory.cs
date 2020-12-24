@@ -60,5 +60,10 @@ namespace RadiantDentalPractice.presenter
         {
             return new AddStaffPresenter(staffRepository);
         }
+
+        public StaffServicesPresenter getStaffServicesPresenter(IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
+        {
+            return new StaffServicesPresenter(presenterFactory,repositoryFactory);
+        }
     }
 }

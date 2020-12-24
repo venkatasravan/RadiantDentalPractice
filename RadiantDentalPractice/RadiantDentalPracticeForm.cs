@@ -78,6 +78,9 @@ namespace RadiantDentalPractice
         {
             this.Hide();
             StaffServicesForm staffServicesForm = new StaffServicesForm();
+            radiantDentalPracticePresenter.staffServices(staffServicesForm);
+            staffServicesForm.ShowDialog();
+            this.Close();
         }
     }
 }

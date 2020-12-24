@@ -52,6 +52,7 @@ namespace RadiantDentalPractice.views
 
         private void Submit_Click(object sender, EventArgs e)
         {
+            
             int? staff_id;
             try
             {
@@ -62,6 +63,7 @@ namespace RadiantDentalPractice.views
             {
                 MessageBox.Show("Staff Registration Not Successful");
             }
+            this.Close();
         }
     }
 }

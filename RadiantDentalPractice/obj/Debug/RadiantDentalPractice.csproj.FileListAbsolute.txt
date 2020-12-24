@@ -91,3 +91,7 @@ C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPractice\ob
 C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.csprojAssemblyReference.cache
 C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.AddStaffForm.resources
 C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.StaffServicesForm.resources
+C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.AddStaffForm.resources
+C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.DentalSurgeryVisitForm.resources
+C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.StaffServicesForm.resources
+C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.TreatmentConsentAndPaymentForm.resources

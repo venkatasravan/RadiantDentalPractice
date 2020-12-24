@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj": {}
+    "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj": {
+    "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj",
+        "projectUniqueName": "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj",
         "projectName": "RadiantDentalPracticeTests",
-        "projectPath": "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj",
+        "projectPath": "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj",
         "packagesPath": "C:\\Users\\w19051025\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPracticeTests\\obj\\",
+        "outputPath": "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPracticeTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj": {
-                "projectPath": "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj"
+              "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj": {
+                "projectPath": "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj"
               }
             }
           }
@@ -89,12 +89,12 @@
         }
       }
     },
-    "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj": {
+    "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj",
+        "projectUniqueName": "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj",
         "projectName": "RadiantDentalPractice",
-        "projectPath": "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj"
+        "projectPath": "C:\\Users\\w19051025\\Downloads\\Dental\\RadiantDentalPractice\\RadiantDentalPractice\\RadiantDentalPractice.csproj"
       },
       "frameworks": {
         "net472": {}
