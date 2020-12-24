@@ -20,6 +20,7 @@ namespace RadiantDentalPractice.models
         public string name { get; set; }
         [Key, Column(Order = 1), Index(IsUnique = true)]
         public string email { get; set; }
+        public string phoneNumber { get; set; }
         public DateTime dob { get; set; }
         public virtual Address address { get; set; }
         public virtual MedicalQuestions medicalQuestions { get; set; }

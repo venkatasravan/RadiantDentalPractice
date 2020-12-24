@@ -41,13 +41,15 @@
             this.Country = new System.Windows.Forms.Label();
             this.countryTXT = new System.Windows.Forms.TextBox();
             this.Next = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.phoneTXT = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Name
             // 
             this.Name.AutoSize = true;
             this.Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name.Location = new System.Drawing.Point(426, 88);
+            this.Name.Location = new System.Drawing.Point(424, 37);
             this.Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Name.Name = "Name";
             this.Name.Size = new System.Drawing.Size(55, 20);
@@ -57,7 +59,7 @@
             // 
             // nameTXT
             // 
-            this.nameTXT.Location = new System.Drawing.Point(513, 83);
+            this.nameTXT.Location = new System.Drawing.Point(513, 37);
             this.nameTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nameTXT.Name = "nameTXT";
             this.nameTXT.Size = new System.Drawing.Size(148, 26);
@@ -169,11 +171,33 @@
             this.Next.UseVisualStyleBackColor = false;
             this.Next.Click += new System.EventHandler(this.Next_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(394, 90);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Phone No";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // phoneTXT
+            // 
+            this.phoneTXT.Location = new System.Drawing.Point(513, 90);
+            this.phoneTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.phoneTXT.Name = "phoneTXT";
+            this.phoneTXT.Size = new System.Drawing.Size(148, 26);
+            this.phoneTXT.TabIndex = 14;
+            // 
             // PatientRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 637);
+            this.Controls.Add(this.phoneTXT);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Next);
             this.Controls.Add(this.countryTXT);
             this.Controls.Add(this.Country);
@@ -210,5 +234,7 @@
         private System.Windows.Forms.Label Country;
         private System.Windows.Forms.TextBox countryTXT;
         private System.Windows.Forms.Button Next;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox phoneTXT;
     }
 }

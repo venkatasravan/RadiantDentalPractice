@@ -35,6 +35,18 @@ namespace RadiantDentalPractice.views
                 nameTXT.Text = value;
             } 
         }
+
+        public string phoneNumber
+        {
+            get
+            {
+                return phoneTXT.Text;
+            }
+            set
+            {
+                phoneTXT.Text = value;
+            }
+        }
         public string email
         {
             get

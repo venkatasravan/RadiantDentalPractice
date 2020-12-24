@@ -17,6 +17,7 @@ namespace RadiantDentalPractice.views
     public interface IPatientView
     {
         string name { get; set; }
+        string phoneNumber { get; set; }
         string email { get; set; }
         DateTime dob { get; set; }
         string postcode { get; set; }

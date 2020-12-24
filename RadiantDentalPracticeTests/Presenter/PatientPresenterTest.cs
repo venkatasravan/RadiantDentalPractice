@@ -30,6 +30,7 @@ namespace RadiantDentalPracticeTests.Presenter
             patientpresenter.view.postcode = "ne48as";
             patientpresenter.view.email = "priyanka@gmail.com";
             patientpresenter.view.name = "priyanka";
+            patientpresenter.view.phoneNumber = "1234567890";
             patientpresenter.view.dob = DateTime.Now;
             patientpresenter.RegisterPatient(questionview.Object);
         }

@@ -75,6 +75,10 @@ namespace RadiantDentalPractice.presenter
             {
                 view.errorMessage = "Please enter name";
             }
+            else if(view.phoneNumber.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter Phone number";
+            }
             else if (view.email.Trim().Length == 0)
             {
                 view.errorMessage = "Please enter email";
@@ -113,6 +117,7 @@ namespace RadiantDentalPractice.presenter
             patient.medicalQuestions = new MedicalQuestions();
             patient.medicalQuestions.questions = new HashSet<Question>();
             patient.name = view.name;
+            patient.phoneNumber = view.phoneNumber;
             patient.email = view.email;
             patient.dob = view.dob;
             patient.address.city = view.city;
