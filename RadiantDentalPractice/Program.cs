@@ -20,12 +20,11 @@ namespace RadiantDentalPractice
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            IViewFactory viewFactory = new ViewFactory();
-            RadiantDentalPracticeForm mainView = new RadiantDentalPracticeForm(viewFactory);
+            RadiantDentalPracticeForm mainView = new RadiantDentalPracticeForm();
 
             IRepositoryFactory repositoryFactory = new RepositoryFactory();
             IPresenterFactory presenterFactory = new PresenterFactory();
-            mainView.radiantDentalPracticePresenter = new RadiantDentalPracticePresenter(mainView,viewFactory, presenterFactory, repositoryFactory);
+            mainView.radiantDentalPracticePresenter = new RadiantDentalPracticePresenter(mainView, presenterFactory, repositoryFactory);
             Application.Run(mainView);
         }
     }

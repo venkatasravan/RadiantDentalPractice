@@ -15,21 +15,19 @@ namespace RadiantDentalPractice.presenter
     {
 
         private RadiantDentalPracticeForm formView;
-        private IViewFactory viewFactory;
         private IPresenterFactory presenterFactory;
         private IRepositoryFactory repositoryFactory;
         public RadiantDentalPracticePresenter(RadiantDentalPracticeForm formView,
-            IViewFactory viewFactory, IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
+            IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
             this.formView = formView;
-            this.viewFactory = viewFactory;
             this.presenterFactory = presenterFactory;
             this.repositoryFactory = repositoryFactory;
         }
 
         public void registerPatient(IPatientView patientView)
         {
-            PatientPresenter patientPresenter = presenterFactory.getPatientPresenter(viewFactory, presenterFactory, repositoryFactory);
+            PatientPresenter patientPresenter = presenterFactory.getPatientPresenter(presenterFactory, repositoryFactory);
             patientPresenter.view = patientView;
             patientView.patientPresenter = patientPresenter;
         }

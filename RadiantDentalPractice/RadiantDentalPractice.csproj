@@ -82,8 +82,10 @@
     <Compile Include="models\MedicalQuestions.cs" />
     <Compile Include="models\Patient.cs" />
     <Compile Include="models\Question.cs" />
+    <Compile Include="models\Staff.cs" />
     <Compile Include="models\TreatmentConsentAndPayment.cs" />
     <Compile Include="models\TreatmentPlan.cs" />
+    <Compile Include="presenter\AddStaffPresenter.cs" />
     <Compile Include="presenter\CheckUpPresenter.cs" />
     <Compile Include="presenter\DentalSurgeryVisitPresenter.cs" />
     <Compile Include="presenter\EmergencyPresenter.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="presenter\QuestionnairePresenter.cs" />
     <Compile Include="presenter\RadiantDentalPracticePresenter.cs" />
     <Compile Include="presenter\RecordTreatmentPresenter.cs" />
+    <Compile Include="presenter\StaffServicesPresenter.cs" />
     <Compile Include="presenter\TreatmentConsentPresenter.cs" />
     <Compile Include="RadiantDentalPracticeForm.cs">
       <SubType>Form</SubType>
@@ -107,10 +110,18 @@
     <Compile Include="Repository\IAppointmentRepository.cs" />
     <Compile Include="Repository\IRepositoryFactory.cs" />
     <Compile Include="Repository\IPatientRepository.cs" />
+    <Compile Include="Repository\IStaffRepository.cs" />
     <Compile Include="Repository\ITreatmentPlanRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
     <Compile Include="Repository\RepositoryFactory.cs" />
+    <Compile Include="Repository\StaffRepository.cs" />
     <Compile Include="Repository\TreatmentPlanRepository.cs" />
+    <Compile Include="views\AddStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\AddStaffForm.Designer.cs">
+      <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\CheckUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +146,7 @@
     <Compile Include="views\GP_Practice.Designer.cs">
       <DependentUpon>GP_Practice.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\IAddStaffView.cs" />
     <Compile Include="views\ICheckupView.cs" />
     <Compile Include="views\IDentalSurgeryVisitView.cs" />
     <Compile Include="views\IEmergencyView.cs" />
@@ -161,6 +173,12 @@
     <Compile Include="views\RecordTreatmentForm.Designer.cs">
       <DependentUpon>RecordTreatmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\StaffServicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\StaffServicesForm.Designer.cs">
+      <DependentUpon>StaffServicesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\TreatmentConsentAndPaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +197,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="views\AddStaffForm.resx">
+      <DependentUpon>AddStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\CheckUpForm.resx">
       <DependentUpon>CheckUpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\RecordTreatmentForm.resx">
       <DependentUpon>RecordTreatmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\StaffServicesForm.resx">
+      <DependentUpon>StaffServicesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\TreatmentConsentAndPaymentForm.resx">
       <DependentUpon>TreatmentConsentAndPaymentForm.cs</DependentUpon>

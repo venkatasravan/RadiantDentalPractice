@@ -52,11 +52,11 @@ namespace RadiantDentalPractice.views
             try
             {
                 patientID = gPPresenter.updatePatient();
-                MessageBox.Show("Patient Registartion Successful \n Your PatientID is " + patientID);
+                MessageBox.Show("Patient Registration Successful \n Your PatientID is " + patientID);
             }
             catch
             {
-                MessageBox.Show("Patient Registartion Not Successful");
+                MessageBox.Show("Patient Registration Not Successful");
             }
             if(patientID!=null)
             {

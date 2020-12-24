@@ -25,7 +25,7 @@ namespace RadiantDentalPracticeTests.Presenter
             IViewFactory viewFactory = new ViewFactory();
 
             PatientPresenter patientpresenter = new PatientPresenter(
-                viewFactory,presenterFactory,repositoryFactory);
+                presenterFactory,repositoryFactory);
             patientpresenter.view = view.Object;
             patientpresenter.view.city = "newcastle";
             patientpresenter.view.country = "UK";

@@ -17,10 +17,10 @@ namespace RadiantDentalPractice.presenter
             return new GPPresenter( patient, factory,presenterFactory);
         }
 
-        public PatientPresenter getPatientPresenter(IViewFactory factory,
+        public PatientPresenter getPatientPresenter(
             IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
-            return new PatientPresenter(factory, presenterFactory, repositoryFactory);
+            return new PatientPresenter(presenterFactory, repositoryFactory);
         }
 
         public QuestionnairePresenter getQuestionnairePresenter(Patient patient, IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
@@ -54,6 +54,11 @@ namespace RadiantDentalPractice.presenter
         public DentalSurgeryVisitPresenter getDentalSurgeryVisitPresenter(IRepositoryFactory repositoryFactory, IPresenterFactory presenterFactory)
         {
             return new DentalSurgeryVisitPresenter(repositoryFactory, presenterFactory);
+        }
+
+        public AddStaffPresenter getAddStaffPresenter(IStaffRepository staffRepository)
+        {
+            return new AddStaffPresenter(staffRepository);
         }
     }
 }

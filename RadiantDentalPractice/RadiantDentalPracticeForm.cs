@@ -20,12 +20,10 @@ namespace RadiantDentalPractice
      */
     public partial class RadiantDentalPracticeForm : Form
     {
-        private IViewFactory viewFactory;
 
-        public RadiantDentalPracticeForm(IViewFactory viewFactory)
+        public RadiantDentalPracticeForm()
         {
             InitializeComponent();
-            this.viewFactory = viewFactory;
         }
         
         public RadiantDentalPracticePresenter radiantDentalPracticePresenter { get; set; }
@@ -74,6 +72,12 @@ namespace RadiantDentalPractice
             radiantDentalPracticePresenter.recordTreatmentPlan(recordTreatmentForm);
             recordTreatmentForm.ShowDialog();
             this.Close();
+        }
+
+        private void StaffServices_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StaffServicesForm staffServicesForm = new StaffServicesForm();
         }
     }
 }

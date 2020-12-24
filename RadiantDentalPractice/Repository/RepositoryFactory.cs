@@ -21,5 +21,10 @@ namespace RadiantDentalPractice.Repository
         {
             return new TreatmentPlanRepository();
         }
+
+        public IStaffRepository getStaffRepository()
+        {
+            return new StaffRepository();
+        }
     }
 }

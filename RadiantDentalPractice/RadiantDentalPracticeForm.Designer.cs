@@ -108,6 +108,7 @@
             this.StaffServices.TabIndex = 5;
             this.StaffServices.Text = "StaffServices";
             this.StaffServices.UseVisualStyleBackColor = false;
+            this.StaffServices.Click += new System.EventHandler(this.StaffServices_Click);
             // 
             // RecordTreatmentPlan
             // 

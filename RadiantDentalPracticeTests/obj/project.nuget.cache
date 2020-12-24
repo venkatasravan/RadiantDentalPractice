@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QpO9vEzj2Ate+SO5XBt/ojPpLLgtfbOtM3rIs0sPRpe8HBMzcBk1K0wBAh8E3KeatZiSVAjYxwDo81CwRMRj5g==",
+  "dgSpecHash": "CivZfs1UeSbtJv5Cb6W0h40RIzQdR6bqcrldl1HMejzae+0aJyRxuPJQd4P5s3zmbocPLIMxF9phq2NwKV9fAQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\w19051025\\Downloads\\test\\RadiantDentalPractice\\RadiantDentalPracticeTests\\RadiantDentalPracticeTests.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\w19051025\\.nuget\\packages\\microsoft.testplatform.objectmodel\\16.5.0\\microsoft.testplatform.objectmodel.16.5.0.nupkg.sha512",
     "C:\\Users\\w19051025\\.nuget\\packages\\microsoft.testplatform.testhost\\16.5.0\\microsoft.testplatform.testhost.16.5.0.nupkg.sha512",
+    "C:\\Users\\w19051025\\.nuget\\packages\\microsoft.unittestframework.extensions\\2.0.0\\microsoft.unittestframework.extensions.2.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\w19051025\\.nuget\\packages\\moq\\4.15.2\\moq.4.15.2.nupkg.sha512",
     "C:\\Users\\w19051025\\.nuget\\packages\\mstest.testadapter\\2.1.0\\mstest.testadapter.2.1.0.nupkg.sha512",
@@ -46,6 +47,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.componentmodel.primitives\\4.3.0\\system.componentmodel.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.componentmodel.typeconverter\\4.3.0\\system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
+    "C:\\Users\\w19051025\\.nuget\\packages\\system.diagnostics.contracts\\4.0.1\\system.diagnostics.contracts.4.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.diagnostics.diagnosticsource\\4.3.0\\system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
     "C:\\Users\\w19051025\\.nuget\\packages\\system.diagnostics.textwritertracelistener\\4.3.0\\system.diagnostics.textwritertracelistener.4.3.0.nupkg.sha512",

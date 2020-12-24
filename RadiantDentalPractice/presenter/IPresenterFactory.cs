@@ -12,7 +12,7 @@ namespace RadiantDentalPractice.presenter
 {
     public interface IPresenterFactory
     {
-        PatientPresenter getPatientPresenter(IViewFactory factory, IPresenterFactory presenterFactory, 
+        PatientPresenter getPatientPresenter(IPresenterFactory presenterFactory, 
             IRepositoryFactory repositoryFactory);
         QuestionnairePresenter getQuestionnairePresenter(Patient patient,
             IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory);
@@ -24,6 +24,8 @@ namespace RadiantDentalPractice.presenter
             ITreatmentPlanRepository treatmentPlanRepository);
         TreatmentConsentPresenter getTreatmentConsentPresenter(
             ITreatmentPlanRepository treatmentPlanRepository, TreatmentPlan treatmentPlan);
-        DentalSurgeryVisitPresenter getDentalSurgeryVisitPresenter(IRepositoryFactory repositoryFactory, IPresenterFactory presenterFactory);
+        DentalSurgeryVisitPresenter getDentalSurgeryVisitPresenter(IRepositoryFactory repositoryFactory,
+            IPresenterFactory presenterFactory);
+        AddStaffPresenter getAddStaffPresenter(IStaffRepository staffRepository);
     }
 }

@@ -17,15 +17,13 @@ namespace RadiantDentalPractice.presenter
 
         
         private Patient patient;
-        private IViewFactory viewFactory;
         private IPresenterFactory presenterFactory;
         private IRepositoryFactory repositoryFactory;
 
 
-        public PatientPresenter(IViewFactory viewFactory,
+        public PatientPresenter(
             IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
-            this.viewFactory = viewFactory;
             this.presenterFactory = presenterFactory;
             this.repositoryFactory = repositoryFactory;
         }
@@ -85,6 +83,10 @@ namespace RadiantDentalPractice.presenter
             {
                 view.errorMessage = "Email is already registered";
             }
+            else if (view.postcode.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter postcode";
+            }
             else if (view.city.Trim().Length == 0)
             {
                 view.errorMessage = "Please enter city";
@@ -92,10 +94,6 @@ namespace RadiantDentalPractice.presenter
             else if (view.country.Trim().Length == 0)
             {
                 view.errorMessage = "Please enter country";
-            }
-            else if (view.postcode.Trim().Length == 0)
-            {
-                view.errorMessage = "Please enter postcode";
             }
             else if (view.dob > DateTime.Now)
             {
