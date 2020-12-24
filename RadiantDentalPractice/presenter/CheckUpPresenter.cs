@@ -1,4 +1,5 @@
-﻿using RadiantDentalPractice.models;
+﻿using RadiantDentalPractice.Helper;
+using RadiantDentalPractice.models;
 using RadiantDentalPractice.Repository;
 using RadiantDentalPractice.views;
 using System;
@@ -30,6 +31,11 @@ namespace RadiantDentalPractice.presenter
             appointment.status = "CONFIRM";
             int result = checkupRepository.addBooking(appointment);
             return result;
+        }
+
+        public Boolean isPatientAvailable(int patientID)
+        {
+            return PatientHelper.isPatientAvailable(patientID);
         }
 
     }

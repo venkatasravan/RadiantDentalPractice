@@ -73,7 +73,15 @@ namespace RadiantDentalPractice.views
             this.Hide();
             TreatmentConsentAndPaymentForm treatmentConsentAndPaymentForm = new TreatmentConsentAndPaymentForm();
             recordTreatmentPresenter.recordTreatementPlan(treatmentConsentAndPaymentForm);
-            treatmentConsentAndPaymentForm.ShowDialog();
+            if (!recordTreatmentPresenter.isPatientAvailable(patientID))
+            {
+                MessageBox.Show("Patient Not registered");
+            }
+            else
+            {
+                treatmentConsentAndPaymentForm.ShowDialog();
+            }
+
             this.Close();
         }
     }

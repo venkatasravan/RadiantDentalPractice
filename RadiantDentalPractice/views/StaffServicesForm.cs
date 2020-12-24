@@ -46,6 +46,9 @@ namespace RadiantDentalPractice.views
         private void UnAllocatedPatients_Click(object sender, EventArgs e)
         {
             this.Hide();
+            AppointmentsList appointmentsList = new AppointmentsList();
+            staffServicesPresenter.listPatients(appointmentsList);
+            appointmentsList.ShowDialog();
             this.Close();
         }
     }

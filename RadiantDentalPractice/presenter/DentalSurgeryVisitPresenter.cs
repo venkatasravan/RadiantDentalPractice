@@ -1,4 +1,5 @@
-﻿using RadiantDentalPractice.models;
+﻿using RadiantDentalPractice.Helper;
+using RadiantDentalPractice.models;
 using RadiantDentalPractice.Repository;
 using RadiantDentalPractice.views;
 using System;
@@ -33,6 +34,11 @@ namespace RadiantDentalPractice.presenter
             questionnairePresenter.view = questionView;
             questionView.questionnairePresenter = questionnairePresenter;
             questionnairePresenter.patientID = view.PatientID;
+        }
+
+        public Boolean isPatientAvailable(int patientID)
+        {
+            return PatientHelper.isPatientAvailable(patientID);
         }
     }
 }

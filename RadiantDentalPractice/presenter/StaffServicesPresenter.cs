@@ -36,6 +36,13 @@ namespace RadiantDentalPractice.presenter
             setAvailabilityView.availableStaff = loadStaffDetails();
         }
 
+        public void listPatients(IAppointmentListView appointmentListView)
+        {
+            AppointmentsListPresenter appointmentsListPresenter = presenterFactory.
+                getAppointmentsListPresenter(repositoryFactory);
+            appointmentListView.appointmentsListPresenter = appointmentsListPresenter;
+        }
+
         public string[] loadStaffDetails()
         {
             HashSet<string> staffs = new HashSet<string>();

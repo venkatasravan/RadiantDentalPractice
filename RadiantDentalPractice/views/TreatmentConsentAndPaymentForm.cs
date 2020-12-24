@@ -65,13 +65,14 @@ namespace RadiantDentalPractice.views
             else
             {
                 MessageBox.Show("You must Accept the terms and conditions");
-            }
-            DialogResult dialogResult = MessageBox.Show("Do You want to Continue?",
+                DialogResult dialogResult = MessageBox.Show("Do You want to Continue?",
                     "Treatment Plan", MessageBoxButtons.YesNo);
-            if(dialogResult == DialogResult.No)
-            {
-                this.Close();
-            }           
+                if (dialogResult == DialogResult.No)
+                {
+                    this.Close();
+                }
+            }
+                       
         }
     }
 }

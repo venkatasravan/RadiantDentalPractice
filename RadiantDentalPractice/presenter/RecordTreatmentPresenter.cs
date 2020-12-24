@@ -1,4 +1,5 @@
 ﻿using RadiantDentalPractice.Constants;
+using RadiantDentalPractice.Helper;
 using RadiantDentalPractice.models;
 using RadiantDentalPractice.Repository;
 using RadiantDentalPractice.views;
@@ -46,6 +47,11 @@ namespace RadiantDentalPractice.presenter
             treatmentConsentView.treatmentConsentPresenter = treatmentConsentPresenter;
             treatmentConsentPresenter.view = treatmentConsentView;
             treatmentConsentPresenter.view.treatmentCost = treatmentPlan.treatmentConsentAndPayment.treatmentCost;
+        }
+
+        public Boolean isPatientAvailable(int patientID)
+        {
+            return PatientHelper.isPatientAvailable(patientID);
         }
 
         private TreatmentPlan createTreatmentPlan()

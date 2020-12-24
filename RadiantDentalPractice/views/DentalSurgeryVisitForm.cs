@@ -34,6 +34,11 @@ namespace RadiantDentalPractice.views
 
         private void next_Click(object sender, EventArgs e)
         {
+            if(!dentalSurgeryVisitPresenter.isPatientAvailable(PatientID))
+            {
+                MessageBox.Show("Patient Not registered");
+                this.Close();
+            }
             Boolean result = dentalSurgeryVisitPresenter.checkMedicalQuestionHistory();
             if(result)
             {
@@ -41,12 +46,12 @@ namespace RadiantDentalPractice.views
                 dentalSurgeryVisitPresenter.updateQuestions(questionnaire);
                 questionnaire.caller = this;
                 questionnaire.ShowDialog();
-
             }
             else
             {
                 MessageBox.Show("Medical History is up-to-date");
             }
+            this.Close();
         }
     }
 }

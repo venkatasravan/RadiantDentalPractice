@@ -31,5 +31,15 @@ namespace RadiantDentalPractice.Repository
                 return result.ToList();
             }
         }
+
+        public List<Appointment> getBookings()
+        {
+            using (var db = new DentalPracticeContext())
+            {
+                var result = from booking in db.appointments
+                             select booking;
+                return result.ToList();
+            }
+        }
     }
 }

@@ -74,9 +74,11 @@
     <Compile Include="Factory\IViewFactory.cs" />
     <Compile Include="Factory\ViewFactory.cs" />
     <Compile Include="Helper\AppointmentHelper.cs" />
+    <Compile Include="Helper\PatientHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="models\Address.cs" />
     <Compile Include="models\Appointment.cs" />
+    <Compile Include="models\AppointmentList.cs" />
     <Compile Include="models\EmergencyAppointment.cs" />
     <Compile Include="models\GP.cs" />
     <Compile Include="models\MedicalQuestions.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="models\TreatmentConsentAndPayment.cs" />
     <Compile Include="models\TreatmentPlan.cs" />
     <Compile Include="presenter\AddStaffPresenter.cs" />
+    <Compile Include="presenter\AppointmentsListPresenter.cs" />
     <Compile Include="presenter\CheckUpPresenter.cs" />
     <Compile Include="presenter\DentalSurgeryVisitPresenter.cs" />
     <Compile Include="presenter\EmergencyPresenter.cs" />
@@ -124,6 +127,12 @@
     <Compile Include="views\AddStaffForm.Designer.cs">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\AppointmentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\AppointmentsList.Designer.cs">
+      <DependentUpon>AppointmentsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\CheckUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +158,7 @@
       <DependentUpon>GP_Practice.cs</DependentUpon>
     </Compile>
     <Compile Include="views\IAddStaffView.cs" />
+    <Compile Include="views\IAppointmentListView.cs" />
     <Compile Include="views\ICheckupView.cs" />
     <Compile Include="views\IDentalSurgeryVisitView.cs" />
     <Compile Include="views\IEmergencyView.cs" />
@@ -209,6 +219,9 @@
     <EmbeddedResource Include="views\AddStaffForm.resx">
       <DependentUpon>AddStaffForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\AppointmentsList.resx">
+      <DependentUpon>AppointmentsList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\CheckUpForm.resx">
       <DependentUpon>CheckUpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,7 +266,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

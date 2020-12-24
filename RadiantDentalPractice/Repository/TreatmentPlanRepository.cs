@@ -62,5 +62,15 @@ namespace RadiantDentalPractice.Repository
                 return null;
             }
         }
+
+        public List<TreatmentPlan> getTreatmentPlans()
+        {
+            using (var db = new DentalPracticeContext())
+            {
+                var result = from treatmentPlan in db.treatmentPlans
+                             select treatmentPlan;
+                return result.ToList();
+            }
+        }
     }
 }

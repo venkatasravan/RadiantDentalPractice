@@ -76,6 +76,11 @@ namespace RadiantDentalPractice.views
 
         private void Book_Click(object sender, EventArgs e)
         {
+            if(!checkUpPresenter.isPatientAvailable(patientID))
+            {
+                MessageBox.Show("Patient Not registered");
+                this.Close();
+            }
             try
             {
                 int result = checkUpPresenter.CreateCheckupBooking();

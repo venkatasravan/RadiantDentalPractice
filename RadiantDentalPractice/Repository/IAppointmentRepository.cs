@@ -11,5 +11,6 @@ namespace RadiantDentalPractice.Repository
     {
         int addBooking(Appointment appointment);
         List<string> bookedSlots(DateTime bookingDate, String treatmentType);
+        List<Appointment> getBookings();
     }
 }
