@@ -83,6 +83,7 @@
     <Compile Include="models\Patient.cs" />
     <Compile Include="models\Question.cs" />
     <Compile Include="models\Staff.cs" />
+    <Compile Include="models\StaffAvailability.cs" />
     <Compile Include="models\TreatmentConsentAndPayment.cs" />
     <Compile Include="models\TreatmentPlan.cs" />
     <Compile Include="presenter\AddStaffPresenter.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="presenter\QuestionnairePresenter.cs" />
     <Compile Include="presenter\RadiantDentalPracticePresenter.cs" />
     <Compile Include="presenter\RecordTreatmentPresenter.cs" />
+    <Compile Include="presenter\SetAvailabilityPresenter.cs" />
     <Compile Include="presenter\StaffServicesPresenter.cs" />
     <Compile Include="presenter\TreatmentConsentPresenter.cs" />
     <Compile Include="RadiantDentalPracticeForm.cs">
@@ -154,6 +156,7 @@
     <Compile Include="views\IPatientView.cs" />
     <Compile Include="views\IQuestionView.cs" />
     <Compile Include="views\IRecordTreatmentForm.cs" />
+    <Compile Include="views\ISetAvailabilityView.cs" />
     <Compile Include="views\ITreatmentConsentView.cs" />
     <Compile Include="views\PatientRegistration.cs">
       <SubType>Form</SubType>
@@ -172,6 +175,12 @@
     </Compile>
     <Compile Include="views\RecordTreatmentForm.Designer.cs">
       <DependentUpon>RecordTreatmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\SetAvailabilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\SetAvailabilityForm.Designer.cs">
+      <DependentUpon>SetAvailabilityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="views\StaffServicesForm.cs">
       <SubType>Form</SubType>
@@ -220,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\RecordTreatmentForm.resx">
       <DependentUpon>RecordTreatmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\SetAvailabilityForm.resx">
+      <DependentUpon>SetAvailabilityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\StaffServicesForm.resx">
       <DependentUpon>StaffServicesForm.cs</DependentUpon>

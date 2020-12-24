@@ -201,3 +201,4 @@ C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPracticeTes
 C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPracticeTests\obj\Debug\netcoreapp3.1\RadiantDentalPracticeTests.genruntimeconfig.cache
 C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPracticeTests\bin\Debug\netcoreapp3.1\Microsoft.UnitTestFramework.Extensions.dll
 C:\Users\w19051025\Downloads\test\RadiantDentalPractice\RadiantDentalPracticeTests\obj\Debug\netcoreapp3.1\RadiantDentalPracticeTests.csproj.CoreCompileInputs.cache
+C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPracticeTests\bin\Debug\netcoreapp3.1\Microsoft.UnitTestFramework.Extensions.dll

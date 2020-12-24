@@ -1,4 +1,5 @@
-﻿using RadiantDentalPractice.Repository;
+﻿using RadiantDentalPractice.models;
+using RadiantDentalPractice.Repository;
 using RadiantDentalPractice.views;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,26 @@ namespace RadiantDentalPractice.presenter
                 getAddStaffPresenter(repositoryFactory.getStaffRepository());
             addStaffPresenter.view = addStaffView;
             addStaffView.addStaffPresenter = addStaffPresenter;
+        }
+
+        public void setAvailability(ISetAvailabilityView setAvailabilityView)
+        {
+            SetAvailabilityPresenter setAvailabilityPresenter = presenterFactory.
+                getSetAvailabilityPresenter(repositoryFactory.getStaffRepository());
+            setAvailabilityPresenter.view = setAvailabilityView;
+            setAvailabilityView.setAvailabilityPresenter = setAvailabilityPresenter;
+            setAvailabilityView.availableStaff = loadStaffDetails();
+        }
+
+        public string[] loadStaffDetails()
+        {
+            HashSet<string> staffs = new HashSet<string>();
+            List<Staff> staff_details = repositoryFactory.getStaffRepository().retrieveStaff();
+            foreach(Staff staff in staff_details)
+            {
+                staffs.Add(staff.name);
+            }
+            return staffs.ToArray();
         }
     }
 }

@@ -22,7 +22,10 @@ namespace RadiantDentalPractice.views
 
         private void SetAvailability_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            SetAvailabilityForm setAvailabilityForm = new SetAvailabilityForm();
+            staffServicesPresenter.setAvailability(setAvailabilityForm);
+            setAvailabilityForm.ShowDialog();
         }
 
         private void AddStaff_Click(object sender, EventArgs e)

@@ -10,5 +10,8 @@ namespace RadiantDentalPractice.Repository
     public interface IStaffRepository
     {
         int addStaff(Staff staff);
+        int getStaffIDByName(string name);
+        Boolean updateAvailability(StaffAvailability staffAvailability);
+        List<Staff> retrieveStaff();
     }
 }

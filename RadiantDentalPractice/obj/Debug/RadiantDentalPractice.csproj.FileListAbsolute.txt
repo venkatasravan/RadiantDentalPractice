@@ -95,3 +95,4 @@ C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\
 C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.DentalSurgeryVisitForm.resources
 C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.StaffServicesForm.resources
 C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.TreatmentConsentAndPaymentForm.resources
+C:\Users\w19051025\Downloads\Dental\RadiantDentalPractice\RadiantDentalPractice\obj\Debug\RadiantDentalPractice.views.SetAvailabilityForm.resources

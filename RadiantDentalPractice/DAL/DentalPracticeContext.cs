@@ -23,5 +23,6 @@ namespace RadiantDentalPractice.DAL
         public DbSet<Appointment> appointments { get; set; }
         public DbSet<TreatmentPlan> treatmentPlans { get; set; }
         public DbSet<Staff> staff_details { get; set; }        
+        public DbSet<StaffAvailability> staff_availability_details { get; set; }        
     }
 }

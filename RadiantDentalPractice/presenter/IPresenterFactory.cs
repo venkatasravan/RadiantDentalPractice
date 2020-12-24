@@ -28,5 +28,6 @@ namespace RadiantDentalPractice.presenter
             IPresenterFactory presenterFactory);
         StaffServicesPresenter getStaffServicesPresenter(IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory);
         AddStaffPresenter getAddStaffPresenter(IStaffRepository staffRepository);
+        SetAvailabilityPresenter getSetAvailabilityPresenter(IStaffRepository staffRepository);
     }
 }

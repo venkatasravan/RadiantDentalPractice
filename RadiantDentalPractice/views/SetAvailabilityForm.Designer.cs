@@ -46,6 +46,7 @@
             this.StaffNameTXT.Name = "StaffNameTXT";
             this.StaffNameTXT.Size = new System.Drawing.Size(168, 28);
             this.StaffNameTXT.TabIndex = 0;
+            this.StaffNameTXT.Click += new System.EventHandler(this.StaffNameTXT_Click);
             // 
             // label1
             // 
@@ -106,6 +107,7 @@
             this.Submit.TabIndex = 6;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = false;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // SetAvailabilityForm
             // 
