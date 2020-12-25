@@ -17,14 +17,11 @@ namespace RadiantDentalPractice.presenter
     */
     public class RadiantDentalPracticePresenter
     {
-
-        private RadiantDentalPracticeForm formView;
         private IPresenterFactory presenterFactory;
         private IRepositoryFactory repositoryFactory;
-        public RadiantDentalPracticePresenter(RadiantDentalPracticeForm formView,
+        public RadiantDentalPracticePresenter(
             IPresenterFactory presenterFactory, IRepositoryFactory repositoryFactory)
         {
-            this.formView = formView;
             this.presenterFactory = presenterFactory;
             this.repositoryFactory = repositoryFactory;
         }

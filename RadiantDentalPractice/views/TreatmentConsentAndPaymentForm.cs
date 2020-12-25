@@ -25,6 +25,10 @@ namespace RadiantDentalPractice.views
 
         public double treatmentCost
         {
+            get
+            {
+                return double.Parse(PaymentTXT.Text);
+            }
             
             set
             {

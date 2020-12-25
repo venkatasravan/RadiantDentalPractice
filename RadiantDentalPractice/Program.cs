@@ -29,7 +29,7 @@ namespace RadiantDentalPractice
 
             IRepositoryFactory repositoryFactory = new RepositoryFactory();
             IPresenterFactory presenterFactory = new PresenterFactory();
-            mainView.radiantDentalPracticePresenter = new RadiantDentalPracticePresenter(mainView, presenterFactory, repositoryFactory);
+            mainView.radiantDentalPracticePresenter = new RadiantDentalPracticePresenter(presenterFactory, repositoryFactory);
             Application.Run(mainView);
         }
     }

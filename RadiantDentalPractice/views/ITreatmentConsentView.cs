@@ -16,7 +16,7 @@ namespace RadiantDentalPractice.views
      */
     public interface ITreatmentConsentView
     {
-        double treatmentCost { set; }
+        double treatmentCost { get; set; }
         string consentText { get; set; }
         Boolean isAccepted { get; set; }
         TreatmentConsentPresenter treatmentConsentPresenter { get; set; }
