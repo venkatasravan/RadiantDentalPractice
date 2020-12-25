@@ -12,7 +12,7 @@ namespace RadiantDentalPracticeTests.Presenter
     /*
     * @author venkata sravan kumar
     * 
-    * 
+    * @author Priyanka pawar
     */
     [TestClass]
     public class RadiantDentalPracticePresenterTest
@@ -35,6 +35,58 @@ namespace RadiantDentalPracticeTests.Presenter
             RadiantDentalPracticePresenter radiantDentalPracticePresenter =
                 new RadiantDentalPracticePresenter(presenterFactory.Object, repositoryFactory.Object);
             radiantDentalPracticePresenter.registerPatient(patientView.Object);
+
+            // Bookupcheck
+            Mock<ICheckupView> checkupView = new Mock<ICheckupView>();
+
+
+
+            presenterFactory.Setup(x => x.getCheckUpPresenter(checkupView.Object, repositoryFactory.Object.getAppointmentRepository()));
+
+
+
+            radiantDentalPracticePresenter.bookCheckup(checkupView.Object);
+
+
+
+            //bookemergency
+
+
+
+            Mock<IEmergencyView> emergencyView = new Mock<IEmergencyView>();
+
+
+
+            presenterFactory.Setup(x => x.getEmergencyPresenter(emergencyView.Object, repositoryFactory.Object.getAppointmentRepository()));
+
+
+
+            radiantDentalPracticePresenter.bookEmergency(emergencyView.Object);
+
+
+
+            //recordtreatment
+
+
+
+            Mock<IRecordTreatmentForm> recordTreatmentForm = new Mock<IRecordTreatmentForm>();
+
+
+
+            RecordTreatmentPresenter recordTreatmentPresenter = new RecordTreatmentPresenter(presenterFactory.Object, repositoryFactory.Object.getTreatmentPlanRepository());
+            presenterFactory.Setup(x => x.getRecordTreatmentPresenter(presenterFactory.Object, repositoryFactory.Object.getTreatmentPlanRepository())).Returns(recordTreatmentPresenter);
+
+
+
+            radiantDentalPracticePresenter.recordTreatmentPlan(recordTreatmentForm.Object);
+
+
+
+            //OnDentalSurgeryVisit
+            Mock<IDentalSurgeryVisitView> dentalSurgeryVisitView = new Mock<IDentalSurgeryVisitView>();
+            DentalSurgeryVisitPresenter dentalSurgeryVisitPresenter = new DentalSurgeryVisitPresenter(repositoryFactory.Object, presenterFactory.Object);
+            presenterFactory.Setup(x => x.getDentalSurgeryVisitPresenter(repositoryFactory.Object, presenterFactory.Object)).Returns(dentalSurgeryVisitPresenter);
+            radiantDentalPracticePresenter.OnDentalSurgeryVisit(dentalSurgeryVisitView.Object);
         }
     }
 }

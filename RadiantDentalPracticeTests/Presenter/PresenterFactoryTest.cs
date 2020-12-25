@@ -13,7 +13,7 @@ namespace RadiantDentalPracticeTests.Presenter
     /*
     * @author venkata sravan kumar
     * 
-    * 
+    * @author Priyanka pawar
     */
     [TestClass]
     public class PresenterFactoryTest
@@ -65,6 +65,70 @@ namespace RadiantDentalPracticeTests.Presenter
                 emergencyView.Object, new AppointmentRepository());
 
             Assert.IsNotNull(emergencyPresenter);
+        }
+
+        [TestMethod]
+        public void testRecordTreatmentPresenter()
+        {
+            Mock<ITreatmentPlanRepository> treatmentPlanRepository = new Mock<ITreatmentPlanRepository>();
+            RecordTreatmentPresenter recordTreatmentPresenter = presenterFactory.getRecordTreatmentPresenter(
+                presenterFactory, treatmentPlanRepository.Object);
+
+
+
+            Assert.IsNotNull(recordTreatmentPresenter);
+        }
+        [TestMethod]
+        public void testTreatmentConsentPresenter()
+        {
+            Mock<ITreatmentPlanRepository> treatmentPlanRepository = new Mock<ITreatmentPlanRepository>();
+            TreatmentConsentPresenter treatmentConsentPresenter = presenterFactory.getTreatmentConsentPresenter(
+                treatmentPlanRepository.Object, new TreatmentPlan());
+
+
+
+            Assert.IsNotNull(treatmentConsentPresenter);
+        }
+        [TestMethod]
+        public void testDentalSurgeryVisitPresenter()
+        {
+            Mock<IRepositoryFactory> repositoryFactory = new Mock<IRepositoryFactory>();
+            DentalSurgeryVisitPresenter dentalSurgeryVisitPresenter = presenterFactory.getDentalSurgeryVisitPresenter(
+               repositoryFactory.Object, presenterFactory);
+
+
+
+            Assert.IsNotNull(dentalSurgeryVisitPresenter);
+        }
+        [TestMethod]
+        public void testAddStaffPresenter()
+        {
+            Mock<IStaffRepository> staffRepository = new Mock<IStaffRepository>();
+            AddStaffPresenter addStaffPresenter = presenterFactory.getAddStaffPresenter(staffRepository.Object);
+            Assert.IsNotNull(addStaffPresenter);
+        }
+        [TestMethod]
+        public void testStaffServicesPresenter()
+        {
+            Mock<IRepositoryFactory> repositoryFactory = new Mock<IRepositoryFactory>();
+            StaffServicesPresenter staffServicesPresenter = presenterFactory.getStaffServicesPresenter(presenterFactory, repositoryFactory.Object);
+            Assert.IsNotNull(staffServicesPresenter);
+        }
+        [TestMethod]
+        public void testSetAvailabilityPresenter()
+        {
+            Mock<IStaffRepository> staffRepository = new Mock<IStaffRepository>();
+            SetAvailabilityPresenter setAvailabilityPresenter = presenterFactory.getSetAvailabilityPresenter(
+                 staffRepository.Object);
+            Assert.IsNotNull(setAvailabilityPresenter);
+        }
+        [TestMethod]
+        public void testAppointmentsListPresenter()
+        {
+            Mock<IRepositoryFactory> repositoryFactory = new Mock<IRepositoryFactory>();
+            AppointmentsListPresenter appointmentsListPresenter = presenterFactory.getAppointmentsListPresenter(
+                 repositoryFactory.Object);
+            Assert.IsNotNull(appointmentsListPresenter);
         }
     }
 }
