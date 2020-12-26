@@ -30,6 +30,10 @@ namespace RadiantDentalPractice.views
         {
             get
             {
+                if (patientIDTXT.Text.Trim().Length == 0)
+                {
+                    patientIDTXT.Text = "0";
+                }
                 return int.Parse(patientIDTXT.Text);
             }
             set
@@ -44,28 +48,44 @@ namespace RadiantDentalPractice.views
          */
         public DentalSurgeryVisitPresenter dentalSurgeryVisitPresenter { get; set; }
 
+        public string errorMessage { get; set; }
+
+        private void validateInput()
+        {
+            errorMessage = "";
+            dentalSurgeryVisitPresenter.validate();
+        }
+
         private void next_Click(object sender, EventArgs e)
         {
-            // Check if patient is available with the given id
-            if(!dentalSurgeryVisitPresenter.isPatientAvailable(PatientID))
+            validateInput();
+            if (errorMessage.Length != 0)
             {
-                MessageBox.Show("Patient Not registered");
-                this.Close();
-            }
-            // check medcal history
-            Boolean result = dentalSurgeryVisitPresenter.checkMedicalQuestionHistory();
-            if(result)
-            {
-                Questionnaire questionnaire = new Questionnaire();
-                dentalSurgeryVisitPresenter.updateQuestions(questionnaire);
-                questionnaire.caller = this;
-                questionnaire.ShowDialog();
+                MessageBox.Show(errorMessage);
             }
             else
             {
-                MessageBox.Show("Medical History is up-to-date");
+                // Check if patient is available with the given id
+                if (!dentalSurgeryVisitPresenter.isPatientAvailable(PatientID))
+                {
+                    MessageBox.Show("Patient Not registered");
+                    this.Close();
+                }
+                // check medcal history
+                Boolean result = dentalSurgeryVisitPresenter.checkMedicalQuestionHistory();
+                if (result)
+                {
+                    Questionnaire questionnaire = new Questionnaire();
+                    dentalSurgeryVisitPresenter.updateQuestions(questionnaire);
+                    questionnaire.caller = this;
+                    questionnaire.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Medical History is up-to-date");
+                }
+                this.Close();
             }
-            this.Close();
         }
     }
 }

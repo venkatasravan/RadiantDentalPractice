@@ -18,5 +18,6 @@ namespace RadiantDentalPractice.views
         string name { get; set; }
         string role { get; set; }
         AddStaffPresenter addStaffPresenter { get; set; }
+        string errorMessage { get; set; }
     }
 }

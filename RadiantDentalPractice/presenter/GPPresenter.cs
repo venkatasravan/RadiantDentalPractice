@@ -60,7 +60,19 @@ namespace RadiantDentalPractice.presenter
 
         public void validate()
         {
-            throw new NotImplementedException();
+            validationChecks();
+        }
+        private void validationChecks()
+        {
+            if (view.name.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter GP name";
+            }
+            else if (view.address.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter GP address";
+            }
+
         }
     }
 }

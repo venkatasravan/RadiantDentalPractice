@@ -21,6 +21,7 @@ namespace RadiantDentalPractice.views
         string availabilityStatus { get; set; }
         SetAvailabilityPresenter setAvailabilityPresenter { get; set; }
         string[] availableStaff { get; set; }
-        string errorDescription { get; set; }
+
+        string errorMessage { get; set; }
     }
 }

@@ -32,6 +32,10 @@ namespace RadiantDentalPractice.views
         {
             get
             {
+                if(patientIDTXT.Text.Trim().Length == 0)
+                {
+                    patientIDTXT.Text = "0";
+                }
                 return int.Parse(patientIDTXT.Text);
             }
             set
@@ -71,6 +75,8 @@ namespace RadiantDentalPractice.views
          */
         public CheckUpPresenter checkUpPresenter { get; set; }
 
+        public string errorMessage { get; set; }
+
         /*
          * 
          * 
@@ -80,6 +86,7 @@ namespace RadiantDentalPractice.views
          */
         private void checkUpDateTXT_ValueChanged(object sender, EventArgs e)
         {
+            NoteTXT.Text = "";
             bookingSlotTXT.Items.Clear();
             bookingSlotTXT.Text = "";
             List<string> bookingSlots = AppointmentHelper.getCheckupSlots(checkUpDateTXT.Value);
@@ -92,34 +99,73 @@ namespace RadiantDentalPractice.views
             
             List<string> availableSlots = bookingSlots.Except(bookedSlots).ToList();
 
+            if(availableSlots.Count==0)
+            {
+                NoteTXT.Text = "Note: Slots not available for this day. Please select next day";
+            }
+
+            if (availableSlots.Count == 0 && checkUpDateTXT.Value.CompareTo(DateTime.Now.AddDays(7))<= 0)
+            {
+                DayOfWeek dayOfWeek = DateTime.Now.AddDays(7).DayOfWeek;
+                if(dayOfWeek == DayOfWeek.Saturday)
+                {
+                    dayOfWeek = DateTime.Now.AddDays(9).DayOfWeek;
+                }
+                else if (dayOfWeek == DayOfWeek.Sunday)
+                {
+                    dayOfWeek = DateTime.Now.AddDays(8).DayOfWeek;
+                }
+                NoteTXT.Text = "Note: You can not book slots this week. Try to select from "+dayOfWeek.ToString() + " of next week";
+            }
 
             bookingSlotTXT.Items.AddRange(availableSlots.ToArray());
         }
 
+        private void validateInput()
+        {
+            errorMessage = "";
+            NoteTXT.Text = "";
+            checkUpPresenter.validate();
+        }
+
         private void Book_Click(object sender, EventArgs e)
         {
-            if(!checkUpPresenter.isPatientAvailable(patientID))
+            validateInput();
+            if (errorMessage.Length != 0)
             {
-                MessageBox.Show("Patient Not registered");
+                MessageBox.Show(errorMessage);
+            }
+            else
+            {
+                if (!checkUpPresenter.isPatientAvailable(patientID))
+                {
+                    MessageBox.Show("Patient Not registered");
+                    this.Close();
+                }
+                try
+                {
+                    int result = checkUpPresenter.CreateCheckupBooking();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("CheckUp Appointment Booked");
+                    }
+                    else
+                    {
+                        MessageBox.Show("CheckUp Appointment Not Successful");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error Occured during CheckUp Appointment");
+                }
                 this.Close();
             }
-            try
-            {
-                int result = checkUpPresenter.CreateCheckupBooking();
-                if (result > 0)
-                {
-                    MessageBox.Show("CheckUp Appointment Booked");
-                }
-                else
-                {
-                    MessageBox.Show("CheckUp Appointment Not Successful");
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error Occured during CheckUp Appointment");
-            }
-            this.Close();
+            
+        }
+
+        private void CheckUpForm_Load(object sender, EventArgs e)
+        {
+            NoteTXT.Text = "Note: You can only book one week in advance. except saturday and sunday";
         }
     }
 }

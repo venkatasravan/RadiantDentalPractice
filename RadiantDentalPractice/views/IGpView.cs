@@ -19,5 +19,6 @@ namespace RadiantDentalPractice.views
         string name { get; set; }
         string address { get; set; }
         GPPresenter gPPresenter { get; set; }
+        string errorMessage { get; set; }
     }
 }

@@ -112,7 +112,7 @@ namespace RadiantDentalPractice.views
          * validation checks
          * 
          */
-        public void validatePatient()
+        private void validatePatient()
         {
             errorMessage = "";
             patientPresenter.validate();

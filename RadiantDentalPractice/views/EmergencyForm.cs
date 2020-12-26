@@ -29,6 +29,10 @@ namespace RadiantDentalPractice.views
         {
             get
             {
+                if (patientIDTXT.Text.Trim().Length == 0)
+                {
+                    patientIDTXT.Text = "0";
+                }
                 return int.Parse(patientIDTXT.Text);
             }
             set
@@ -61,30 +65,46 @@ namespace RadiantDentalPractice.views
         }
         public EmergencyPresenter emergencyPresenter { get; set; }
 
+        public string errorMessage { get; set; }
+
+        private void validateInput()
+        {
+            errorMessage = "";
+            emergencyPresenter.validate();
+        }
+
         private void Book_Click(object sender, EventArgs e)
         {
-            if (!emergencyPresenter.isPatientAvailable(patientID))
+            validateInput();
+            if (errorMessage.Length != 0)
             {
-                MessageBox.Show("Patient Not registered");
+                MessageBox.Show(errorMessage);
+            }
+            else
+            {
+                if (!emergencyPresenter.isPatientAvailable(patientID))
+                {
+                    MessageBox.Show("Patient Not registered");
+                    this.Close();
+                }
+                try
+                {
+                    int result = emergencyPresenter.CreateEmergencyBooking();
+                    if (result > 0)
+                    {
+                        MessageBox.Show("Emergency Appointment Booked");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Emergency Appointment Not Successful");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error Occured during Emergency Appointment");
+                }
                 this.Close();
-            }
-            try
-            {
-                int result = emergencyPresenter.CreateEmergencyBooking();
-                if (result > 0)
-                {
-                    MessageBox.Show("Emergency Appointment Booked");
-                }
-                else
-                {
-                    MessageBox.Show("Emergency Appointment Not Successful");
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error Occured during Emergency Appointment");
-            }
-            this.Close();
+            }            
         }
 
         /*
@@ -107,8 +127,20 @@ namespace RadiantDentalPractice.views
 
             List<string> availableSlots = bookingSlots.Except(bookedSlots).ToList();
 
+            if (availableSlots.Count == 0)
+            {
+                NoteTXT.Text = "Note: Slots not available for this day. Please select next day";
+            }
+
+            
+
 
             bookingSlotTXT.Items.AddRange(availableSlots.ToArray());
+        }
+
+        private void EmergencyForm_Load(object sender, EventArgs e)
+        {
+            NoteTXT.Text = "Note: You can only book from next day. except saturday and sunday";
         }
     }
 }

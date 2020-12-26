@@ -67,20 +67,36 @@ namespace RadiantDentalPractice.views
          */
         public AddStaffPresenter addStaffPresenter { get; set; }
 
+        public string errorMessage { get; set; }
+
+        private void validateInput()
+        {
+            errorMessage = "";
+            addStaffPresenter.validate();
+        }
+
         private void Submit_Click(object sender, EventArgs e)
         {
             
             int? staff_id;
-            try
+            validateInput();
+            if (errorMessage.Length != 0)
             {
-                staff_id = addStaffPresenter.insertStaff();
-                MessageBox.Show("Staff Registration Successful \n Your StaffID is " + staff_id);
+                MessageBox.Show(errorMessage);
             }
-            catch
+            else
             {
-                MessageBox.Show("Staff Registration Not Successful");
+                try
+                {
+                    staff_id = addStaffPresenter.insertStaff();
+                    MessageBox.Show("Staff Registration Successful \n Your StaffID is " + staff_id);
+                }
+                catch
+                {
+                    MessageBox.Show("Staff Registration Not Successful");
+                }
+                this.Close();
             }
-            this.Close();
         }
     }
 }

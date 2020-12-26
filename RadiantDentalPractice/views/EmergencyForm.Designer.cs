@@ -35,6 +35,7 @@
             this.bookingDateTXT = new System.Windows.Forms.DateTimePicker();
             this.bookingSlotTXT = new System.Windows.Forms.ComboBox();
             this.Book = new System.Windows.Forms.Button();
+            this.NoteTXT = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -97,7 +98,7 @@
             // 
             this.Book.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Book.Location = new System.Drawing.Point(361, 287);
+            this.Book.Location = new System.Drawing.Point(361, 303);
             this.Book.Name = "Book";
             this.Book.Size = new System.Drawing.Size(123, 37);
             this.Book.TabIndex = 6;
@@ -105,11 +106,21 @@
             this.Book.UseVisualStyleBackColor = false;
             this.Book.Click += new System.EventHandler(this.Book_Click);
             // 
+            // NoteTXT
+            // 
+            this.NoteTXT.AutoSize = true;
+            this.NoteTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoteTXT.Location = new System.Drawing.Point(210, 246);
+            this.NoteTXT.Name = "NoteTXT";
+            this.NoteTXT.Size = new System.Drawing.Size(0, 17);
+            this.NoteTXT.TabIndex = 7;
+            // 
             // EmergencyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NoteTXT);
             this.Controls.Add(this.Book);
             this.Controls.Add(this.bookingSlotTXT);
             this.Controls.Add(this.bookingDateTXT);
@@ -119,6 +130,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EmergencyForm";
             this.Text = "EmergencyForm";
+            this.Load += new System.EventHandler(this.EmergencyForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +145,6 @@
         private System.Windows.Forms.DateTimePicker bookingDateTXT;
         private System.Windows.Forms.ComboBox bookingSlotTXT;
         private System.Windows.Forms.Button Book;
+        private System.Windows.Forms.Label NoteTXT;
     }
 }

@@ -44,5 +44,26 @@ namespace RadiantDentalPractice.presenter
         {
             return staffRepository.retrieveStaff();
         }
+
+        public void validate()
+        {
+            validationChecks();
+        }
+        private void validationChecks()
+        {
+            if (view.name.Trim().Length == 0)
+            {
+                view.errorMessage = "Please select name";
+            }
+            else if (view.selectedDate.CompareTo(DateTime.Now) <= 0)
+            {
+                view.errorMessage = "Please select future date";
+            }
+            else if (view.availabilityStatus.Trim().Length == 0)
+            {
+                view.errorMessage = "Please select Availability Status";
+            }
+
+        }
     }
 }

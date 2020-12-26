@@ -19,5 +19,6 @@ namespace RadiantDentalPractice.views
         DateTime bookingDate { get; set; }
         string bookingSlot { get; set; }
         CheckUpPresenter checkUpPresenter { get; set; }
+        string errorMessage { get; set; }
     }
 }

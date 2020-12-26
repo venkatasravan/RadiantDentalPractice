@@ -29,6 +29,10 @@ namespace RadiantDentalPractice.views
         {
             get
             {
+                if (patientIDTXT.Text.Trim().Length == 0)
+                {
+                    patientIDTXT.Text = "0";
+                }
                 return int.Parse(patientIDTXT.Text);
             }
             set
@@ -78,21 +82,38 @@ namespace RadiantDentalPractice.views
             proposedTreatmentList.Items.Add("FILLINGS");
         }
 
+        public string errorMessage { get; set; }
+
+        private void validateInput()
+        {
+            errorMessage = "";
+            recordTreatmentPresenter.validate();
+        }
+
         private void Next_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TreatmentConsentAndPaymentForm treatmentConsentAndPaymentForm = new TreatmentConsentAndPaymentForm();
-            recordTreatmentPresenter.recordTreatementPlan(treatmentConsentAndPaymentForm);
-            if (!recordTreatmentPresenter.isPatientAvailable(patientID))
+            validateInput();
+            if (errorMessage.Length != 0)
             {
-                MessageBox.Show("Patient Not registered");
+                MessageBox.Show(errorMessage);
             }
             else
             {
-                treatmentConsentAndPaymentForm.ShowDialog();
-            }
+                this.Hide();
+                TreatmentConsentAndPaymentForm treatmentConsentAndPaymentForm = new TreatmentConsentAndPaymentForm();
+                recordTreatmentPresenter.recordTreatementPlan(treatmentConsentAndPaymentForm);
+                if (!recordTreatmentPresenter.isPatientAvailable(patientID))
+                {
+                    MessageBox.Show("Patient Not registered");
+                }
+                else
+                {
+                    treatmentConsentAndPaymentForm.ShowDialog();
+                }
 
-            this.Close();
+                this.Close();
+            }
+            
         }
     }
 }

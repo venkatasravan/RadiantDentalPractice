@@ -19,5 +19,6 @@ namespace RadiantDentalPractice.views
         string treatmentNotes { get; set; }
         string proposedTreatmentValue { get; set; }
         RecordTreatmentPresenter recordTreatmentPresenter { get; set; }
+        string errorMessage { get; set; }
     }
 }

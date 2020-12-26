@@ -50,23 +50,39 @@ namespace RadiantDentalPractice.views
          */
         public Form caller { get; set; }
 
-        
+        public string errorMessage { get; set; }
+
+        private void validateInput()
+        {
+            errorMessage = "";
+            questionnairePresenter.validate();
+        }
+
+
 
         private void Next_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            if (caller is PatientRegistration)
+            validateInput();
+            if (errorMessage.Length != 0)
             {
-                GP_Practice gP_Practice = new GP_Practice();
-                questionnairePresenter.updatePatient(gP_Practice);
-                gP_Practice.ShowDialog();
+                MessageBox.Show(errorMessage);
             }
             else
             {
-                questionnairePresenter.updateExistingPatient();
+                this.Hide();
+                if (caller is PatientRegistration)
+                {
+                    GP_Practice gP_Practice = new GP_Practice();
+                    questionnairePresenter.updatePatient(gP_Practice);
+                    gP_Practice.ShowDialog();
+                }
+                else
+                {
+                    questionnairePresenter.updateExistingPatient();
+                }
+
+                this.Close();
             }
-            
-            this.Close();
         }
 
         /*

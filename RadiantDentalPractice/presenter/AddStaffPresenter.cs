@@ -30,5 +30,21 @@ namespace RadiantDentalPractice.presenter
             staff.role = view.role;
             return staffRepository.addStaff(staff);
         }
+
+        public void validate()
+        {
+            validationChecks();
+        }
+        private void validationChecks()
+        {
+            if (view.name.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter name";
+            }
+            else if (view.role.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter Role";
+            }
+        }
     }
 }

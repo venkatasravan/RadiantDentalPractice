@@ -39,5 +39,26 @@ namespace RadiantDentalPractice.presenter
         {
             return PatientHelper.isPatientAvailable(patientID);
         }
+
+        public void validate()
+        {
+            validationChecks();
+        }
+        private void validationChecks()
+        {
+            if (emergencyView.patientID == 0)
+            {
+                emergencyView.errorMessage = "Please enter patientID";
+            }
+            else if (emergencyView.bookingDate.CompareTo(DateTime.Now) <= 0)
+            {
+                emergencyView.errorMessage = "Please enter Future date";
+            }
+            else if (emergencyView.bookingSlot.Trim().Length == 0)
+            {
+                emergencyView.errorMessage = "Please select bookingSlot";
+            }
+
+        }
     }
 }

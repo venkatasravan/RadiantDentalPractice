@@ -62,8 +62,15 @@ namespace RadiantDentalPractice.views
             }
         }
         public string[] availableStaff { get; set; }
-        public string errorDescription { get; set; }
         public SetAvailabilityPresenter setAvailabilityPresenter { get; set; }
+
+        public string errorMessage { get; set; }
+
+        private void validateInput()
+        {
+            errorMessage = "";
+            setAvailabilityPresenter.validate();
+        }
 
         private void loadAvailabilityOptions()
         {
@@ -81,27 +88,23 @@ namespace RadiantDentalPractice.views
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            errorDescription = "";
-            ValidateChecks();
-            if(errorDescription.Length == 0 && setAvailabilityPresenter.setAvailability())
+            validateInput();
+            if (errorMessage.Length != 0)
             {
-                MessageBox.Show("Your availability is updated accordingly");
+                MessageBox.Show(errorMessage);
             }
             else
             {
-                MessageBox.Show("Unable to update please check your details");
-            }
-            this.Close();
-        }
-
-        // validation checks can go here
-        private void ValidateChecks()
-        {
-            if(SelectedDateTXT.Value < DateTime.Now)
-            {
-                MessageBox.Show("InValid Date");
-                errorDescription = "InValid Date";
-            }
+                if (setAvailabilityPresenter.setAvailability())
+                {
+                    MessageBox.Show("Your availability is updated accordingly");
+                }
+                else
+                {
+                    MessageBox.Show("Unable to update, please check your details");
+                }
+                this.Close();
+            }            
         }
 
         private void StaffNameTXT_Click(object sender, EventArgs e)

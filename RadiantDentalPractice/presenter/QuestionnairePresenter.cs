@@ -49,9 +49,16 @@ namespace RadiantDentalPractice.presenter
 
         public void validate()
         {
-            throw new NotImplementedException();
+            validationChecks();
         }
+        private void validationChecks()
+        {
+            if (view.questions.Values.ToList().Contains(""))
+            {
+                view.errorMessage = "You must answer all three questions";
+            }
 
+        }
         private void updateQuestions()
         {
             foreach (KeyValuePair<string, string> entry in view.questions)

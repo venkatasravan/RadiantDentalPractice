@@ -22,7 +22,7 @@ namespace RadiantDentalPractice.Helper
         public static List<string> getCheckupSlots(DateTime bookingDate)
         {
             List<string> checkUpSlots = new List<string>();
-            DateTime dateTime = new DateTime(bookingDate.Year, bookingDate.Month, bookingDate.Day, 8, 0, 0);
+            DateTime dateTime = new DateTime(bookingDate.Year, bookingDate.Month, bookingDate.Day, 9, 0, 0);
             if (dateTime.DayOfWeek == DayOfWeek.Saturday || dateTime.DayOfWeek == DayOfWeek.Sunday)
             {
                 return checkUpSlots;
@@ -33,8 +33,8 @@ namespace RadiantDentalPractice.Helper
             }
             for (int i = 0; checkUpSlots.Count < ApplicationConstants.DAILY_CHECKUP_SLOTS; i++)
             {
-                DateTime startSlot = dateTime.AddMinutes(i * (2 * ApplicationConstants.CHECKUP_DURATION));
-                DateTime endSlot = dateTime.AddMinutes((i + 1) * (2 * ApplicationConstants.CHECKUP_DURATION));
+                DateTime startSlot = dateTime.AddMinutes(i * (ApplicationConstants.CHECKUP_DURATION));
+                DateTime endSlot = dateTime.AddMinutes((i + 1) * (ApplicationConstants.CHECKUP_DURATION));
                 if (startSlot.Hour == ApplicationConstants.BREAK_HOUR)
                 {
                     continue;

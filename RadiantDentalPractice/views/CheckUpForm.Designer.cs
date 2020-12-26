@@ -35,6 +35,7 @@
             this.bookingSlotTXT = new System.Windows.Forms.ComboBox();
             this.BookingSlot = new System.Windows.Forms.Label();
             this.Book = new System.Windows.Forms.Button();
+            this.NoteTXT = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -96,8 +97,8 @@
             // Book
             // 
             this.Book.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Book.Location = new System.Drawing.Point(365, 266);
+            this.Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Book.Location = new System.Drawing.Point(368, 294);
             this.Book.Name = "Book";
             this.Book.Size = new System.Drawing.Size(108, 35);
             this.Book.TabIndex = 6;
@@ -105,11 +106,22 @@
             this.Book.UseVisualStyleBackColor = false;
             this.Book.Click += new System.EventHandler(this.Book_Click);
             // 
+            // NoteTXT
+            // 
+            this.NoteTXT.AutoSize = true;
+            this.NoteTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoteTXT.Location = new System.Drawing.Point(171, 252);
+            this.NoteTXT.Name = "NoteTXT";
+            this.NoteTXT.Size = new System.Drawing.Size(47, 17);
+            this.NoteTXT.TabIndex = 7;
+            this.NoteTXT.Text = "Note:";
+            // 
             // CheckUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NoteTXT);
             this.Controls.Add(this.Book);
             this.Controls.Add(this.BookingSlot);
             this.Controls.Add(this.bookingSlotTXT);
@@ -119,6 +131,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CheckUpForm";
             this.Text = "CheckUpForm";
+            this.Load += new System.EventHandler(this.CheckUpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +146,6 @@
         private System.Windows.Forms.ComboBox bookingSlotTXT;
         private System.Windows.Forms.Label BookingSlot;
         private System.Windows.Forms.Button Book;
+        private System.Windows.Forms.Label NoteTXT;
     }
 }

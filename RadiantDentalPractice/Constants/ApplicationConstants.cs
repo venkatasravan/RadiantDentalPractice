@@ -13,7 +13,7 @@ namespace RadiantDentalPractice.Constants
     */
     public sealed class ApplicationConstants
     {
-        public const int DAILY_CHECKUP_SLOTS = 20;
+        public const int DAILY_CHECKUP_SLOTS = 30;
         public const int DAILY_EMERGENCY_SLOTS = 2;
         public const int DAILY_SURGERY_SLOTS = 6;
         // Duration is in Minutes

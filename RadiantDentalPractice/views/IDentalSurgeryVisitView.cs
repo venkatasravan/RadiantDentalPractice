@@ -20,5 +20,6 @@ namespace RadiantDentalPractice.views
     {
         int PatientID { get; set; }
         DentalSurgeryVisitPresenter dentalSurgeryVisitPresenter { get; set; }
+        string errorMessage { get; set; }
     }
 }

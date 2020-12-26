@@ -53,6 +53,27 @@ namespace RadiantDentalPractice.presenter
             treatmentConsentPresenter.view.treatmentCost = treatmentPlan.treatmentConsentAndPayment.treatmentCost;
         }
 
+        public void validate()
+        {
+            validationChecks();
+        }
+        private void validationChecks()
+        {
+            if (view.patientID == 0)
+            {
+                view.errorMessage = "Please enter patientID";
+            }
+            else if (view.treatmentNotes.Trim().Length == 0)
+            {
+                view.errorMessage = "Please enter treatmentNotes";
+            }
+            else if (view.proposedTreatmentValue.Trim().Length == 0)
+            {
+                view.errorMessage = "Please select Proposed treatment";
+            }
+
+        }
+
         public Boolean isPatientAvailable(int patientID)
         {
             return PatientHelper.isPatientAvailable(patientID);

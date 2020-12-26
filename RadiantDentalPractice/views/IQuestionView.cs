@@ -19,5 +19,6 @@ namespace RadiantDentalPractice.views
     {
         Dictionary<string, string> questions { get; set; }
         QuestionnairePresenter questionnairePresenter { get; set; }
+        string errorMessage { get; set; }
     }
 }

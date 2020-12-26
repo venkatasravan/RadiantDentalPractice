@@ -65,5 +65,17 @@ namespace RadiantDentalPractice.presenter
         {
             return PatientHelper.isPatientAvailable(patientID);
         }
+
+        public void validate()
+        {
+            validationChecks();
+        }
+        private void validationChecks()
+        {
+            if (view.PatientID == 0)
+            {
+                view.errorMessage = "Please enter patientID";
+            }
+        }
     }
 }

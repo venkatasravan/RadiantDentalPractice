@@ -52,36 +52,53 @@ namespace RadiantDentalPractice.views
             }
         }
 
+        public string errorMessage { get; set; }
+
+        private void validateInput()
+        {
+            errorMessage = "";
+            gPPresenter.validate();
+        }
+
         private void Submit_Click(object sender, EventArgs e)
         {
-            int? patientID = null;
-            try
+            validateInput();
+            if (errorMessage.Length != 0)
             {
-                patientID = gPPresenter.updatePatient();
-                MessageBox.Show("Patient Registration Successful \n Your PatientID is " + patientID);
+                MessageBox.Show(errorMessage);
             }
-            catch
+            else
             {
-                MessageBox.Show("Patient Registration Not Successful");
-            }
-            if(patientID!=null)
-            {
-                // Give the option to the patient to book checkup
-                DialogResult checkupBooking = MessageBox.Show("Do You want to Book for the checkup?",
-                    "CheckUp Booking", MessageBoxButtons.YesNo);
-                if (checkupBooking == DialogResult.Yes)
+                int? patientID = null;
+                try
                 {
-                    CheckUpForm checkUpForm = new CheckUpForm();
-                    gPPresenter.registerCheckupPresenter(checkUpForm);
-                    checkUpForm.ShowDialog();
+                    patientID = gPPresenter.updatePatient();
+                    MessageBox.Show("Patient Registration Successful \n Your PatientID is " + patientID);
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Thanks for Registering with us. Have a Nice day");
+                    MessageBox.Show("Patient Registration Not Successful");
                 }
+                if (patientID != null)
+                {
+                    // Give the option to the patient to book checkup
+                    DialogResult checkupBooking = MessageBox.Show("Do You want to Book for the checkup?",
+                        "CheckUp Booking", MessageBoxButtons.YesNo);
+                    if (checkupBooking == DialogResult.Yes)
+                    {
+                        CheckUpForm checkUpForm = new CheckUpForm();
+                        gPPresenter.registerCheckupPresenter(checkUpForm);
+                        checkUpForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thanks for Registering with us. Have a Nice day");
+                    }
+                }
+
+                this.Close();
             }
             
-            this.Close();
 
         }
     }
