@@ -33,6 +33,7 @@ namespace RadiantDentalPracticeTests.Presenter
             patientpresenter.view.phoneNumber = "1234567890";
             patientpresenter.view.dob = DateTime.Now;
             patientpresenter.RegisterPatient(questionview.Object);
+            //patientpresenter.validate();
         }
     }
 }

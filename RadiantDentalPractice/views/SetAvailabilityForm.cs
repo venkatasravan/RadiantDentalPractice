@@ -111,5 +111,14 @@ namespace RadiantDentalPractice.views
         {
             StaffNameTXT.Items.AddRange(availableStaff);
         }
+
+        private void SetAvailabilityForm_Load(object sender, EventArgs e)
+        {
+            if(availableStaff is null)
+            {
+                MessageBox.Show("Please add staff first");
+                this.Close();
+            }
+        }
     }
 }

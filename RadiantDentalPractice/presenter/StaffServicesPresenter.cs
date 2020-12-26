@@ -51,6 +51,10 @@ namespace RadiantDentalPractice.presenter
         {
             HashSet<string> staffs = new HashSet<string>();
             List<Staff> staff_details = repositoryFactory.getStaffRepository().retrieveStaff();
+            if (staff_details is null)
+            {
+                return null;
+            }
             foreach(Staff staff in staff_details)
             {
                 staffs.Add(staff.name);

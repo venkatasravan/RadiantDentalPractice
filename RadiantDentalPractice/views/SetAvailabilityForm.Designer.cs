@@ -123,6 +123,7 @@
             this.Controls.Add(this.StaffNameTXT);
             this.Name = "SetAvailabilityForm";
             this.Text = "SetAvailabilityForm";
+            this.Load += new System.EventHandler(this.SetAvailabilityForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
