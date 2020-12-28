@@ -106,14 +106,14 @@ namespace RadiantDentalPractice.views
 
             if (availableSlots.Count == 0 && checkUpDateTXT.Value.CompareTo(DateTime.Now.AddDays(7))<= 0)
             {
-                DayOfWeek dayOfWeek = DateTime.Now.AddDays(7).DayOfWeek;
+                DayOfWeek dayOfWeek = DateTime.Now.AddDays(8).DayOfWeek;
                 if(dayOfWeek == DayOfWeek.Saturday)
                 {
-                    dayOfWeek = DateTime.Now.AddDays(9).DayOfWeek;
+                    dayOfWeek = DateTime.Now.AddDays(10).DayOfWeek;
                 }
                 else if (dayOfWeek == DayOfWeek.Sunday)
                 {
-                    dayOfWeek = DateTime.Now.AddDays(8).DayOfWeek;
+                    dayOfWeek = DateTime.Now.AddDays(9).DayOfWeek;
                 }
                 NoteTXT.Text = "Note: You can not book slots this week. Try to select from "+dayOfWeek.ToString() + " of next week";
             }

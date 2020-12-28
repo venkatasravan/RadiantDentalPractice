@@ -27,13 +27,13 @@ namespace RadiantDentalPractice.presenter
 
         public List<AppointmentList> getAppointments()
         {
-            List<Appointment> bookedAppointments = repositoryFactory.getAppointmentRepository().getBookings();
-            List<TreatmentPlan> treatmentPlans = repositoryFactory.getTreatmentPlanRepository().getTreatmentPlans();
+            List<Appointment> bookedAppointments = ((IAppointmentRepository)repositoryFactory.getRepository("APPOINTMENT")).getBookings();
+            List<TreatmentPlan> treatmentPlans = ((ITreatmentPlanRepository)repositoryFactory.getRepository("TREATMENTPLAN")).getTreatmentPlans();
             foreach(Appointment appointment in bookedAppointments)
             {
                 AppointmentList appointments= new AppointmentList();
                 appointments.patientID = appointment.patientID;
-                Patient patient = repositoryFactory.getPatientRepository().getPatient(appointment.patientID);
+                Patient patient = ((IPatientRepository)repositoryFactory.getRepository("PATIENT")).getPatient(appointment.patientID);
                 appointments.email = patient.email;
                 appointments.treatmentType = appointment.treatmentType;
                 appointments.bookingSlot = appointment.bookingSlot;
@@ -44,7 +44,7 @@ namespace RadiantDentalPractice.presenter
             {
                 AppointmentList appointments = new AppointmentList();
                 appointments.patientID = treatmentPlan.patientID;
-                Patient patient = repositoryFactory.getPatientRepository().getPatient(treatmentPlan.patientID);
+                Patient patient = ((IPatientRepository)repositoryFactory.getRepository("PATIENT")).getPatient(treatmentPlan.patientID);
                 appointments.email = patient.email;
                 appointments.treatmentType = treatmentPlan.proposedTreatment;
                 appointments.bookingSlot = "NOT BOOKED";

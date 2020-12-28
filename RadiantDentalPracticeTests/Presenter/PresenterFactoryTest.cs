@@ -52,7 +52,7 @@ namespace RadiantDentalPracticeTests.Presenter
         {
             Mock<ICheckupView> checkupView = new Mock<ICheckupView>();
             CheckUpPresenter checkUpPresenter = presenterFactory.getCheckUpPresenter(
-                checkupView.Object, new AppointmentRepository());
+                checkupView.Object, AppointmentRepository.getInstance());
 
             Assert.IsNotNull(checkUpPresenter);
         }
@@ -62,7 +62,7 @@ namespace RadiantDentalPracticeTests.Presenter
         {
             Mock<IEmergencyView> emergencyView = new Mock<IEmergencyView>();
             EmergencyPresenter emergencyPresenter = presenterFactory.getEmergencyPresenter(
-                emergencyView.Object, new AppointmentRepository());
+                emergencyView.Object, AppointmentRepository.getInstance());
 
             Assert.IsNotNull(emergencyPresenter);
         }

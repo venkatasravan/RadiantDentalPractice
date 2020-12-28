@@ -18,6 +18,17 @@ namespace RadiantDentalPractice.Repository
      */
     public class TreatmentPlanRepository : ITreatmentPlanRepository
     {
+
+        private static ITreatmentPlanRepository treatmentPlanRepository = new TreatmentPlanRepository();
+
+        private TreatmentPlanRepository()
+        {
+
+        }
+        public static ITreatmentPlanRepository getInstance()
+        {
+            return treatmentPlanRepository;
+        }
         /*
          * insert treatment plan
          * 

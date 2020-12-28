@@ -15,6 +15,17 @@ namespace RadiantDentalPractice.Repository
      */
     public class StaffRepository : IStaffRepository
     {
+
+        private static IStaffRepository staffRepository = new StaffRepository();
+
+        private StaffRepository()
+        {
+
+        }
+        public static IStaffRepository getInstance()
+        {
+            return staffRepository;
+        }
         /*
          * add staff details
          * 

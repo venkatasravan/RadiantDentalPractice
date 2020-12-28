@@ -73,7 +73,7 @@ namespace RadiantDentalPractice.presenter
 
         public void updateExistingPatient()
         {
-            IPatientRepository patientRepository = repositoryFactory.getPatientRepository();
+            IPatientRepository patientRepository = ((IPatientRepository)repositoryFactory.getRepository("PATIENT"));
             patientRepository.updatePatientQuestions(patientID,view.questions);
         }
     }

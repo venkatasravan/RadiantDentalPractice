@@ -31,7 +31,7 @@ namespace RadiantDentalPracticeTests.Presenter
             AddStaffPresenter addStaffPresenter = new AddStaffPresenter(staffRepository.Object);
 
             presenterFactory.Setup(x => x.getAddStaffPresenter(It.IsAny<IStaffRepository>())).Returns(addStaffPresenter);
-            repositoryFactory.Setup(x => x.getStaffRepository()).Returns(staffRepository.Object);
+            repositoryFactory.Setup(x => x.getRepository(It.IsAny<string>())).Returns(staffRepository.Object);
 
             StaffServicesPresenter staffServices = new StaffServicesPresenter(presenterFactory.Object, repositoryFactory.Object);
             staffServices.addStaff(addStaffView.Object);

@@ -57,8 +57,8 @@ namespace RadiantDentalPractice.Helper
 
         public static List<string> bookedCheckupSlots(DateTime bookedDate)
         {
-            IAppointmentRepository appointmentRepository = repositoryFactory.getAppointmentRepository();
-            List<string> bookedSlots = appointmentRepository.bookedSlots(bookedDate,"CHCEKUP");
+            IAppointmentRepository appointmentRepository = (IAppointmentRepository)repositoryFactory.getRepository("APPOINTMENT");
+            List<string> bookedSlots = appointmentRepository.bookedSlots(bookedDate,"CHECKUP");
             return bookedSlots;
         }
 
@@ -101,7 +101,7 @@ namespace RadiantDentalPractice.Helper
 
         public static List<string> bookedEmergencySlots(DateTime bookedDate)
         {
-            IAppointmentRepository appointmentRepository = repositoryFactory.getAppointmentRepository();
+            IAppointmentRepository appointmentRepository = (IAppointmentRepository)repositoryFactory.getRepository("APPOINTMENT");
             List<string> bookedSlots = appointmentRepository.bookedSlots(bookedDate,"EMERGENCY");
             return bookedSlots;
         }

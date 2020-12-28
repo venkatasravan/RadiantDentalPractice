@@ -25,7 +25,7 @@ namespace RadiantDentalPracticeTests.Presenter
             Mock<IDentalSurgeryVisitView> dentalSurgeryVisitView = new Mock<IDentalSurgeryVisitView>();
             Mock<IPatientRepository> patientRepository = new Mock<IPatientRepository>();
 
-            repositoryFactory.Setup(x => x.getPatientRepository()).Returns(patientRepository.Object);
+            repositoryFactory.Setup(x => x.getRepository(It.IsAny<string>())).Returns(patientRepository.Object);
             patientRepository.Setup(x => x.isMedicalQuestionExpired(It.IsAny<int>())).Returns(false);
 
             DentalSurgeryVisitPresenter dentalSurgeryVisitPresenter = new

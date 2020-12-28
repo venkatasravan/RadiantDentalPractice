@@ -26,7 +26,7 @@ namespace RadiantDentalPractice.presenter
         public void addStaff(IAddStaffView addStaffView)
         {
             AddStaffPresenter addStaffPresenter = presenterFactory.
-                getAddStaffPresenter(repositoryFactory.getStaffRepository());
+                getAddStaffPresenter(((IStaffRepository)repositoryFactory.getRepository("STAFF")));
             addStaffPresenter.view = addStaffView;
             addStaffView.addStaffPresenter = addStaffPresenter;
         }
@@ -34,7 +34,7 @@ namespace RadiantDentalPractice.presenter
         public void setAvailability(ISetAvailabilityView setAvailabilityView)
         {
             SetAvailabilityPresenter setAvailabilityPresenter = presenterFactory.
-                getSetAvailabilityPresenter(repositoryFactory.getStaffRepository());
+                getSetAvailabilityPresenter(((IStaffRepository)repositoryFactory.getRepository("STAFF")));
             setAvailabilityPresenter.view = setAvailabilityView;
             setAvailabilityView.setAvailabilityPresenter = setAvailabilityPresenter;
             setAvailabilityView.availableStaff = loadStaffDetails();
@@ -50,7 +50,7 @@ namespace RadiantDentalPractice.presenter
         public string[] loadStaffDetails()
         {
             HashSet<string> staffs = new HashSet<string>();
-            List<Staff> staff_details = repositoryFactory.getStaffRepository().retrieveStaff();
+            List<Staff> staff_details = ((IStaffRepository)repositoryFactory.getRepository("STAFF")).retrieveStaff();
             if (staff_details is null)
             {
                 return null;

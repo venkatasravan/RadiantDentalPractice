@@ -39,7 +39,7 @@ namespace RadiantDentalPractice.presenter
          */
         public Boolean checkMedicalQuestionHistory()
         {
-            IPatientRepository patientRepository = repositoryFactory.getPatientRepository();
+            IPatientRepository patientRepository = ((IPatientRepository)repositoryFactory.getRepository("PATIENT"));
             return patientRepository.isMedicalQuestionExpired(view.PatientID);
         }
 

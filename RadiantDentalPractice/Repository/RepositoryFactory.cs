@@ -14,23 +14,44 @@ namespace RadiantDentalPractice.Repository
      */
     public class RepositoryFactory : IRepositoryFactory
     {
-        public IPatientRepository getPatientRepository()
+        private IPatientRepository getPatientRepository()
         {
-            return new PatientRepository();
+            return PatientRepository.getInstance();
         }
-        public IAppointmentRepository getAppointmentRepository()
+        private IAppointmentRepository getAppointmentRepository()
         {
-            return new AppointmentRepository();
-        }
-
-        public ITreatmentPlanRepository getTreatmentPlanRepository()
-        {
-            return new TreatmentPlanRepository();
+            return AppointmentRepository.getInstance();
         }
 
-        public IStaffRepository getStaffRepository()
+        private ITreatmentPlanRepository getTreatmentPlanRepository()
         {
-            return new StaffRepository();
+            return TreatmentPlanRepository.getInstance();
+        }
+
+        private IStaffRepository getStaffRepository()
+        {
+            return StaffRepository.getInstance();
+        }
+
+        public object getRepository(string type)
+        {
+            if(type.Equals("PATIENT"))
+            {
+                return getPatientRepository();
+            }
+            else if(type.Equals("APPOINTMENT"))
+            {
+                return getAppointmentRepository();
+            }
+            else if (type.Equals("TREATMENTPLAN"))
+            {
+                return getTreatmentPlanRepository();
+            }
+            else if (type.Equals("STAFF"))
+            {
+                return getStaffRepository();
+            }
+            return null;
         }
     }
 }

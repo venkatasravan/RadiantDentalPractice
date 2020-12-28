@@ -16,6 +16,16 @@ namespace RadiantDentalPractice.Repository
      */
     public class PatientRepository : IPatientRepository
     {
+        private static IPatientRepository patientRepository = new PatientRepository();
+
+        private PatientRepository()
+        {
+
+        }
+        public static IPatientRepository getInstance()
+        {
+            return patientRepository;
+        }
         // add patient
         public int addPatient(Patient patient)
         {

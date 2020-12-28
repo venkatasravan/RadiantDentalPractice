@@ -15,6 +15,16 @@ namespace RadiantDentalPractice.Repository
     */
     public class AppointmentRepository : IAppointmentRepository
     {
+        private static IAppointmentRepository appointmentRepository = new AppointmentRepository();
+
+        private AppointmentRepository()
+        {
+
+        }
+        public static IAppointmentRepository getInstance()
+        {
+            return appointmentRepository;
+        }
         // add booking
         public int addBooking(Appointment appointment)
         {

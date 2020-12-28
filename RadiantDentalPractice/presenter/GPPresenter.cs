@@ -39,14 +39,14 @@ namespace RadiantDentalPractice.presenter
         public int updatePatient()
         {
             updateAddress();
-            IPatientRepository patientRepository = repositoryFactory.getPatientRepository();
+            IPatientRepository patientRepository = ((IPatientRepository)repositoryFactory.getRepository("PATIENT"));
             return patientRepository.addPatient(patient);
         }
 
         public void registerCheckupPresenter(ICheckupView checkupView)
         {
             CheckUpPresenter checkUpPresenter = presenterFactory.getCheckUpPresenter(checkupView,
-                repositoryFactory.getAppointmentRepository());
+                (IAppointmentRepository)repositoryFactory.getRepository("APPOINTMENT"));
             checkupView.checkUpPresenter = checkUpPresenter;
         }
 

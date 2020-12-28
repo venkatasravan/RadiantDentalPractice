@@ -55,15 +55,15 @@ namespace RadiantDentalPracticeTests.Presenter
             patient.phoneNumber = "1234567890";
 
             // mock patient repo
-            repositoryFactory.Setup(x => x.getPatientRepository()).Returns(patientRepository.Object);
+            repositoryFactory.Setup(x => x.getRepository("PATIENT")).Returns(patientRepository.Object);
             patientRepository.Setup(x => x.getPatient(It.IsAny<int>())).Returns(patient);
 
             //mock appointment repo
-            repositoryFactory.Setup(x => x.getAppointmentRepository()).Returns(appointmentRepository.Object);
+            repositoryFactory.Setup(x => x.getRepository("APPOINTMENT")).Returns(appointmentRepository.Object);
             appointmentRepository.Setup(x => x.getBookings()).Returns(bookedAppointments);
 
             //mock treatmentplan repo
-            repositoryFactory.Setup(x => x.getTreatmentPlanRepository()).Returns(treatmentPlanRepository.Object);
+            repositoryFactory.Setup(x => x.getRepository("TREATMENTPLAN")).Returns(treatmentPlanRepository.Object);
             treatmentPlanRepository.Setup(x => x.getTreatmentPlans()).Returns(treatmentPlans);
 
             AppointmentsListPresenter appointmentsListPresenter = new AppointmentsListPresenter(repositoryFactory.Object);

@@ -90,6 +90,11 @@ namespace RadiantDentalPractice.presenter
             return treatmentPlan;
         }
 
+        // calculate cost for the treatment
+        // reference : https://assets.nhs.uk/prod/documents/dental-treatment-plan-dh_4139048.pdf
+        /* Within 2 months of completion of the
+        course of treatment detailed overleaf, should you require further NHS treatment in either the same
+        or lower charge band, you will not normally need pay again.*/
         private double calculateCost(string proposedTreatment, int patientID)
         {
             double cost = 0;

@@ -18,7 +18,7 @@ namespace RadiantDentalPractice.Helper
 
         public static Boolean isPatientAvailable(int patientID)
         {
-            Patient patient = repositoryFactory.getPatientRepository().getPatient(patientID);
+            Patient patient = ((IPatientRepository)repositoryFactory.getRepository("PATIENT")).getPatient(patientID);
             if(patient!=null)
             {
                 return true;

@@ -50,7 +50,7 @@ namespace RadiantDentalPractice.presenter
 
         private Boolean isEmailRegistered(string email)
         {
-            int result = repositoryFactory.getPatientRepository().isEmailRegistered(email);
+            int result = ((IPatientRepository)repositoryFactory.getRepository("PATIENT")).isEmailRegistered(email);
             if(result>0)
             {
                 return true;

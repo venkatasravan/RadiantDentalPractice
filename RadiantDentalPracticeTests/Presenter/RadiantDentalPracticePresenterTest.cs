@@ -41,7 +41,8 @@ namespace RadiantDentalPracticeTests.Presenter
 
 
 
-            presenterFactory.Setup(x => x.getCheckUpPresenter(checkupView.Object, repositoryFactory.Object.getAppointmentRepository()));
+            presenterFactory.Setup(x => x.getCheckUpPresenter(checkupView.Object,
+                (IAppointmentRepository)repositoryFactory.Object.getRepository("APPOINTMENT")));
 
 
 
@@ -57,7 +58,8 @@ namespace RadiantDentalPracticeTests.Presenter
 
 
 
-            presenterFactory.Setup(x => x.getEmergencyPresenter(emergencyView.Object, repositoryFactory.Object.getAppointmentRepository()));
+            presenterFactory.Setup(x => x.getEmergencyPresenter(emergencyView.Object, 
+                (IAppointmentRepository)repositoryFactory.Object.getRepository("APPOINTMENT")));
 
 
 
@@ -73,8 +75,10 @@ namespace RadiantDentalPracticeTests.Presenter
 
 
 
-            RecordTreatmentPresenter recordTreatmentPresenter = new RecordTreatmentPresenter(presenterFactory.Object, repositoryFactory.Object.getTreatmentPlanRepository());
-            presenterFactory.Setup(x => x.getRecordTreatmentPresenter(presenterFactory.Object, repositoryFactory.Object.getTreatmentPlanRepository())).Returns(recordTreatmentPresenter);
+            RecordTreatmentPresenter recordTreatmentPresenter = new RecordTreatmentPresenter(presenterFactory.Object, 
+                (ITreatmentPlanRepository)repositoryFactory.Object.getRepository("TREATMENTPLAN"));
+            presenterFactory.Setup(x => x.getRecordTreatmentPresenter(presenterFactory.Object, 
+                (ITreatmentPlanRepository)repositoryFactory.Object.getRepository("TREATMENTPLAN"))).Returns(recordTreatmentPresenter);
 
 
 

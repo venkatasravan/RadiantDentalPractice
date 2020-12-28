@@ -13,10 +13,6 @@ namespace RadiantDentalPractice.Repository
      */
     public interface IRepositoryFactory
     {
-        IPatientRepository getPatientRepository();
-        //IAppointmentRepository getAppointmentRepository();
-        IAppointmentRepository getAppointmentRepository();
-        ITreatmentPlanRepository getTreatmentPlanRepository();
-        IStaffRepository getStaffRepository();
+        Object getRepository(string type);
     }
 }
